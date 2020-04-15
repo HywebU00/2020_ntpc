@@ -1,0 +1,1170 @@
+/////////////////////////////////////////////////////////以下為demo範例///
+// 2018-1005 全文檢索 table修正
+.gsc-above-wrapper-area {
+    margin-bottom: 0;
+    td {
+        padding: 0 5px;
+        border: 0;
+    }
+}
+.gsc-refinementsArea {
+    border-bottom: 1px solid transparent;
+}
+.MP {
+    background: url(../images/mp-bg.png) 50% top no-repeat;
+    // background-size: contain;
+    .section {
+        padding: 0 0 0;
+        .container {
+            padding: 1.25em 0 1.25em;
+        }
+    }
+    .Side_Wrap {
+        .Side_Position {
+            padding-top: 20px;
+        }
+    }
+}
+// 側邊按鈕的複雜定位
+.Side_Wrap {
+    position: relative;
+    width: 1320px;
+    margin: 0 auto;
+    min-width: 1000px\9;
+    .Side_Position {
+        position: fixed;
+        width: 1320px;
+        z-index: 97;
+        // W3C CSS測不過所以先碼掉
+        // width: 100%\9;
+        // z-index: 5000\9;
+
+        #Side {
+            position: absolute;
+            right: 0;
+            width: 60px;
+            background: rgba(0, 0, 0, .75);
+            background: #333\9;
+            border-radius: 5px;
+            a {
+                display: block;
+                width: 60px;
+                height: 60px;
+                transition: background .3s ease;
+                text-align: center;
+                &:hover, &:focus {
+                    // background: $lightColor;
+                    background: darken($primaryColor, 30);
+                }
+                img {
+                    // width: 85%;
+                    // height: 85%;
+                }
+            }
+            a:first-child {
+                &:hover, &:focus {
+                    border-radius: 5px 5px 0 0;
+                }
+            }
+            a:last-child {
+                &:hover, &:focus {
+                    border-radius: 0 0 5px 5px;
+                }
+            }
+            a.GoLink {}
+            a.GoTel {
+                display: none;
+            }
+            // 收合按鈕
+            button{
+                position: absolute;
+                left: -40px;
+                top: 15px;
+                width: 40px;
+                display: block;
+
+                top: 12px;
+                border-radius: 5px 0 0 5px;
+                background: rgba(0,0,0,.75);
+                color: #fff;
+                color: #000\9;  //ie8 hack
+                padding: .75em .5em;
+                border: 0;
+                border-right: dotted 1px rgba(255,255,255,.6);
+            }
+        }
+    }
+    @media screen and (max-width: 1320px) {
+        width: 100%;
+        .Side_Position {
+            width: 100%;
+        }
+    }
+    @media screen and (max-width: 768px) {
+        .Side_Position {
+            bottom: 0;
+            #Side {
+                position: static;
+                width: 100%;
+                height: 60px;
+                a {
+                    float: left;
+                }
+                a.GoLink {
+                    display: none;
+                }
+                a.GoTel {
+                    display: block;
+                }
+            }
+        }
+    }
+    @media screen and (max-width: 320px) {
+        .Side_Position {
+            #Side {
+                height: 50px;
+                a {
+                    width: 50px;
+                    height: 50px;
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    // 側邊欄按鈕出現
+    // 最小寬1200px
+    @media screen and (min-width: 1200px) {
+        .Side_Position {
+            #Side {
+                // 收合按鈕
+                button{
+                    // 當寬度 >1200px 時隱藏按鈕
+                    display: none;
+                }
+            }
+        }
+    }
+    // 側邊欄隱藏
+    // 最大寬1200px
+    @media screen and (max-width: 1200px) {
+        .Side_Position {
+            #Side {
+                right: -60px;
+                transition: right 600ms ease;
+            }
+        }
+    }
+}
+
+
+// 側邊欄出現
+.Show{ right: 0 !important; }
+
+// 首頁區塊設定
+.section {
+    padding: 2em 0 2em;
+    // text-align: center;
+    [class^="col"] {
+        // border: 2px solid #FFF;
+        // background: #DEDEDE;
+        // min-height: 250px;
+        // color: $primaryColor;
+        // text-align: center;
+        // line-height: 250px;
+        // font-size: 1.5em;
+        // font-weight: bold;
+        @include box-sizing();
+    }
+    &+.section {
+        // padding-top: 2em;
+    }
+    h2 {
+        text-align: center;
+        font-size: 220%;
+    }
+}
+// section 的背景
+.Bg_White {
+    // background-color: $primaryColor;
+    .container {
+        background-image: url('../images/Mp_Deco_color.png');
+        background-position: left top;
+        background-repeat: no-repeat;
+    }
+}
+.Bg_Color {
+    background-color: $primaryColor;
+    .container {
+        background-image: url('../images/Mp_Deco_white.png');
+        background-position: left top;
+        background-repeat: no-repeat;
+        @include screen('mobile') {
+            background-position: 20px top;
+        }
+    }
+}
+// 可用class個別命名
+// .event {
+//     .news {
+//         @include make-xs-column(12);
+//         @include make-sm-column(8);
+//         @include make-md-column(8); //992px  width:100%
+//         @include make-lg-column(8); //1400px width:100%
+//         // @include gutter(); //gutter 代表左右要留白 
+//     }
+//     .video {
+//         @include make-xs-column(12);
+//         @include make-sm-column(4);
+//         @include make-md-column(4); //992px  width:100%
+//         @include make-lg-column(4); //1400px width:100%
+//         // @include gutter(); //gutter 代表左右要留白
+//     }
+//     &+.event {
+//         .container {
+//             @include gutter(); //gutter 代表左右要留白
+//         }
+//     }
+// }
+// 單欄
+.col-12 {
+    .container {
+        // max-width: 100%;
+        max-width: 1200px;
+    }
+    .col {
+        @include make-xs-column(12);
+        @include make-sm-column(12);
+        @include make-md-column(12); //992px  width:100%
+        @include make-lg-column(12); //1400px width:100%
+        @include gutter(); //gutter 代表左右要留白
+    }
+    // 稅務線上服務
+    .Tax_Online {
+        @include clearfix;
+        overflow: visible;
+        padding: 0 7em;
+        a {
+            @include make-xs-column(6);
+            @include make-sm-column(4);
+            @include make-md-column(3);
+            @include make-lg-column(3);
+            margin: .25em 0 .25em;
+            // ie8 hack -----------------------
+            -ms-float: left;
+            -ms-width: 23%;
+            -ms-width: 23%\9;
+            -ms-margin: .25em 3px .25em;
+            background: #104971\9;
+            // --------------------------------
+            transform-origin: 50% 50%;
+            transform: scale(1, 1);
+            transition: all .6s;
+            .Item {
+                width: 90%;
+                height: 120px;
+                margin: 0 auto;
+                border-radius: 5px;
+                overflow: hidden;
+                text-align: center;
+                // img{ text-align: center;}
+            }
+            &:nth-child(8n+1) .Item {
+                background: #029671;
+            }
+            &:nth-child(8n+2) .Item {
+                background: #03987b;
+            }
+            &:nth-child(8n+3) .Item {
+                background: #058879;
+            }
+            &:nth-child(8n+4) .Item {
+                background: #087677;
+            }
+            &:nth-child(8n+5) .Item {
+                background: #0c778b;
+            }
+            &:nth-child(8n+6) .Item {
+                background: #0b6475;
+            }
+            &:nth-child(8n+7) .Item {
+                background: #0e5473;
+            }
+            &:nth-child(8n+8) .Item {
+                background: #104971;
+            }
+            p {
+                text-align: center;
+                margin-top: .5em;
+                font-size: 112.5%;
+            }
+            color: #333;
+            color: #FFF\9;
+            &:hover, &:focus {
+                transform: scale(1.1, 1.1);
+                background: #087677\9;
+                .Item {
+                    p {
+                        color: #fff;
+                    }
+                }
+            }
+        }
+        @include screen('mobile') {
+            padding: 0 2em;
+        }
+        .Mobile {
+            display: none;
+            @include screen('mobile') {
+                display: block;
+            }
+        }
+    }
+    // 節稅資訊
+    .Tax_Reduce {
+        h3 {
+            font-size: 180%;
+            text-align: center;
+            color: #fff;
+            margin: 0 auto 1em;
+            span {
+                background: $secondaryColor;
+                padding: .5em 1em;
+                border-radius: 4.8em;
+                position: relative;
+                display: block;
+                line-height: 1.4;
+                // overflow:hidden;
+                // white-space: nowrap;
+                // text-overflow: ellipsis;
+                &:after {
+                    content: '';
+                    position: absolute;
+                    width: 10px;
+                    height: 10px;
+                    background: $secondaryColor;
+                    bottom: -5px;
+                    left: 50%;
+                    transform: rotate(45deg);
+                }
+            }
+        }
+        .btn_grp {
+            a {
+                color: #fff;
+                color: #000\9; // ie8 hack
+                border-color: transparent;
+                font-size: 125%;
+                margin: 0 2px;
+                font-weight: bold;
+                //-------------------hover.css----------------------------
+                display: inline-block;
+                vertical-align: middle;
+                -webkit-transform: perspective(1px) translateZ(0);
+                transform: perspective(1px) translateZ(0);
+                box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+                position: relative;
+                -webkit-transition-property: color;
+                transition-property: color;
+                -webkit-transition-duration: 0.3s;
+                transition-duration: 0.3s;
+                &:before {
+                    content: "";
+                    position: absolute;
+                    z-index: -1;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    // background: $lightColor;
+                    background: darken($primaryColor, 30);
+                    -webkit-transform: scaleX(0);
+                    transform: scaleX(0);
+                    -webkit-transform-origin: 0 50%;
+                    transform-origin: 0 50%;
+                    -webkit-transition-property: transform;
+                    transition-property: transform;
+                    -webkit-transition-duration: 0.3s;
+                    transition-duration: 0.3s;
+                    -webkit-transition-timing-function: ease-out;
+                    transition-timing-function: ease-out;
+                }
+                &:hover, &:focus, &:active {
+                    color: white;
+                }
+                &:hover:before, &:focus:before, &:active:before {
+                    -webkit-transform: scaleX(1);
+                    transform: scaleX(1);
+                }
+            }
+            // a:nth-child(1),
+            // a:nth-child(2),
+            // a:nth-child(3){}
+            a:nth-child(1) {
+                background: #4b90ba;
+            }
+            a:nth-child(2) {
+                background: #2da3a1;
+            }
+            a:nth-child(3) {
+                background: #3c8c96;
+                // background: #ffb800;
+                // color: #000;
+                &:hover, &:focus{
+                    color: #fff;
+                }
+            }
+            background: #19cbc8\9;
+            color:#FFF\9;
+            &:hover, &:focus {
+                background: #198fc8\9;
+            }
+        }
+        @include screen('mobile') {
+            h3 {
+                font-size: 150%;
+                display: table;
+                width: 100%;
+                span {
+                    height: 65px;
+                    display: table-cell;
+                    vertical-align: middle;
+                }
+            }
+        }
+    }
+}
+// 雙欄 6-6
+.col-6 {
+    .container {
+        //@include gutter(); gutter 代表左右要留白
+    }
+    .Tax_AD {
+        @include make-xs-column(12);
+        @include make-sm-column(6); //768px  width:50%
+        @include make-md-column(6); //992px  width:50%
+        @include make-lg-column(6); //1400px width:50%
+        @include gutter();
+
+        // ie8-10 hack---------------------
+        float: left\9;
+        -ms-display: inline-block;
+        -ms-width: 48%;
+        width: 48%\9;
+        -ms-margin: 0px 1% 15px;
+        // --------------------------------
+        a {
+            overflow: hidden;
+            img {
+                transform-origin: 50% 50%;
+                transform: scale(1, 1);
+                transition: all .6s;
+                // opacity: .5;
+            }
+            &:hover {
+                img {
+                    transform: scale(1.025, 1.025);
+                }
+            }
+        }
+    }
+}
+// 雙欄 8-4
+.col-8-4 {
+    .news {
+        @include make-xs-column(12);
+        @include make-sm-column(8); //768px  width:66.6%
+        @include make-md-column(8); //992px  width:66.6%
+        @include make-lg-column(8); //1400px width:66.6%
+        @include gutter(); //gutter 代表左右要留白
+    }
+    .video {
+        @include make-xs-column(12);
+        @include make-sm-column(4); //768px  width:33.3%
+        @include make-md-column(4); //992px  width:33.3%
+        @include make-lg-column(4); //1400px width:33.3%
+    }
+}
+// 雙欄 3-9
+.col-3-9 {
+    padding: 0 0 0;
+    .Tax_Info {
+        @include make-xs-column(12);
+        @include make-sm-column(12); //768px  width:66.6%
+        @include make-md-column(3); //992px  width:66.6%
+        @include make-lg-column(3); //1400px width:66.6%
+        @include gutter(); //gutter 代表左右要留白
+        .imgOuter1-1 {
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        width:25%\9;
+        float: left\9;
+    }
+    .Tax_News {
+        @include make-xs-column(12);
+        @include make-sm-column(12); //768px  width:33.3%
+        @include make-md-column(9); //992px  width:33.3%
+        @include make-lg-column(9); //1400px width:33.3%
+        font-size: 112.5%;
+        .share {
+            float: right;
+            a {
+                display: block;
+                padding-top: 5px;
+                img {
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+        }
+        width:75%\9;
+        // min-width: 822px\9;
+        float: left\9;
+    }
+}
+// 三欄
+.news {
+    .container {
+        @include gutter(); //gutter 代表左右要留白
+    }
+    .col {
+        @include make-xs-column(12);
+        @include make-sm-column(4);
+        @include make-md-column(4); //992px  width:100%
+        @include make-lg-column(4); //1400px width:100%
+        @include gutter(); //gutter 代表左右要留白
+    }
+}
+// 三欄 4-4-4
+.btn-Youtube {
+    background: #e02f2f\9;
+    border: 1px solid #bf1d1d \9;
+    padding: .5em 1em \9;
+}
+.col-4-4-4 {
+    clear: both\9;
+    .Video {
+        @include make-xs-column(12);
+        @include make-sm-column(4); //768px  width:33.3%
+        @include make-md-column(4); //992px  width:33.3%
+        @include make-lg-column(4); //1400px width:33.3%
+        @include gutter();
+        p {
+            font-size: 112.5%;
+            text-align: center;
+        } 
+        width: 33.3%\9;
+        float: left\9;
+        margin: 0px 0 15px\9;
+        // padding:0px 15px 0\9;
+        padding:0px 15px 0;
+        iframe {
+            width: 100%\9;
+            height: 340px\9;
+        }
+    }
+    .btn_grp {
+        a.btn {
+            border: 1px solid transparent;
+            background: #2f6f96;
+            background: #2f6f96\9;
+            color: #fff;
+            color: #000\9;
+            font-size: 112.5%;
+            font-weight: bold;
+            //-------------------hover.css----------------------------
+            display: inline-block;
+            vertical-align: middle;
+            -webkit-transform: perspective(1px) translateZ(0);
+            transform: perspective(1px) translateZ(0);
+            box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+            position: relative;
+            -webkit-transition-property: color;
+            transition-property: color;
+            -webkit-transition-duration: 0.3s;
+            transition-duration: 0.3s;
+            &:before {
+                content: "";
+                position: absolute;
+                z-index: -1;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: darken($primaryColor, 30);
+                -webkit-transform: scaleX(0);
+                transform: scaleX(0);
+                -webkit-transform-origin: 0 50%;
+                transform-origin: 0 50%;
+                -webkit-transition-property: transform;
+                transition-property: transform;
+                -webkit-transition-duration: 0.3s;
+                transition-duration: 0.3s;
+                -webkit-transition-timing-function: ease-out;
+                transition-timing-function: ease-out;
+            }
+            &:hover, &:focus, &:active {
+                color: white;
+            }
+            &:hover:before, &:focus:before, &:active:before {
+                -webkit-transform: scaleX(1);
+                transform: scaleX(1);
+            }
+        }
+    }
+    .imgOuter {
+        @include aspect-ratio(4, 3);
+    }
+    .Youtube_Share {
+        position: absolute;
+        right: 15px;
+        top: 50px;
+        @media screen and (max-width: 1320px) {
+            right: 80px;
+        }
+        @include screen('mobile') {
+            position: static;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+    }
+    // &+.col-3-3-3 {
+    //     background: $primaryColor;
+    // }
+}
+// // 進階設定，也可以自己寫
+// .col-1-2-1 {
+//     .col {
+//         @include make-xs-column(12);
+//         @include make-sm-column(3);
+//         @include make-md-column(3);
+//         @include make-lg-column(3);
+//         @include gutter(); //gutter 代表左右要留白
+//         min-height: 250px;
+//         &:nth-child(2) {
+//             @include make-xs-column(12);
+//             @include make-sm-column(6);
+//             @include make-md-column(6);
+//             @include make-lg-column(6);
+//         }
+//     }
+// }
+// // 四欄
+// .col-3 {
+//     .col {
+//         @include make-xs-column(12);
+//         @include make-sm-column(3); //768px  width:50%
+//         @include make-md-column(3); //992px  width:50%
+//         @include make-lg-column(3); //1400px width:50%
+//         @include gutter(); //gutter 代表左右要留白
+//     }
+// }
+// // 五欄
+// .col-5 {
+//     .col {
+//         @include make-xs-column(12);
+//         @include make-sm-column(2);
+//         @include make-md-column(2);
+//         @include make-lg-column(2);
+//         &:first-child {
+//             @include make-xs-column-offset(0);
+//             @include make-sm-column-offset(1);
+//             @include make-md-column-offset(1);
+//             @include make-lg-column-offset(1);
+//         }
+//     }
+// }
+//  -----------------------------------------------------
+// Youtub RWD -------------------------------------------
+.Video {
+    // margin: 1em 0;
+    margin-bottom: 50px;
+}
+.embed-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+}
+.embed-container iframe,
+.embed-container object,
+.embed-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+// Google map RWD
+.Gmap-rwd {
+    position: relative;
+    padding-bottom: 50%;
+    padding-top: 30px;
+    height: 0;
+    overflow: hidden;
+    margin-bottom: 50px;
+}
+.Gmap-rwd iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+// 圖片比例 --------------------------------------------------
+.imgOuter1-1 {
+    @include aspect-ratio(1, 1); //設定比例 1:1
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+.imgOuter4-3 {
+    @include aspect-ratio(3, 4);
+}
+//設定比例 3:4
+.imgOuter4-1 {
+    @include aspect-ratio(4, 1);
+}
+//設定比例 4:1
+.imgOuter4-3 {
+    @include aspect-ratio(4, 3);
+}
+//設定比例 4:3
+.imgOuter7-3 {
+    @include aspect-ratio(7, 3); //設定比例 1:1
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+.imgOuter16-9 {
+    @include aspect-ratio(16, 9);
+}
+//設定比例 16:9
+// Slider --------------------------------------------------
+.singleSlider {
+    width: 100%;
+    padding-bottom: 3em;
+    overflow-x:hidden\9;
+    @include gutter(0);
+    .img-container {
+        // height: inherit;
+        height: 320px;
+        width: 100%;
+        position: relative;
+        img {
+            // width: 100%;
+            width: auto;
+            max-width: 100%;
+            height: 100%;
+            margin: 0 auto;
+        }
+        @media screen and (min-width: 1199px) {}
+        @include screen('tablet') {
+            height: 220px;
+        }
+        @include screen('mobile') {
+            height: 180px;
+        }
+    }
+    a {
+        display: block;
+        height: 100%;
+        width: 100%;
+        position: relative;
+        .caption {
+            position: absolute;
+            width: 100%;
+            height: 3em;
+            background: rgba(0, 0, 0, .45);
+            padding: 1em .5em .5em;
+            font-size: 112.5%;
+            color: #FFF;
+            margin: 0;
+            text-align: center;
+            bottom: 0;
+            left: 0;
+            @include text-overflow;
+            @include box-sizing;
+            @include screen('mobile') {
+                height: 2em;
+                width: 100%;
+                left: 0;
+                padding: .5em;
+            }
+        }
+    }
+    .slick-dots {
+        bottom: initial;
+        margin-top: .3em;
+    }
+    .slick-dots li.slick-active button:before {
+        background: #f98385;
+    }
+    .slick-dots li button:before {
+        background: #333;
+    }
+    .slick-prev {
+        left: -100px\9;
+        top: 38%;
+    }
+    .slick-next {
+        right: -100px\9;
+        top: 38%;
+    }
+    @include screen('mobile') {
+        padding-bottom: 0;
+        .slick-prev {
+            left: 0;
+            top: 38%;
+        }
+        .slick-next {
+            right: 0;
+            top: 38%;
+        }
+    }
+}
+//節稅資訊
+.singleSlider_TaxReduce {
+    width: 100%;
+    padding-bottom: 3em;
+    @include gutter(0);
+    position: relative;
+    .img-container {
+        height: inherit;
+        width: 100%;
+        position: relative;
+        margin: 0 10px;
+        @include box-sizing;
+        img {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+        .Text {
+            background: #e2e2e2;
+            color: #000;
+            padding: 1.5em 2em;
+            height: 220px;
+            // min-height: 180px;
+            // max-height: 300px;
+            overflow: hidden;
+            display: none;
+            border-radius: 6px;
+            h3 {
+                line-height: 1.4;
+                color: #000;
+            }
+            p {
+                font-size: 1.125em;
+                line-height: 1.6;
+            }
+            position: relative;
+            .mask {
+                position: absolute;
+                background: -moz-linear-gradient(top, rgba(226, 226, 226, 0) 0%, rgba(226, 226, 226, 1) 80%, rgba(226, 226, 226, 1) 100%);
+                /* FF3.6-15 */
+                background: -webkit-linear-gradient(top, rgba(226, 226, 226, 0) 0%, rgba(226, 226, 226, 1) 80%, rgba(226, 226, 226, 1) 100%);
+                /* Chrome10-25,Safari5.1-6 */
+                background: linear-gradient(to bottom, rgba(226, 226, 226, 0) 0%, rgba(226, 226, 226, 1) 80%, rgba(226, 226, 226, 1) 100%);
+                /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                height: 100px;
+            }
+        }
+        @include screen('mobile') {
+            // height: 280px;
+            width: 100%;
+            img {
+                display: none;
+            }
+            .Text {
+                display: block;
+            }
+        }
+    }
+    a {
+        display: block;
+        height: 100%;
+        width: 100%;
+        position: relative;
+        .caption {
+            position: absolute;
+            width: 100%;
+            height: 3em;
+            background: rgba(0, 0, 0, .45);
+            padding: 1em .5em .5em;
+            font-size: 112.5%;
+            color: #FFF;
+            margin: 0;
+            text-align: center;
+            bottom: 0;
+            left: 0;
+            @include text-overflow;
+            @include box-sizing;
+            @include screen('mobile') {
+                height: 2em;
+                width: 100%;
+                left: 0;
+                padding: .5em;
+            }
+        }
+    }
+    .btn_grp {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        padding: 1.8em 0;
+        background: rgba(0,0,0,.3);
+        a.btn {
+            width: 180px;
+            display: inline-block;
+        }
+    }
+    .slick-dots {
+        bottom: initial;
+    }
+    .slick-dots li.slick-active button:before {
+        background: #f98385;
+    }
+    .slick-dots li button:before {
+        // background: #fff;
+    }
+    @include screen('mobile') {
+        .btn_grp {
+            padding: .5em 0;
+            position: static;
+            background: rgba(0,0,0,0);
+            a.btn {
+                // width: 100%;
+                width: 31.5%;
+                min-width: 31.5%;
+                line-height: 2.2;
+                margin-bottom: 3px;
+                span {
+                    width: 50px;
+                    display: block;
+                    margin: 0 auto;
+                    line-height: 1.3;
+                    padding: .5em 0;
+                }
+            }
+            .btn {
+                padding: 0 !important;
+            }
+        }
+    }
+}
+// .adSlider {
+//     padding-top: 2em;
+//     padding-bottom: 1.25em;
+//     @include gutter(70px);
+//     @include screen('mobile') {
+//         @include gutter();
+//     }
+//     .slick-prev {
+//         background: url(../vendor/slick/icon_arrow_left_inverse.png) no-repeat center center;
+//         background-size: 80%;
+//         left: 0;
+//         top: 55%;
+//     }
+//     .slick-next {
+//         background: url(../vendor/slick/icon_arrow_right_inverse.png) no-repeat center center;
+//         background-size: 80%;
+//         right: 0;
+//         top: 55%;
+//     }
+//     .img-container {
+//         width: 165px;
+//         height: 55px;
+//         margin: 0px 15px;
+//         margin: 0px 8px 15px\9;
+//         border: 1px solid #DDD\9;
+//         float: left\9;
+//         a {
+//             display: block;
+//             text-align: center;
+//             img {
+//                 margin: 0 auto;
+//                 // opacity: 1\9;
+//                 opacity: 1;
+//                 width: 165px\9;
+//                 height: 55px\9;
+//                 position: relative\9;
+//             }
+//         }
+//         &:focus {
+//             outline: none;
+//             &:before {
+//                 content:"";
+//                 position: absolute;
+//                 z-index: 9;
+//                 width: 100%;
+//                 height: 100%;
+//                 top: 0;
+//                 left: 0;
+//                 bottom:0;
+//                 right: 0;
+//                 box-shadow: 0 0px 0px 3px $primaryColor inset;
+//             }
+//         }
+//     }
+// }
+
+
+//write it in your sass setting
+.adSlider {
+    padding-top: 2em;
+    padding-bottom: 2em;
+    @include gutter(70px);
+    @include screen('mobile') {
+        @include gutter();
+    }
+    .slick-prev {
+        background: url(../vendor/slick/icon_arrow_left_inverse.png) no-repeat center center;
+        background-size: 80%;
+        left: 4px;
+        top: 50%;
+    }
+    .slick-next {
+        background: url(../vendor/slick/icon_arrow_right_inverse.png) no-repeat center center;
+        background-size: 80%;
+        right: 4px;
+        top: 50%;
+    }
+
+    .slick-prev,.slick-next{
+         &:focus {
+            &:before {
+                content:"";
+                position: absolute;
+                z-index: 9;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                bottom:0;
+                right: 0;
+                box-shadow: 0 0px 0px 3px $primaryColor inset;
+            }
+         }
+    }
+
+    .img-container {
+        width: 165px;
+        height: 55px;
+        margin: 0px 15px;
+        a {
+            display: block;
+            text-align: center;
+            img { margin: 0 auto; }
+            &:focus {
+                &:before {
+                    content:"";
+                    position: absolute;
+                    z-index: 9;
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                    bottom:0;
+                    right: 0;
+                    box-shadow: 0 0px 0px 3px $primaryColor inset;
+                }
+            }
+        }
+        
+    }
+}
+
+
+// 相關照
+.Multiple_slider {
+    margin-top: 1em;
+    margin-bottom: 2em;
+    .img-container {
+        height: inherit;
+        width: 100%;
+        position: relative;
+        margin: 0px 2px;
+        img {
+            width: 100%;
+            height: 100%;
+        }
+        @include screen('mobile') {
+            // height: 280px;
+            width: 100%;
+        }
+    }
+    .slick-dots {
+        bottom: initial;
+    }
+    .slick-dots li.slick-active button:before {
+        background: #f98385;
+    }
+    .slick-dots li button:before {
+        background: #333;
+    }
+}
+// 影片
+.singleSlider-Video {
+    width: 100%;
+    @include gutter(0);
+    .img-container {
+        height: inherit;
+        width: 100%;
+        position: relative;
+        img {
+            width: 100%;
+            height: 100%;
+        }
+        @include screen('mobile') {
+            // height: 280px;
+            width: 100%;
+        }
+    }
+    a {
+        display: block;
+        height: 100%;
+        width: 100%;
+        position: relative;
+        .caption {
+            position: absolute;
+            width: 100%;
+            height: 3em;
+            background: rgba(0, 0, 0, .45);
+            padding: 1em .5em .5em;
+            font-size: 112.5%;
+            color: #FFF;
+            margin: 0;
+            text-align: center;
+            bottom: 0;
+            left: 0;
+            @include text-overflow;
+            @include box-sizing;
+            @include screen('mobile') {
+                height: 2em;
+                width: 100%;
+                left: 0;
+                padding: .5em;
+            }
+        }
+    }
+    // .slick-dots{
+    //     bottom: initial;
+    //     margin: 1em 0 1em;
+    // }
+    // .slick-dots li.slick-active button:before{
+    //     background: #f98385;
+    // }
+    // .slick-dots li button:before {
+    //     background: #333;
+    // }
+}

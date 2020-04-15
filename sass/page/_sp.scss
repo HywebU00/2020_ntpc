@@ -1,0 +1,1923 @@
+// 常見問答
+// .QandA{
+// 	.Q_Type{
+// 		ol{ 
+// 			// list-style-type: cjk-ideographic;
+// 			// list-style-position: inside;
+// 			padding: 0;
+// 			li{
+// 				color: #fff;
+// 				position: relative;
+// 				a{
+// 					@include box-sizing;
+// 					display: block;
+// 					width: 100%;
+// 					color: #676767;
+// 					font-size: 1.125em;
+// 					padding: .5em 3.5em .5em 80px;
+// 					border-bottom: dotted 1px #d5d5d5;
+// 					border-radius: 5px;
+// 					text-decoration: none;
+// 					span{
+// 					    display: inline-block;
+// 					    width: 100px;
+// 					    text-align: center;
+// 					    position: absolute;
+// 					    top: .5em;
+// 					    left: 0;
+// 						&:after{
+// 							content:'、';
+// 						}
+// 					}
+// 					&:hover, &:focus, &:active{
+// 						// color: $aHover;
+// 						// text-decoration: none;
+// 						// color: #fff;
+// 						background: #d5d5d5;
+// 					}
+// 					// &:focus, &:active{
+// 					// 	background: $primaryColor;
+// 					// 	color: #fff;
+// 					// }
+// 				}
+// 				&:after{
+// 					content:'';
+// 					position: absolute;
+// 					right: 1.5em;
+// 				    top: .75em;
+// 				    width: 12px;
+// 				    height: 12px;
+// 				    border-bottom: solid 2px #555;
+// 				    border-right: solid 2px #555;
+// 				    transform: rotate(45deg);
+// 				}
+// 				.Now{
+// 					color: #fff;
+// 					background: #555;
+// 				}
+// 			}
+// 		}
+// 		.Ans{
+// 			background: #fff;
+// 			padding: 15px 25px;
+// 			display: none;
+// 			p{ 
+// 				color: #000;
+// 				font-size: 1em;
+// 			}
+// 			a{
+// 				display: inline-block;
+// 				color: #f06b09;
+// 				font-size: 1em;
+// 				padding: 5px;
+// 				background: rgba(85,85,85,0);
+// 				border-radius: 5px;
+// 				margin: 0 5px 5px;
+// 				text-decoration: none;
+// 				border-bottom: 0;
+// 				&:hover, &:focus, &:active{
+// 					background: none !important;
+// 					color: #f06b09 !important;
+// 					text-decoration: underline;
+// 				}
+// 			}
+// 		}
+// 		.Show{ display: block; }
+// 	}
+// }
+
+.accordion{
+	ul{
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		li{
+			// color: #fff;
+			position: relative;
+			a{
+				@include box-sizing;
+				display: block;
+				width: 100%;
+				color: #666;
+				font-size: 1.125em;
+				padding: .5em 80px;
+				border-bottom: dotted 1px #d5d5d5;
+				border-radius: 5px;
+				text-decoration: none;
+				position: relative;
+				span{
+				    display: inline-block;
+				    width: 100px;
+				    text-align: center;
+				    position: absolute;
+				    top: .5em;
+				    left: 0;
+					&:after{
+						content:'、';
+					}
+				}
+				span.switch{
+					left: auto;
+					right: 0;
+					width: 40px;
+					height: 100%;
+					font-size: 0;
+					&:before{
+						content:'';
+						position: absolute;
+						top: 50%;
+						right: 50%;
+						margin-top: -12px;
+						margin-left: -12px;
+					    width: 12px;
+					    height: 12px;
+					    border-bottom: solid 2px #555;
+					    border-right: solid 2px #555;
+					    transform: rotate(45deg);
+					}
+					&:after{
+						content:'';
+					}
+				}
+				&.act{
+					span.switch{
+						&:before{
+							transform: rotate(-135deg);
+							margin-top: 0;
+						}
+					}
+				}
+			}
+			.accordion-content{
+				padding: 0 2em;
+				a{
+				    display: inline-block;
+				    padding: 5px 10px;
+				    width: auto;
+				    border-bottom: 0;
+				    @include aSetting();
+				}
+			}
+		}
+	}
+}
+
+// 稅務行事曆
+.Calendar{
+	.Month{
+        @include make-xs-column(12);
+        @include make-sm-column(4);
+        @include make-md-column(3); //992px  width:100%
+        @include make-lg-column(3); //1400px width:100%
+    	// @include gutter(); gutter 代表左右要留白
+    	@include box-sizing;
+        padding: 0 .5em;
+        margin-bottom: 1.8em;
+        height: 380px;
+        h3{
+        	text-align: center;
+        	background: #ddd;
+        	margin: 0;
+        	line-height: 2.6;
+        	border-top-left-radius: 5px;
+        	border-top-right-radius: 5px;
+        	overflow: hidden;
+        }
+        ul{
+        	padding: 0 16px 0 40px;
+        	li{
+	        	margin-bottom: .5em;
+	        	font-weight: bold;
+	        	a{ text-decoration: underline !important; }
+	        	span{
+	        		display: block;
+	        		width: auto;
+	        		font-size: .85em;
+	        		font-weight: normal;
+	        		line-height: 1.2;
+					margin-top: 5px;
+	        	}
+	        }
+        }
+        
+
+        .Jan, .Feb, .Mar, .Apr, .May, .Jun, .Jly, .Agu, .Sep, .Oct, .Nov, .Dec{
+        	min-height: 100%;
+        	@include border-radius(5px);
+        	border-radius: 5px;
+        	border: solid 1px #b1b1b1;
+        }
+    }
+    .Now{
+    	h3{
+    		background: darken($primaryColor, 30);
+    		color: #fff;
+    	}
+    	.Jan, .Feb, .Mar, .Apr, .May, .Jun, .Jly, .Agu, .Sep, .Oct, .Nov, .Dec{
+    		border: solid 1px darken($primaryColor, 30);
+    	}
+    }
+}
+
+// 統一發票
+.Invoice{
+	table{
+		h3{
+			margin: 0;
+			font-size: 2em;
+			color: $lightColor;
+			line-height: 1.8;
+			span{
+				display: inline-block;
+				&:after{ content:'、'; }
+				&:last-child{
+					&:after{ content:''; }
+				}
+			}
+		}
+		p{ margin: 0; }
+	}
+}
+
+// 按鈕 - 案件查詢
+.btn_search{
+	font-size: .813em;
+    display: block;
+    background: $function_color;
+    border-color: $function_color;
+    color:#FFF;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    margin: 0 auto; 
+    @include border-radius(50%);
+    &:hover, &:focus, &:active {
+    	color: #fff;
+        background: darken($primaryColor, 30);
+        border-color: darken($function_color, 10);
+        outline: solid 2px #ff6f06;
+    }
+    &:focus{
+        &+ul{ display: block; }
+    }
+    @include screen('mobile') {
+        margin: 0 0;
+    }
+}
+
+// 問題與建議
+.Steps{
+	@include clearfix;
+	margin: 2em 0;
+	background: url(../images/basic/img_sp_steps_bg.png) left 20px repeat-x;
+	ul{
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		li{
+			float: left;
+			text-align: center;
+			span{
+				@include border-radius(50%);
+				display: block;
+				margin: 0 auto;
+				background: #e5e5e5;
+				width: 50px;
+				height: 50px;
+				line-height: 50px;
+				font-size: 1.25em;
+			}
+			p{
+				margin: 0;
+				line-height: 1.6;
+			}
+		}
+		.Now{
+			span{
+				background: #0270b3;
+				color: #fff;
+			}
+		}
+	}
+	@include screen('mobile') {
+		ul{
+			li{
+				span{
+					width: 10px;
+					height: 10px;
+					font-size: 0;
+					margin: 20px auto;
+				}
+				p{ font-size: 0;}
+			}
+			.Now{
+				span{
+					width: 50px;
+					height: 50px;
+					font-size: 1em;
+					margin: 0 auto;
+				}
+				p{ font-size: 1em;} 
+			}
+		}
+	}
+}
+.Three li{ width: 33.333%; }
+.Four li{ width: 25%; }
+
+// 重要訊息
+.Mayor{
+	padding: 1em;
+	text-align: center;
+	font-size: 1.125em;
+	label{
+	}
+}
+
+a.btn_main,
+a.btn_secondary{
+	@include border-radius(20px);
+	margin-bottom: 1em;
+	//-------------------hover.css----------------------------
+	display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    position: relative;
+    -webkit-transition-property: color;
+    transition-property: color;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    &:before{
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: darken($primaryColor, 35);
+        -webkit-transform: scaleX(0);
+        transform: scaleX(0);
+        -webkit-transform-origin: 0 50%;
+        transform-origin: 0 50%;
+        -webkit-transition-property: transform;
+        transition-property: transform;
+        -webkit-transition-duration: 0.3s;
+        transition-duration: 0.3s;
+        -webkit-transition-timing-function: ease-out;
+        transition-timing-function: ease-out;
+    }
+    &:hover, &:focus, &:active{ color: white; }
+    &:hover:before, &:focus:before, &:active:before{
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1);
+    }
+}
+
+a.btn_main{
+	background: darken($primaryColor, 30);
+	color: #fff;
+	&:hover, &:focus, &:active{ background: darken($primaryColor, 35); }
+}
+a.btn_secondary{
+	background: #555;
+	color: #fff;
+	&:hover, &:focus, &:active{ background: #555; }
+}
+
+// 月曆
+// 月曆上方按鈕
+a.CalendarBtn{
+	border-radius:4px;
+	color: #fff;
+	background: #545454;
+	border: solid 1px rgba(0, 0, 0, .25);
+	border-radius:4px;
+	line-height: 2.2em;
+    display: inline-block;
+    padding: 0 1em;
+}
+a:hover.CalendarBtn,
+a:focus.CalendarBtn{
+	color: #fff !important;
+	background-color: darken($primaryColor, 10);
+	border: solid 1px #b49061;
+	text-decoration: none !important;
+}
+
+
+/* 月曆 table版 */
+.Btn_wrap{ float: right;}
+.calendar{
+	// background: red;
+	table{ 
+		width: 100%; 
+		background: #fff;
+		line-height: 42px;
+		margin-bottom: 1em;
+		tbody{
+			border: solid 2px #7f7f7f;
+		}
+		th, td{ padding: 0;}
+		th{ 
+			background: rgba(0, 0, 0, .5);
+			color: #fff; 
+			text-align: center;
+			line-height: 2;
+			border-right: solid 1px #fff;
+			&:last-child{ 
+				border-right: 0;
+			}
+		}
+		td{ 
+			width: calc(100%/7);
+			text-align: center;
+			vertical-align: top;
+			border: solid 1px #fff;
+			// border-right: solid 1px #ddd; 
+			// border-bottom: solid 1px #ddd; 
+			box-sizing: border-box;
+			background: lighten($lightColor, 18);
+			&:hover, &:focus, &:active{
+				cursor: pointer;
+				background: darken($lightColor, 10);
+			}
+			span{ display: block; }
+		}
+		.Available{
+			background: #ff9600;
+			color: #fff;
+			font-weight: bold;
+			background: #ffe9ca;
+			height: 42px;
+		}
+		.Unclick{ 
+			color: rgba(0, 0, 0, .30);
+			background: rgba(0, 0, 0, 0);
+			&:hover, &:focus, &:active{
+				color: rgba(0, 0, 0, .30);
+				background: rgba(0, 0, 0, 0);
+				cursor: auto;
+			}
+		}
+		.Closed{  color: red; font-weight: bold; }
+		a{
+			color: #000;
+			&:hover{ color: #fff; }
+		}
+		a:hover .Closed{
+			text-decoration: underline;
+			text-decoration-color:  red;
+		}
+		.Act{
+			background: darken($lightColor, 10);
+			a{ color: #fff; }
+		}
+		+ div > .Closed{
+			background: #fff;
+			box-shadow: inset 0 0 3px #000;
+		}    /*不開放*/
+		+ div > .Available{ background: #fcdbdd; } /*可預約*/
+	}
+	.dot{
+		display: inline-block;
+		width: 16px; 
+		height: 16px;
+		// border-radius: 50%;
+		background: #555;
+	}
+	.Date{
+		@include clearfix;
+		margin: 1em 0;
+		h3{ 
+			font-size: 1.5em;
+			margin: 0 0;
+			display: inline-block;
+			line-height: 1.6;
+		}
+		.Btn_wrap{
+			a{
+				color: #fff;
+				text-decoration: none;
+			}
+		}
+	}
+	@include screen('mobile') {
+    }
+}
+
+
+// @media (max-width: 992px) {
+// 	.calendar{ margin-bottom: 30px; }
+// }
+
+
+// SP分格
+.Box{
+	border: solid 1px #ddd;
+	h3{
+		background: #ddd;
+		margin: 0;
+		padding: 1em 2em;
+	}
+	a{
+		color: #545454;
+	    text-decoration: underline;
+	    margin: 0 1em;
+	    &:hover, &:focus {
+	       color: darken($primaryColor, 10);
+	    }
+	}
+	.Cancel{ font-size: 2em;}
+	.form_grid{
+		.form_grp{
+			border-bottom: dotted 1px #ddd;
+		}
+		.form_grp:last-child{
+			border-bottom: 0;
+		}
+	}
+	.Inner{
+		padding: 1em 2em 0;
+		border-bottom: dotted 1px #ddd;
+		table{
+			margin: .75em 0;
+			tr{
+				>td:last-child{
+					text-align: center;
+				}
+				&:last-child td{
+					border-bottom: 0;
+				}
+			}
+		}
+	}
+	@include screen('mobile') {
+        h3{
+			padding: 1em 1em;
+		}
+    }
+}
+
+// dl
+dl {
+	margin-top: 0;
+	margin-bottom: 21px;
+	// dt, dd { line-height: 1.42857143; }
+	dt{ font-weight: bold; font-size: 1.125em;}
+	dd{ margin-left: 0; }
+}
+
+// dt { font-weight: bold; }
+// dd { margin-left: 0; }
+
+.dl-horizontal{
+	dl{
+		dd{ margin-left: 130px; }
+		dt{ text-align: left; width: 130px; }
+	}
+	@include screen('mobile') {
+		dl{
+			dd{ margin-left: -40px; }
+			dt{ width: 100%; }
+		}
+	}
+}
+
+@media (min-width: 768px) {
+  .dl-horizontal dt {
+    float: left;
+    width: 160px;
+    clear: left;
+    text-align: right;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .dl-horizontal dd {
+    margin-left: 180px;
+  }
+}
+
+// 圖示說明
+.Icon-caption{
+	ul{
+		list-style: none;
+		padding: 0;
+		li{
+			display: inline-block;
+			margin-right: 1em;
+			i{
+				color: darken($primaryColor, 10);
+				font-size: 1.625em;
+			}
+			img{
+				height: 26px;
+				vertical-align:bottom;
+				margin-right: 3px;
+			}
+		}
+	}
+	@include screen('tablet'){
+		ul{
+			li{ margin-bottom: .5em;}
+		}
+	}
+}
+
+// 表格：申辦管道/進度查詢
+.Various{
+	p{
+		margin: .5em 0;
+	}
+	img{
+		height: 26px;
+		vertical-align:middle;
+		margin-right: .5em;
+	}
+	a+span{
+		display: inline-block;
+		margin: 0 1em;
+	}
+	a{
+		display: inline-block;
+		width: 300px;
+		i{
+        	font-size: 1.625em;
+        	color: $primaryColor;
+        	margin-right: .3em;
+        }
+	}
+	a.Progress{
+        display: inline-block;
+        width: auto;
+        float: right;
+        // &:hover, &:focus, &:active { color: $lightColor; }
+        &:focus{
+            &+ul{ display: block; }
+        }
+        // i{
+        // 	font-size: 1.625em;
+        // 	color: $primaryColor;
+        // 	margin-right: .3em;
+        // }
+	}
+	@include screen('tablet'){
+		p{
+			border-bottom: dotted 1px #555;
+			&:last-child{
+				border-bottom: dotted 1px transparent;
+			}
+		}
+		a+span{ display: none;}
+		a{
+			// line-height: 2.6;
+			width: 100%;
+			padding: 8px 0;
+		}
+		a.Progress{
+			width: 100%;
+			float: none;
+		}
+	}
+}
+// 案件查詢、案件說明 (icon後面文字隱藏)
+a.CaseSearch, a.Case{
+    display: inline-block;
+    width: auto;
+    font-size: 1.625em;
+	color: $primaryColor;
+	margin-right: .3em;
+    // &:hover, &:focus, &:active { color: $lightColor; }
+    &:focus{
+        &+ul{ display: block; }
+    }
+    i{
+    	// font-size: 1.625em;
+    	color: $primaryColor;
+    	margin-right: .3em;
+    }
+    span{
+    	display:block;
+    	font-size:0;
+    	line-height:0;
+    }
+}
+// 進度查詢 (icon後面文字顯示)
+a.Progress{
+	display: inline-block;
+    width: auto;
+    // font-size: 1.625em;
+	color: $primaryColor;
+    &:focus{
+        &+ul{ display: block; }
+    }
+    i{
+    	color: $primaryColor;
+    	margin-right: .3em;
+    }
+    &:before{
+    	font-size: 1.625em;
+    }
+    span{
+    	@include aSetting();
+    }
+}
+
+// 下載
+a.Download{
+	font-size: 1.625em;
+    display: inline-block;
+    color: $primaryColor;
+    &:hover, &:focus, &:active { color: $lightColor; }
+}
+
+// 靠齊左中右
+.align-L{ text-align: left; }
+.align-C{ text-align: center; }
+.align-R{ text-align: right; }
+
+// form label_title
+.label_title{
+	font-size: 1.125em;
+	font-weight: bold;
+}
+.Tip{
+	padding: .5em 1em;
+	background: #FFD3DA;
+	margin: 1em 0;
+	@include border-radius;
+}
+
+// 節稅健檢
+.Examine{
+	background-size: cover;
+	min-height: 500px;
+	margin-bottom: 2em;
+	background-position: 50% 50%;
+	@include border-radius;
+	.Text{
+		@include clearfix;
+		padding: 3em 0;
+		max-width: 900px;
+		margin: 0 auto;
+		span.num, span.pass, span.fail{
+			float: left;
+			display: block;
+			width: 15%;
+			height: 15%;
+			color: #fff;
+			font-size: 2.6em;
+			text-align: center;
+			line-height: 2.6em;
+			margin-right: 30px;
+			background-size: contain;
+			@include border-radius(50%);
+		}
+		span.num{
+			background: url(../images/Examine/bg-num.svg) 50% 50% no-repeat;
+			background-size: contain;
+		}
+		span.pass{
+			background: url(../images/Examine/bg-pass.svg) 50% 50% no-repeat;
+			background-size: contain;
+		}
+		span.fail{
+			background: url(../images/Examine/bg-num.svg) 50% 50% no-repeat;
+			background-size: contain;
+		}
+		h3{
+			float: left;
+			display: block;
+			font-size: 2.6em;	
+			width: 80%;
+			margin: 0;
+			line-height: 1.8;
+		}
+	}
+	.btn_grp{
+		padding-bottom: 3em;
+		a.btn_yes, a.btn_no{
+			font-size: 1.8em;
+			padding: 1.6em 1.6em !important;
+			color: #fff;
+			border: transparent;
+			transition: background-color .5s ease;
+			margin: 0 6px;
+			&:hover, &:focus, &:active{
+				background: darken($primaryColor, 30);
+			}
+		}
+		a.btn_yes{ background: #2faa89; }
+		a.btn_no{ background: $secondaryColor; }
+	}
+	@include screen('tablet') {
+		min-height: auto;
+		.Text{
+			padding: 1em 1em;
+			span.num{
+				width: 2em;
+				height: 2em;
+				line-height: 2em;
+			}
+			h3{ 
+				width: 100%;
+				font-size: 2em;
+			}
+		}
+    }
+    @include screen('xs_mobile') {
+    	.btn_grp{
+    		.btn{ min-width: 3em; }
+    		a.btn_yes, a.btn_no{
+    			margin: 0 2px;
+    			padding: 1.2em 1.2em !important;
+    		}
+    	}
+    }
+}
+
+// 前導頁
+.Front{
+	position: relative;
+	width: 1000px;
+	width: 1000px\9;
+	header{
+		h1{
+			position: absolute;
+			z-index: 3001;
+			left: 30px;
+			top: 30px;
+		}
+	}
+	.Side_Wrap{
+		width: 1000px;
+		position: relative;
+	    margin: 0 auto;
+	    min-width: 1000px\9;
+		.Side_Position{
+			position: fixed;
+			width: 1000px;
+			top: 60px;
+			z-index: 3001;
+			#Side{
+				position: absolute;
+				right: 0;
+				width: 40px;
+				background: none;
+				@include border-radius(0);
+				a{
+					width: 30px;
+					width: 40px\9;
+					height: 120px;
+					box-sizing: border-box;
+					color: #fff;
+					display: table;
+					writing-mode: vertical-lr;
+					-ms-writing-mode: vertical-lr;
+					text-orientation: mixed;
+					word-break: break-all;
+					line-height: 1;
+
+					// ie8 hack ------------------
+					display: inline-block\9;
+					transform: rotate(90deg)\9;
+					-ms-writing-mode: tb-rl\9;
+					-ms-transform: none\9;
+					background: #204066\9;
+					// ---------------------------
+
+					transition: background .3s ease;
+	                text-align: center;
+
+	                // background: #204066;
+	                // border-bottom: solid 1px rgba(#fff, 10);
+
+	                // &:last-child{
+	                // 	border-bottom: solid 1px transparent;
+	                // }
+
+					span{
+						display: table-cell;
+						vertical-align: middle;
+						font-size: 1.25em;
+						padding: 15px 10px;
+					}
+					&:nth-child(1){ background: #204066; }
+					&:nth-child(2){ background: #007fa8; }
+					&:nth-child(3){
+						// background: #12b48b;
+						background: #204066;
+						// ie11 hack ------------------
+						-ms-display: inline-block;
+						-ms-transform: rotate(90deg);
+						-ms-writing-mode: tb-rl;
+						-ms-transform: none;
+					}
+					&:nth-child(4){
+						// background: #85b600;
+						background: #007fa8;
+					}
+					&:nth-child(1), &:nth-child(2), &:nth-child(3), &:nth-child(4){
+						&:hover, &:focus {
+		                    background: darken($primaryColor, 30);
+		                    border-radius: 0;
+		                }
+					}
+				}
+			}
+		}
+	}
+	@include screen('mobile') {
+		.Side_Wrap{
+			width: 100%;
+			.Side_Position{
+				width: 100%;
+				height: 50px;
+				top: auto;
+				bottom: 0;
+				#Side{
+					width: 100%;
+					a{
+						width: 25%;
+						height: 50px;
+						writing-mode: horizontal-tb;
+						span{
+							font-size: 1em;
+						}
+					}
+
+					a:first-child, a:last-child{
+		                &:hover, &:focus{
+		                    border-radius: 0 0 0 0;
+		                }
+		            }
+				}
+			}
+		}
+	}
+
+	.container{ max-width: 1000px !important; }
+	.Box{
+		display: block;
+		border: 0;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: 50% 50%;
+		height: 600px;
+		text-align: center;
+		padding: 0 0;
+		overflow: hidden;
+		position: relative;
+		&:before{
+			content:"";
+			display: block;
+			text-align: left;
+			width: 65px;
+			height: 25px;
+			top: 0;
+			margin-left: 7em;
+			position: absolute;
+			z-index: 3000;
+			background-position: left top;
+			background-repeat: no-repeat;
+		}
+		.Left{
+			@include make-xs-column(12);
+			@include make-sm-column(12); //768px  width:66.6%
+			@include make-md-column(6); //992px  width:66.6%
+			@include make-lg-column(6); //1400px width:66.6%
+			@include gutter(); //gutter 代表左右要留白
+			width: 500px\9;
+		}
+		.Right{
+			@include make-xs-column(12);
+			@include make-sm-column(12); //768px  width:66.6%
+			@include make-md-column(6); //992px  width:66.6%
+			@include make-lg-column(6); //1400px width:66.6%
+			@include gutter(); //gutter 代表左右要留白
+			width: 500px\9;
+			// padding-right: 60px;
+		}
+		a{
+			margin: 0 0;
+			img{
+				width: 100%;
+				height: 100%;
+				transition: transform .6s ease;
+			}
+			&:hover, &:focus{
+				img{ transform: scale(1.05); }
+			}
+		}
+		&:nth-child(6n+1){
+			border-top: solid 8px #0cb3b4;
+			.Left{
+				img{ margin-top: 150px; }
+			}
+			.Right{
+				img{ margin-top: 290px; }
+			}
+			&:before{
+				background-image: url(../images/Front/Front_Deco-01.png);
+			}
+		}
+		&:nth-child(6n+2){
+			border-top: solid 8px #dae0db;
+			.Left{
+				// img{ margin-top: 150px; }
+			}
+			.Right{
+				// img{ margin-top: 130px; }
+				// a{
+				// 	height: 360px;
+				// 	display: block;
+				// 	margin-top: 130px;
+				// 	img{
+				// 		width: auto;
+				// 		height: auto;
+				// 	}
+				// }	
+			}
+			&:before{
+				background-image: url(../images/Front/Front_Deco-02.png);
+			}
+		}
+		&:nth-child(6n+3){
+			border-top: solid 8px #dbe2dc;
+			&:before{
+				background-image: url(../images/Front/Front_Deco-03.png);
+			}
+		}
+		&:nth-child(6n+4){
+			border-top: solid 8px #fefefe;
+			&:before{
+				background-image: url(../images/Front/Front_Deco-04.png);
+			}
+		}
+		&:nth-child(6n+5){
+			border-top: solid 8px #fff;
+			&:before{
+				background-image: url(../images/Front/Front_Deco-04.png);
+			}
+		}
+		&:nth-child(6n+6){
+			border-top: solid 8px #fff;
+			&:before{
+				background-image: url(../images/Front/Front_Deco-06.png);
+			}
+		}
+		.Links{
+			margin: 1em 0;
+			a{
+				background: #1b3766;
+				color: #fff;
+				padding: .5em .7em;
+				text-decoration: none;
+				font-size: 1.125em;
+				&:hover, &:focus{
+					background: darken($primaryColor, 30);
+				}
+			}
+		}
+	}
+	.Timer{
+		margin: 90px 1.5em 0;
+		border: solid 2px #fff;
+		background: rgba(255,255,255,.5);
+		padding: 2em 2em 1em;
+		h3{
+			background: none;
+			padding: .5em 0;
+			font-size: 2em;
+			font-weight: normal;
+		}
+		.Day, .Hour, .Mins{
+			width: 32%;
+			display: inline-block;
+			span{
+				display: inline-block;
+				margin-right: 3px;
+				width: 45px;
+				height: 95px;
+				font-size: 3em;
+				padding-top: 36px;
+				box-sizing: border-box;
+				/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,e8efea+100 */
+				background: rgb(255,255,255); /* Old browsers */
+				background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(232,239,234,1) 100%); /* FF3.6-15 */
+				background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(232,239,234,1) 100%); /* Chrome10-25,Safari5.1-6 */
+				background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(232,239,234,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e8efea',GradientType=0 ); /* IE6-9 */
+			}
+			>p{
+				margin-bottom: 0;
+				font-weight: bold;
+			}
+		}
+		.Day{}
+		.Hour{
+			span{
+				&:nth-child(2){
+					position: relative;
+					&:after{
+					    content: "：";
+					    position: absolute;
+					    color: #555;
+					    left: 30px;
+					}
+				}
+			}
+		}
+		.Mins{}
+	}
+	.Timer+p{
+		font-size: 1.45em;
+		span{
+			font-size: 2.2em;
+			color: red;
+			font-weight: bold;
+			font-style: italic;
+		}
+	}
+	.MainInfo{
+		.Links{
+			a{
+				display: block;
+				max-width: 422px;
+				margin: 0 auto;
+				text-align: left;
+				margin-bottom: .5em;
+				padding: .8em 1.5em;
+				position: relative;
+				font-size: 1.25em;
+				@include box-sizing;
+				@include border-radius();	
+				// &:after{
+				// 	content:"";
+				// 	border-right: solid 2px #fff;
+				// 	border-top: solid 2px #fff;
+				// 	display: inline-block;
+				// 	width: 10px;
+				// 	height: 10px;
+				// 	transform: rotate(45deg);
+				// 	-ms-transform: none;
+				// 	position: absolute;
+				// 	right: 15px;
+				// 	top: 20px;
+				// }
+				&:nth-child(2n+1){
+					background: #204066;
+				}
+				&:nth-child(2n+2){
+					background: #007fa8;
+				}
+				&:hover, &:focus{
+					background: darken($primaryColor, 30);
+				}
+			}
+		}
+		.Left{
+			float: right;
+			padding-right: 60px;
+			a{
+				height: 360px;
+				display: block;
+				margin-top: 130px;
+				text-align: left;
+
+				img{
+					width: auto;
+					height: auto;
+					max-width: 100%;
+					display: block;
+	    			margin: 0 auto;
+				}
+			}
+		}
+		@include screen('mobile') {
+			.Left{
+				float: none;
+				padding-right: 0;
+				a{
+					height: auto;
+				}
+			}
+		}
+	}
+	// ie8
+	.Visual{
+		.Left{
+			img{ margin-top: 150px\9; }
+		}
+		.Right{
+			img{ margin-top: 290px\9; }
+		}
+	}
+}
+.Front+footer>.container{ 
+	max-width: 1000px; 
+	// padding-left: 0;
+	// padding-right: 0;
+}
+.Front+footer>.container>div{
+	padding-left: 0;
+	padding-right: 0;
+	p{ margin-bottom: 1em; }
+}
+.Front+footer{
+	.footer_info {
+	    @include make-xs-column(12);
+	    @include make-sm-column(12);
+	    @include make-md-column(6);
+	    @include make-lg-column(6);
+	    @include gutter();
+	    color: #fff;
+	    width: 500px\9;
+	}
+	.footer_icon {
+	    @include make-xs-column(12);
+	    @include make-sm-column(12);
+	    @include make-md-column(6);
+	    @include make-lg-column(6);
+	    @include gutter();
+	    color: #fff;
+	    text-align: right;
+	    width: 500px\9;
+	}
+}
+
+.Front+footer+a.scrollToTop{
+	// position: fixed;
+	// right: 30px;
+	// bottom: 30px;
+	// width: 60px;
+	// height: 60px;
+	// background: #000;
+	// z-index: 3000;
+	width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: url(../images/basic/top.png) no-repeat center top rgba(0, 0, 0, 0.4);
+    text-align: center;
+    color: #FFF;
+    line-height: 50px;
+    text-decoration: none;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    transition: .3s ease-out;
+    display: none;
+    z-index: 99999999;
+    text-indent: -999999px;
+    &:hover {
+        background: url(../images/basic/top.png) no-repeat center top rgba(0, 0, 0, 0.8);
+    }
+	@include screen('mobile') {
+		bottom: 70px;
+	}
+}
+@media screen and (max-width: 991px) {
+	.Front{
+		width: 100%;
+		.Side_Wrap{
+			width: 100%;
+			.Side_Position{ width: 100%; }
+		}
+		.MainInfo{
+			padding: 4em 0 2em;
+			.Left a{ margin-top: 0; }
+			.Right a{
+				text-align: center;
+				// margin-top: 30px;
+				// margin-bottom: 40px;
+			}
+		}
+	}
+	.Front+footer{
+		.footer_icon {
+		    text-align: left;
+		}
+	}
+	.Front+footer>.container{
+		padding: 2em 1em;
+		>div{ padding: 0 0 0; }
+	}
+}
+@include screen('notebook') {}
+@include screen('tablet') {
+	.Front{
+		.Box{
+			height: auto;
+			margin-top: -6px;
+			&:nth-child(6n+1){
+				border-top: solid 8px #0cb3b4;
+				.Left{
+					img{ margin-top: 150px; }
+				}
+				.Right{
+					img{
+						margin-top: 30px;
+						margin-bottom: 30px;
+					}
+				}
+			}
+			&:nth-child(6n+2){
+				border-top: solid 8px #dae0db;
+				.Left{}
+				.Right{
+					a{
+						// height: 360px;
+						display: block;
+						// margin-top: 30px;
+						// margin-bottom: 30px;
+						img{
+							width: auto;
+							height: auto;
+						}
+					}	
+				}
+			}
+			.Timer{
+				margin: 80px auto 2em;
+				width: 422px;
+				.Hour{
+					span{
+						&:nth-child(2){
+							&:after{ left: 44px; }
+						}
+					}
+				}
+			}
+		}
+	}
+}
+@include screen('mobile') {
+	.Front{
+		.main{ padding-top: 0; }
+		.Box{
+			.Left{ @include gutter(4.8em); }
+			.Right{ @include gutter(4.8em); }
+			.Links{
+				a{
+					display: block;
+					margin-bottom: .5em;
+					&:hover, &:focus{}
+				}
+			}
+		}
+		.MainInfo{
+			.Timer{
+				width: auto;
+				.Hour{
+					span{
+						&:nth-child(2){
+							&:after{ left: 28px; }
+						}
+					}
+				}
+			}
+		}
+	}
+}
+@media screen and (max-width: 446px) {
+	.Front{
+		header{
+			h1{
+				img{ width: 250px; }
+			}
+		}
+		.Box{
+			.Left{}
+			.Right{
+			}
+			&:before{
+				margin-left: 3em;
+			}
+			&:nth-child(6n+1){
+				.Left{
+					img{ width: 100%; }
+				}
+				.Right{
+					img{ width: 100%; }
+				}
+			}
+			&:nth-child(6n+2){
+				.Left{}
+				.Right{
+					a{
+						img{
+							width: 100%;
+							height: auto;
+						}
+					}	
+				}
+			}
+		}
+		.MainInfo{
+			.Timer{
+				width: auto;
+				padding: 2em 1em 1em;
+				.Day, .Hour, .Mins{
+					width: 100%;
+					>p{ margin-bottom: 1em; }
+				}
+				.Hour{
+					span{
+						&:nth-child(2){
+							&:after{ left: 28px; }
+						}
+					}
+				}
+			}
+			.Timer+p{
+				span{
+					display: block;
+					margin-top: .5em;
+					font-size: 1.8em;
+				}
+			}
+		}
+	}
+}
+
+.Grandpa{
+	font-size: 1.25em;
+	// li a.L, li a.M, li a.S{ font-size: .652em;}
+}
+// 開徵專區、新住民、銀髮族
+.Branch{
+	a{
+		color: #0270b3;
+		text-decoration: none;
+		display: block;
+	    &:hover, &:focus{
+	    	color: #f98385;
+	    }
+	}
+	a.more{
+		color: #333;
+		text-decoration: none;
+		border: 1px solid #333;
+		&:hover, &:focus, &.active {
+			color: #fff;
+			border: 1px solid $primaryColor;
+		}
+	}
+	ol, ul{
+		margin: 1em 0;
+		li{ margin-bottom: .75em;}
+	}
+    h3.Title{
+    	font-size: 1.8em;
+    	text-align: center;
+    	line-height: 2.4;
+    	// color: darken($primaryColor, 10);
+    	span{
+    		padding: .25em .75em;
+    		border-bottom: solid 2px #000;
+    	}
+    }
+    h4.Title{
+    	font-size: 1.25em;
+    	text-align: center;
+    	color: darken($primaryColor, 10);
+    }
+    .container{ margin: 1em 0; }
+
+	.col-12{
+		.col{
+			@include make-xs-column(12);
+	        @include make-sm-column(12);
+	        @include make-md-column(12); //992px  width:100%
+	        @include make-lg-column(12); //1400px width:100%
+	        //@include gutter(); gutter 代表左右要留白
+		}
+		line-height: 1.6;
+		a{
+        	&:hover, &:focus {
+        		text-decoration: none;
+        	}
+        }
+	}
+	.col-3{
+		.col{
+			@include make-xs-column(12);
+			@include make-sm-column(6);
+			@include make-md-column(3); //992px  width:100%
+			@include make-lg-column(3); //1400px width:100%
+			@include gutter();
+			&:nth-child(3n+1){ background: #204066; }
+			&:nth-child(3n+2){ background: #007fa8; }
+			&:nth-child(3n+3){ background: #19a07d; }
+			&:hover, &:focus, &.active { background: darken($primaryColor, 30); }
+		}
+	}
+	.col-4{
+		.col{
+			@include make-xs-column(12);
+			@include make-sm-column(4);
+			@include make-md-column(4); //992px  width:100%
+			@include make-lg-column(4); //1400px width:100%
+			@include gutter();
+			&:nth-child(1){ background: #204066; }
+			&:nth-child(2){ background: #007fa8; }
+			&:nth-child(3){ background: #19a07d; }
+			&:hover, &:focus, &.active { background: darken($primaryColor, 30); }
+		}
+	}
+	.col-6{
+		.col{
+			@include make-xs-column(12);
+			@include make-sm-column(6);
+			@include make-md-column(6); //992px  width:100%
+			@include make-lg-column(6); //1400px width:100%
+			@include gutter();
+		}
+	}
+	.col-9-3{
+		.Tax-Issues{
+			@include make-xs-column(12);
+			@include make-sm-column(9); //768px  width:66.6%
+			@include make-md-column(9); //992px  width:66.6%
+			@include make-lg-column(9); //1400px width:66.6%
+			//@include gutter(); gutter 代表左右要留白
+			a{
+				font-size: 1.125em;
+				display: inline-block;
+				width: 32%;
+				background: #e0e0e0;
+				color: #000;
+				text-align: center;
+				margin-bottom: .5em;
+				text-decoration: none;
+				padding: .75em 0;
+				transition: background .6s ease;
+				@include border-radius;
+				span{
+					display: block;
+					width: 100px;
+					font-size: .75em;
+					margin: .5em auto 0;
+					background: #555;
+					line-height: 2;
+					color: #fff;
+					transition: background .6s ease;
+					@include border-radius(30px);
+				}
+				&:hover, &:focus{
+					font-weight: bold;
+					background: darken($primaryColor, 30);
+					span{ background: #222 }
+				}
+			}
+			@media (max-width: 767px) {
+				a{ width: 100%; }
+			}
+		}
+		.Tax-Online{
+			@include make-xs-column(12);
+			@include make-sm-column(3); //768px  width:66.6%
+			@include make-md-column(3); //992px  width:66.6%
+			@include make-lg-column(3); //1400px width:66.6%
+			//@include gutter(); gutter 代表左右要留白
+			// padding-top: 127px;
+			padding-top: 98px;
+			a{
+				overflow: hidden;
+				height: 270px;
+				text-align: center;
+				@include border-radius();
+				img{
+					width: auto;
+					height: 100%;
+					transition: transform .6s ease;
+				}
+				&:hover, &:focus{
+					img{ transform: scale(1.1); }
+				}
+			}
+		}
+	}
+	.Links{
+		a{
+			display: block;
+			text-align: center;
+			padding: 1em 0;
+			color: #fff;
+			text-decoration: none;
+			font-size: 1.125em;
+			transition: background .6s ease;
+			// &:nth-child(1){
+			// 	background: #204066;
+			// }
+			// &:nth-child(2){
+			// 	background: #007fa8;
+			// }
+			// &:nth-child(3){
+			// 	background: #19a07d;
+			// }
+			// &:hover, &:focus, &.active {
+			// 	background: $lightColor;
+			// }
+		}
+		@include screen('mobile') {
+			a{
+				@include border-radius();
+				margin: 2px 0;
+				// &:nth-child(2){
+				// 	border-left: 0;
+				// 	border-right: 0;
+				// }
+			}
+		}
+	}
+	.News{
+		ul{
+	        list-style-type: none;
+	        margin: 0;
+	        padding: 0;
+	        line-height: 1.6;
+	    }
+	    li {
+	        margin: 0 0 .75em 0;
+	        padding: 0;
+	        border-bottom: 1px #CCC dashed;
+	        @include screen('mobile') {
+	            @include text-overflow();
+	        }
+	        span {
+	            display: inline-block;
+	            margin: 0 1em 0 0;
+	            font-size: .813em;
+	            color: #666;
+	        }
+	        a{
+	            display: block;
+	            height: 30px;
+	            overflow: hidden;
+	            white-space: nowrap;
+	            text-overflow: ellipsis;
+	        }
+	    }
+	}
+	.Method{
+		ul{ list-style-type: decimal; }
+		li {
+	        margin: 0 0 .75em 0;
+	        padding: 0;
+	        border-bottom: 1px #CCC dashed;
+	        // @include screen('mobile') {
+	        //     @include text-overflow();
+	        // }
+	        span {
+	            display: inline-block;
+	            margin: 0 1em 0 0;
+	            font-size: .813em;
+	            color: #666;
+	        }
+	        a{
+	            // display: block;
+	            // height: 30px;
+	            // overflow: hidden;
+	            // white-space: nowrap;
+	            // text-overflow: ellipsis;
+	        }
+	    }
+	}
+	.Key-Visual{ max-height: 300px; }
+    .Video { margin-bottom: 0 !important; }
+    .Lang{
+    	a{
+    		display: inline-block;
+			width: 32%;
+			background: #333;
+			color: #fff;
+			text-align: center;
+			line-height: 3;
+			margin-bottom: .5em;
+			text-decoration: none;
+			transition: background .6s ease;
+			@include border-radius;
+			&:hover, &:focus{
+				background: darken($primaryColor, 30);
+				span{ background: #222 }
+			}
+    	}
+    }
+    // 檔案下載
+	.file_download{
+		a{ text-decoration: none; }
+		li>ul{ margin: 0 0; }
+	}
+	// 外部連結
+	.web_link{
+		a{
+			color: #666;
+			text-decoration: none;
+			&:hover, &:focus {
+		        color: $aHover;
+		        cursor: pointer;
+		    }
+		}
+	}
+    @include screen('mobile') {
+    	h3.Title{
+	    	font-size: 1.8em;
+	    	text-align: center;
+	    	line-height: 1.6;
+	    	// color: darken($primaryColor, 10);
+	    	span{
+	    		padding: 0 0;
+	    		// border-bottom: solid 2px #000;
+	    	}
+	    }
+	    h4.Title{
+	    	// font-size: 1.25em;
+	    	// text-align: center;
+	    	// color: darken($primaryColor, 10);
+	    }
+	    .Key-Visual{ height: auto;}
+	    .Lang{
+	    	a{
+	    		display: block;
+    			width: 100%;
+	    	}
+	    }
+	    .col-9-3{
+    		.Tax-Issues{
+    			a{
+    				display: block;
+    				width: 100%;
+    			}
+    		}
+    		.Tax-Online{
+				padding-top: 0;
+			}
+    	}
+    }
+    @include screen('xs_mobile') {}
+}
+
+// 地方稅稅捐稽徵機關(地圖)
+.Maps{
+	.Pic{
+		@include make-xs-column(12);
+        @include make-sm-column(4);
+        @include make-md-column(4); //992px  width:100%
+        @include make-lg-column(4); //1400px width:100%
+        @include gutter(); //gutter 代表左右要留白
+        @include screen('mobile') { display: none; }
+	}
+	.list {
+		@include make-xs-column(12);
+        @include make-sm-column(8);
+        @include make-md-column(8); //992px  width:100%
+        @include make-lg-column(8); //1400px width:100%
+        @include gutter(); //gutter 代表左右要留白
+        ul,
+        ol {
+            list-style-type: none;
+            padding: 0;
+            border-top: 2px solid $primaryColor;
+            li {
+                padding: 1em 0;
+                border-bottom: 1px solid #DDD;
+                position: relative; // outline: 1px solid blue;
+                a {
+                    display: block;
+                    padding-left: 2em;
+                    position: relative;
+                    line-height: 1.45em;
+                    font-weight: bold;
+                    text-decoration: none;
+                    .num {
+                        width: 1.5em;
+                        text-align: right;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        color: #555;
+                        &:after {
+                            content: ".";
+                            display: inline-block;
+                        }
+                    }
+                    .sum{
+                        font-size: 1em;
+                        font-weight: bold;
+                        color: #000;
+                        width: 22px;
+                        height: 22px;
+                        line-height: 22px;
+                    }
+                    // 節稅健檢 icon 後面的點
+                    .icon-angle-circled-right{
+                        font-size: 1.25em;   
+                        &:after {
+                            content: "";
+                            display: inline-block;
+                        }
+                    }
+                }
+                span.dept {
+                    display: inline-block;
+                    font-size: .938em;
+                    margin-left: 10px;
+                    color: #555;
+                    @include screen("mobile") {
+                        display: block;
+                    }
+                }
+                time {
+                    display: inline-block;
+                    margin-left: 10px;
+                    color: #AAA;
+                    font-size: .938em;
+                }
+                &:last-child{
+                    border-bottom: 1px solid transparent;
+                }
+                a .sum{background: none;}
+                ul, ol{
+                    border-top: 0;
+                    li{
+                        padding: .5em 0;
+                        border-bottom: 0;
+                        display: inline-block;
+                        a{
+                            display: inline-block;
+                            padding-left: 0;
+                            color: #555;
+                            .sum{
+                                width: 20px;
+                                height: 20px;
+                                line-height: 20px;
+                                background: transparent;
+                                // border: solid 1px #555;
+                                color: #555;
+                                vertical-align: text-bottom;
+                            }
+                            &:hover,
+                            &:focus {
+                                color: $aHover;
+                            }
+                        }
+                        &:before{
+                            content:'/';
+                            display: inline-block;
+                            margin-left: 20px;
+                            margin-right: 20px;
+                            color: #d5d5d5;
+                        }
+                        &:first-child:before{
+                            content:'';
+                            margin-right: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    // 影像地圖
+    .MapArea{
+		width: 900px;
+		margin: 0 auto;
+		img{ margin-bottom: 2em;}
+		ul{
+			padding: 0;
+			margin: 0;
+			margin-bottom: 2em;
+			li{
+				@include box-sizing;
+				@include border-radius(3em);
+				width: 32%;
+				display: inline-block;
+				text-align: center;
+				margin-bottom: 5px;
+				padding: .5em 1em;
+				// background: #555;
+			}
+			.Head{ background: #efcf71; color: #000;}
+	        .Banqiao{ background: #f18900; color: #000;}
+	        .Sanying{ background: #3ab2c5; color: #000; }
+	        .Tamsui{ background: #96cc89; color: #000;}
+	        .Xinzhuang{ background: #4388c8; color: #000; }
+	        .SanChong{ background: #9d8733; color: #000; }
+	        .Zhonghe{ background: #9b5600; color: #fff; }
+	        .Xindian{ background: #a7dcf7; color: #000;}
+	        .Xizhi{ background: #535e92; color: #fff; }
+	        .Ruifang{ background: #46a7db; color: #000; }
+	        .Linkou{ background: #278b39; color: #000; }
+		}
+	}
+}
+// 平板就隱藏
+.tablet-hide{
+	display: block;
+	@include screen('notebook') {}
+	@include screen('tablet') { display: none; }
+}

@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="zh-Hant" class="no-js">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>新北市政府稅捐稽徵處</title>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-size: 1em;
+        }
+        body{
+            background: #ddd;
+            font-family: Lato, "PingFang TC", "Helvetica Neue", Helvetica, 微軟正黑體, Arial, sans-serif;
+        }
+        p{
+            line-height: 1.6;
+            margin: .5em 0;
+        }
+        hr{ margin: 1.25em 0; }
+        .wrapper{
+            width: 1000px;
+            margin: 0 auto;
+            background: #fff;
+        }
+        .Visual, .Banner{
+            width: 1000px;
+            height: 200px;
+        }
+        .Visual img, .Banner img{ width: 100%; height: 100%; }
+        .Visual{
+            text-align: center;
+            display: table;
+            position: relative;
+        }
+        .Visual span{
+            background: #3284af;
+            color: #fff;
+            padding: .5em 1.5em;
+            position: absolute;
+            right: 0;
+            top: 0;
+            font-size: 125%;
+        }
+        .Visual h2{
+            display: table-cell;
+            vertical-align: middle;
+            /*font-size: 2.6em;*/
+            font-size: 300%;
+            color: #0A6492;
+            letter-spacing: 5px;
+        }
+        .Banner{
+            text-align: center;
+            text-align: center;
+            display: table;
+        }
+        .Banner h3{
+            /*font-size: 1.6em;*/
+            font-size: 200%;
+            display: table-cell;
+            vertical-align: middle;
+        }
+        section{ padding: 1em 0; }
+        .Links{ text-align: center; }
+        .Links a{
+            display: inline-block;
+            width: 30%;
+            background: #70d2c7;
+            line-height: 3;
+            border-radius: 2em;
+            color: #fff;
+            text-decoration: none;
+            font-size: 145%;
+        }
+        .Projects{
+            padding: 1.5em 2em;
+            font-size: 125%;
+        }
+        .Projects .Box{
+            border: solid 1px #ddd;
+            margin-bottom: 1em;
+            padding: 0 1.25em 1.25em;
+        }
+        .Projects .Box span{
+            display: inline-block;
+            background: #0e5473;
+            color: #fff;
+            padding: .5em 1.5em;
+            margin-left: -1.25em;
+        }
+        .Projects .Box h4{
+            /*font-size: 1.6em;*/
+            font-size: 160%;
+            margin: .5em 0;
+        }
+        .Projects .Box p{}
+        .Projects .Box a.More{
+            display: inline-block;
+            background: #555;
+            color: #fff;
+            padding: .5em 1.5em;
+            border-radius: 30px;
+            text-decoration: none;
+            /*font-size: .815em;*/
+            margin-top: 1em;
+            float: right;
+            text-align: center;
+        }
+        .News, .Video, .Text{
+            padding: 0 2em;
+            font-size: 125%;
+        }
+
+        .News .Box{
+            width: 33.333%;
+            display: block;
+            float: left;
+        }
+        .News .Box h3{
+            text-align: center;
+            background: #0e5473;
+            color: #fff;
+            line-height: 2.2;
+            margin-bottom: 1em;
+        }
+        .News .Box:nth-child(2){ padding: 0 10px; }
+
+        .News .Box .inner{ padding: 0 1em; }
+
+        .News .Box .List{}
+        .News .Box .List ul{ list-style: none; padding: 0; }
+        .News .Box .List ul li a{
+            display: block;
+            text-decoration: none;
+            color: #555;
+            /*font-size: 1.25em;*/
+            margin-bottom: .5em;
+        }
+        .News .Box .List ul li a span{
+            display: block;
+            /*font-size: .815em;*/
+            color: #70d2c7;
+        }
+        .News .Box .List ul li a:hover,
+        .News .Box .List ul li a:focus{
+            outline: solid 1px #70d2c7;
+        }
+        .News .Box a.More,
+        .Video a.More{
+            display: block;
+            margin: 1em auto 0;
+            background: #555;
+            color: #fff;
+            padding: .5em 1.5em;
+            border-radius: 30px;
+            text-decoration: none;
+            /*font-size: .815em;*/
+            width: 140px;
+            text-align: center;
+        }
+
+        .News .Box h4{
+            text-align: center;
+            margin-bottom: 1em;
+            color: #43c1b3;
+        }
+        .News .Box table{
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1em;
+        }
+        .News .Box table th, .News .Box table td{
+            padding: .5em;
+        }
+        .News .Box table th{
+            background-color: #F3F3F3;
+            color: #333;
+            border: #DDD 1px solid;
+            text-align: center;
+            white-space: nowrap;
+        }
+        .News .Box table td{
+            border: #ddd 1px solid;
+            word-break: break-all;
+        }
+        .Video{
+            margin: 1.5em 0;
+            background: #eee;
+            padding-top: 30px;
+            padding-bottom: 30px;
+        }
+        .Video h3.Title,
+        .Text h3.Title{
+            text-align: center;
+            line-height: 2.2;
+            margin-bottom: .5em;
+            /*font-size: 1.8em;*/
+            font-size: 180%;
+        }
+        .Video .Box{
+            width: 25%;
+            float: left;
+            padding: 0 5px;
+        }
+        .Video .Youtube{
+            margin-top: 1em;
+            text-align: center;
+        }
+        .Youtube a{
+            background: #e02f2f;
+            border: 1px solid #bf1d1d;
+            color: #fff;
+            box-shadow: 0px 2px 2px RGBA(0, 0, 0, 0.08);
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 90%;
+            padding: .25em 1em;
+        }
+        .Youtube a:hover{
+            background: #fd4f4f;
+        }
+
+        .Text{ margin-bottom: 30px; }
+        .Text h3.Title{}
+        .Text h4{
+            text-align: center;
+            margin-bottom: 1em;
+            color: #43c1b3;
+            /*font-size: 1.25em;*/
+            font-size: 125%;
+        }
+        .Text ol, .Text ul{ padding-left: 2em; }
+        .Text .Foto{
+            margin: 1em 0;
+            text-align: center;
+        }
+        .Text .Foto img{ max-width: 100%; }
+
+        .Projects .Box:before,
+        .Projects .Box:after,
+        .News:before,
+        .News:after,
+        .Video .inner:before,
+        .Video .inner:after{
+            content:"";
+            display: table;
+            clear: both;
+        }
+
+        footer{
+            box-sizing: border-box;
+            overflow: hidden;
+            text-align: left;
+            /*font-size: 0.813em;*/
+            background: #545454;
+            text-align: center;
+            padding: 2em 0;
+        }
+        footer p{
+            /*font-size: 1.125em;*/
+            color: #fff;
+            line-height: 1.8;
+        }
+        .embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; }
+        .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }@media screen and (max-width: 1320px){}
+
+        @media screen and (max-width: 1000px){
+            .wrapper{ width: 100%; }
+            .Visual, .Banner{
+                width: 100%;
+                height: 200px;
+            }
+        }
+        @media screen and (max-width: 768px){
+            .Projects{ padding: 1.5em 1em; }
+
+            .Projects .Box a.More,
+            .News .Box a.More,
+            .Video a.More{ width: 100%; }
+
+            .News, .Video, .Text{ padding: 1em 1em;  }
+            .News .Box, .Video .Box{
+                width: 100%;
+                display: block;
+                float: none;
+                margin-bottom: 1.5em;
+            }
+            .Video .Box{
+                width: 50%;
+                display: block;
+                float: none;
+                margin-bottom: 1.5em;
+            }
+            .News .Box .inner{ padding: 0 0; }
+            .News .Box:nth-child(2){ padding: 0 0; }
+            .Links, footer{
+                padding: 1em;
+            }
+            .Links a{
+                display: block;
+                width: 100%;
+                margin-bottom: .5em;
+            }
+        }
+        @media screen and (max-width: 411px){
+            .Video .Box{
+                width: 100%;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- wrapper 最大寬度 -->
+    <div class="wrapper">
+        <section class="Visual" style="background:url(images/EDM_banner_001.jpg) 50% 50% no-repeat;">
+            <span>第101期 2018年06月</span>
+            <h2>新北市e稅報</h2>
+        </section>
+        <!-- main Start -->
+        <div class="main">
+            <section class="Links">
+                <a href="">歷史回顧</a>
+                <a href="">訂閱/取消訂閱新北報報</a>
+                <a href="">逛逛新北稅入口網</a>
+            </section>
+            <section class="Projects">
+                <div class="Box">
+                    <span>專題一</span>
+                    <h4>新北市印花稅檢查開跑囉！</h4>
+                    <p>107年度印花稅憑證檢查作業開始了，新北市政府稅捐稽徵處提醒納稅義務人，檢視最近5年內各項應貼用印花稅票之憑證，如發現有短、漏繳(貼)印花稅票的情形，應依稅捐稽徵法第48條之1規定儘速補繳(貼)印花稅票，以免一經查獲除補稅外，還會被裁處罰鍰。 稅捐處表示，為維護租稅公平，每年均實施印花稅檢查，今年檢查對象除了裝修業、廢棄物處理業、土木業、電路工程業、技術顧問業等書立較多承攬、買賣合約之行業外，並將醫師、補習班、護理及養護機構等較常開立銀錢收據者也列入查核範圍。 按稅捐稽徵法第48條之1規定...</p>
+                    <a href="" class="More">更多內容</a>
+                </div>
+                <div class="Box">
+                    <span>專題二</span>
+                    <h4>本市電動汽機車免牌照稅至110年12月31日止！</h4>
+                    <p>【新北市訊】新北市稅捐稽徵處表示，為提高民眾購置電動汽、機車的意願，加速建立新北市成為綠色交通城市，凡民眾購買完全以電能為動力的電動汽、機車並於本市完成車籍登記者，該電動汽、機車免徵使用牌照稅期限分別為：電動汽車延長至110年12月31日；電動機車自今(107)年1月1日起至110年12月31日，請民眾多多利用。 依據106年12月6日公布修正使用牌照稅法第5條條文規定，授權地方政府得對完全以電能為動力的機動車輛免徵使用牌照稅延長至110年12月31日止，故配合該修法，本市已公告對完全以電能為動力之電動汽車延續免稅期限至110年12月31日及電動機車自107年1月1日起至110年12月31日免徵使用牌照稅。鼓勵換車民眾選擇電動汽、機車，共同為保護地球盡一份心力，建構永續發展環境。</p>
+                    <a href="" class="More">更多內容</a>
+                </div>
+                <div class="Box">
+                    <span>專題三</span>
+                    <h4>e票換影票 侏儸紀世界等您來看，獎品等您來抽!</h4>
+                    <p>【新北市訊】為慶祝一年一度的稅務節，以多元化方式結合電影欣賞並鼓勵民眾養成購物消費索取及使用載具儲存雲端發票的良好習慣，新北市政府稅捐稽徵處訂於107年6、7月首度結合新北市電影業辦理「捐發票看電影，填問卷抽好禮」巡迴活動，除了用發票看侏儸紀世界(殞落國度)、蟻人與黃蜂女、超人特攻隊2等首輪電影外，當日還可抽多項大獎，邀請民眾共襄盛舉。</p>
+                    <a href="" class="More">更多內容</a>
+                </div>
+                <div class="Box">
+                    <span>專題四</span>
+                    <h4>財政部核釋宗教財團法人辦理不動產捐贈移轉與經衛生福利部許可新設之醫療財團法人不課徵土地增值稅及無須課徵印花稅</h4>
+                    <p>財政部今(17)日發布解釋令，對於宗教財團法人附設醫院經衛生福利部(下稱衛福部)依醫療法第119條規定要求補正，嗣宗教財團法人將原供附設醫院使用之不動產捐助移轉與經衛福部許可新設之醫療財團法人，屬配合政府法令規定辦理，與一般所有權移轉情形不同，該次移轉不課徵土地增值稅；其所持憑向地政機關申請不動產移轉登記之憑證，非屬印花稅第5條第5款規定之課稅範圍，無須課徵印花稅。</p>
+                    <a href="" class="More">更多內容</a>
+                </div>
+            </section>
+            <section class="News">
+                <div class="Box">
+                    <h3>FB 稅不著-呼叫暗光鳥</h3>
+                    <div class="inner">
+                        <div id="fb-root"></div>
+                        <script>
+                            (function(d, s, id) {
+                            var js, fjs = d.getElementsByTagName(s)[0];
+                            if (d.getElementById(id)) return;
+                            js = d.createElement(s); js.id = id;
+                            js.src = 'https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v3.1';
+                            fjs.parentNode.insertBefore(js, fjs);
+                            }(document, 'script', 'facebook-jssdk'));
+                        </script>
+                        <div class="fb-page" data-href="https://www.facebook.com/ntpctax/" data-tabs="timeline" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="false" data-height="320"><blockquote cite="https://www.facebook.com/ntpctax/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/ntpctax/">稅不著-呼叫暗光鳥</a></blockquote></div>
+                    </div>
+                </div>
+                <div class="Box">
+                    <h3>活動訊息</h3>
+                    <div class="inner List">
+                        <ul>
+                            <li><a href=""><span>107-05-31</span>【板橋分處】6/9「樂舞派對‧愛心園遊會」暨租稅宣導活動</a></li>
+                            <li><a href=""><span>107-05-31</span>【板橋分處】6/9「樂舞派對‧愛心園遊會」暨租稅宣導活動</a></li>
+                            <li><a href=""><span>107-05-31</span>【板橋分處】6/9「樂舞派對‧愛心園遊會」暨租稅宣導活動</a></li>
+                            <!-- <li><a href=""><span>107-05-31</span>【板橋分處】6/9「樂舞派對‧愛心園遊會」暨租稅宣導活動</a></li>
+                            <li><a href=""><span>107-05-31</span>【板橋分處】6/9「樂舞派對‧愛心園遊會」暨租稅宣導活動</a></li> -->
+                        </ul>
+                    </div>
+                    <a href="" class="More">更多內容</a>
+                </div>
+                <div class="Box">
+                    <h3>統一發票開獎號碼</h3>
+                    <div class="inner">
+                        <h4>107年03-04月統一發票</h4>
+                        <table summary="">
+                            <tbody>
+                                <tr>
+                                    <th>特別獎</th>
+                                    <td>12342126</td>
+                                </tr>
+                                <tr>
+                                    <th>特獎</th>
+                                    <td>80740977</td>
+                                </tr>
+                                <tr>
+                                    <th>頭獎</th>
+                                    <td>36822639、38786238、87204837</td>
+                                </tr>
+                                <tr>
+                                    <th>增開六獎</th>
+                                    <td>991、715</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p>本對獎單如有排印錯誤，以財政部開獎記錄為準。</p>
+                    </div> 
+                    <a href="" class="More">更多內容</a>
+                </div>
+            </section>
+            <section class="Video">
+                <h3 class="Title">影音特區</h3>
+                <div class="inner">
+                    <div class="Box">
+                        <div class='embed-container'>
+                            <iframe src='https://www.youtube.com/embed//gpB4mBE94nE' frameborder='0' allowfullscreen></iframe>
+                        </div>
+                        <p>107年度房屋稅宣導影片</p>
+                    </div>
+                    <div class="Box">
+                        <div class='embed-container'>
+                            <iframe src='https://www.youtube.com/embed//gpB4mBE94nE' frameborder='0' allowfullscreen></iframe>
+                        </div>
+                        <p>107年度房屋稅宣導影片</p>
+                    </div>
+                    <div class="Box">
+                        <div class='embed-container'>
+                            <iframe src='https://www.youtube.com/embed//gpB4mBE94nE' frameborder='0' allowfullscreen></iframe>
+                        </div>
+                        <p>107年度房屋稅宣導影片</p>
+                    </div>
+                    <div class="Box">
+                        <div class='embed-container'>
+                            <iframe src='https://www.youtube.com/embed//gpB4mBE94nE' frameborder='0' allowfullscreen></iframe>
+                        </div>
+                        <p>107年度房屋稅宣導影片</p>
+                    </div>
+                </div>
+                <a href="" class="More">更多內容</a>
+                <div class="Youtube">
+                    <!-- <script src="https://apis.google.com/js/platform.js"></script>
+                    <div class="g-ytsubscribe" data-channelid="UCP38aeYE6IyC1FVI2iH0MQg" data-layout="default" data-theme="dark" data-count="hidden"></div> -->
+                    <a href="#">Youtube訂閱</a>
+                </div>
+            </section>
+            <section class="Text">
+                <h3 class="Title">廉政小故事</h3>
+                <div>
+                    <h4>拒受請託關說的沈葆禎</h4>
+                    <p>沈葆禎奉命擔任福建省欽差大臣（註1）時，福建省境內的貪官污吏們都感到非常害怕。那時在布政使司衙門（註2）中，有著一個和高層關係很好的胥吏（註3），平常即仗著權勢欺負老百姓，狐假虎威，雖然他與沈葆禎有遠親關係，但沈葆禎卻不因此就對他比較好，而且聽了他的事蹟後，早就想給他一點教訓。</p>
+                    <p>有一次，那個胥吏因為處理軍中的糧食而做了一些違法的事，沈葆禎就把他捉來嚴厲審問，一一公布他的罪狀，並且依軍法處置。這時布政使也趕來為他求情，希望沈葆禎能放他一馬，但沈葆禎不為所動。後來沈葆禎的父親親自寫了一封信給他，沈葆禎沒有立刻將信封打開，而是先把信放在書桌上說：「先把公事辦完後，再處理私事。」 於是將那個胥吏判刑。之後開啟信封，果然是他父親的求情信，由此證明沈葆禎果然是一位勵精圖治的好官。</p>
+                    <p>小啟示<br>沈葆禎不但為清朝末年的官場注入一股清流，也為當時國家的進步和現代化，做了最大的貢獻。更重要的是，他的公正無私和大義滅親，也確實提供了執法者最佳的典範。</p>
+                    <hr>
+                    <ul>
+                        <li>註1：明、清時的一種臨時官職，由皇帝派出辦理特別事務。</li>
+                        <li>註2：清朝時設於臺灣的行政機關，其行政首長為布政使。</li>
+                        <li>註3：官府中基層的辦事人員。</li>
+                    </ul>
+                    <div class="Foto">
+                        <img src="images/img-EDM.jpg" alt="">
+                    </div>
+                </div>
+            </section>
+        </div>
+        <section class="Banner" style="background:url(https://assets.imgix.net/unsplash/womansitting.jpg?usm=20&auto=format%2Cenhance&fit=crop&h=200&w=1000) 50% 50% no-repeat;">
+            <h3>廉政檢舉專線:0800-286586<br>廉能是政府的核心價值</h3>
+        </section>
+        <!-- footer -->
+        <footer>
+            <p>新北市政府稅捐稽徵處版權所有Copyright©2015<br>
+               地址：(22002)新北市板橋區中山路一段143號  E-mail：ntpc321@ntpc.gov.tw<br>
+               電話：(02)8952-8200  免付費客服電話：0800-580739(我幫您，輕鬆繳)
+            </p>
+        </footer>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,17 @@
+.qp{
+	@include box-sizing;
+	@include border-radius;
+	margin: 1em auto;
+	padding:1em 2em;
+	border: solid 1px #ddd;
+	.form_grid .form_grp{
+		&:last-child{ border-bottom: 1px solid transparent; }
+	}
+}
+section>.qp{
+	padding:1em 1em;
+	border: solid 1px transparent;
+	@include screen('mobile') {
+		padding: 1em 0;
+	}
+}

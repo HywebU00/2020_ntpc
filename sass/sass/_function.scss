@@ -1,0 +1,130 @@
+$function_color: #d2d2d2;
+
+//可自訂顏色，或是自帶既有變數，但請注意背景色與字的對比度
+//範例：$function_color:#000;
+//icon基本設定
+%function_before {
+    vertical-align: middle;
+    content: "";
+    width: 1.2em;
+    height: 1.2em;
+    margin-right: .2em;
+    display: inline-block;
+}
+.function {
+    margin: 0px;
+    // @include clearfix;
+    @include box-sizing();
+    position: absolute;
+    right: 15px;
+    top: 0;
+    z-index: 3;
+    ul {
+        padding: 0;
+        margin: 0;
+        width: auto;
+        display: inline-block;
+        li {
+            list-style: none;
+            display: block;
+            margin: 2px 0;
+            // float: left;
+            // margin: 0 3px 3px 0;
+            width: 30px;
+            display: inline-block;
+            position: relative;
+            button,
+            a{
+                font-size: .813em;
+                display: block;
+                // padding: .2em 1em;
+                background: $function_color;
+                // border-color: $function_color;
+                color: #000;
+                width: 30px;
+                height: 30px;
+                text-align: center;
+                line-height: 30px;
+                @include border-radius(50%);
+                &:hover, &:focus, &:active {
+                    background: darken($primaryColor, 30);
+                    color: #fff;
+                    // border-color: darken($function_color, 10);
+                    outline: solid 2px #ff6f06;
+                }
+                // &:focus{
+                //     &+ul{ display: block; }
+                // }
+            }
+            // 回上一頁
+            &.icon_back {
+                a:before {
+                    @extend %function_before;
+                    background: url(../images/basic/icon_back.svg) no-repeat center center;
+                    background-size: cover;
+                }
+            }
+            // 友善列印
+            &.icon_print {
+                a:before {
+                    @extend %function_before;
+                    background: url(../images/basic/icon_print.svg) no-repeat center center;
+                    background-size: cover;
+                }
+            }
+            // 轉寄友人
+            &.icon_forward {
+                a:before {
+                    @extend %function_before;
+                    background: url(../images/basic/icon_forward.svg) no-repeat center center;
+                    background-size: cover;
+                }
+            }
+            // &:hover, &:focus, &:active{
+            //     ul{ display: block; }
+            // }
+            // 第二節點
+            ul{
+                position: absolute;
+                z-index: 1;
+                padding: 5px 0;
+                background: rgba(0,0,0,0);
+                display: none; // 先隱藏
+                li{
+                    margin: .125em 0;
+                    a img{
+                        width: 30px;
+                        height: 30px;
+                    }
+                }
+            }
+
+            &.print{
+                display: inline-block;
+                @include screen('mobile') {
+                    display: none;
+                }
+            }
+        }
+    }
+    ul.FontSize{
+        // a{ padding: .5em .9em; }
+        .L, .M, .S{
+            // border-radius: 50%;
+            background: #d2d2d2;
+            color: #222;
+            font-weight: bold;
+        }
+        .Act{
+            background: darken($primaryColor, 30);
+            color: #fff;
+        }
+        // .L{ font-size: 110%; }
+        // .M{ font-size: 100%; }
+        // .S{ font-size: 90%; }
+    }
+    @include screen('notebook') {
+        position: static;
+        margin-bottom: 1em;
+    }
+}

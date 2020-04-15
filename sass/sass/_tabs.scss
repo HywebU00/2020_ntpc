@@ -1,0 +1,159 @@
+.tabSet {
+    max-width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    @include gutter();
+    @include clearfix;
+    @include screen('mobile') {
+        max-width: 100%;
+        width: auto;
+        height: auto !important;
+    }
+}
+
+.tabs {
+    position: relative;
+    @include screen('tablet') {
+        position: relative;
+        margin-top: 2em;
+    }
+    &>.tabItem {
+        border-radius: 5px;
+        overflow:hidden;
+        &.active>a {
+            background: darken($primaryColor, 30);
+            color: #FFF;
+        }
+        float: left;
+        font-size: 1em;
+        margin: 0;
+        padding: 0;
+        line-height: 1;
+        font-weight: normal;
+        @include screen('(max-width:767px)') {
+            float: none;
+            &>a {
+                width: 100% !important;
+                border-bottom: 1px solid #fff;
+            }
+            &.active>a {
+                // border-color: #bbb;
+            }
+        }
+        &>a {
+            display: block;
+            padding: 16px 0 14px;
+            text-align: center;
+            // background-color: #76a0b9;
+            color: darken($primaryColor, 30);
+            border: solid 1px darken($primaryColor, 30);
+            text-decoration: none;
+            @include text-overflow();
+            @include box-sizing();
+            @include border-radius(5px);
+            &:hover {
+                color: #fff;
+                background: darken($primaryColor, 30);
+            }
+        }
+    }
+}
+
+//多組 可設定差異
+.example-2 {
+    .tabItem>a:hover {
+        background: $secondaryColor;
+    }
+    .tabItem.active>a {
+        background: $secondaryColor;
+    }
+}
+
+// 顯示content
+.active+.tabContent {
+    display: block;
+    background: #fff;
+}
+
+.tabContent {
+    position: absolute;
+    top: auto;
+    left: 0;
+    right: 0;
+    clear: both;
+    padding: 30px 20px;
+    display: none;
+    @include screen('mobile') {
+        position: static;
+        margin-bottom: 30px;
+        padding: 30px 20px 60px;
+    }
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+    }
+    li {
+        margin: 0 0 .65em 0;
+        padding: 0;
+        border-bottom: 1px #CCC dashed;
+         @include screen('mobile') {
+            @include text-overflow();
+        }
+        span {
+            display: inline-block;
+            margin: 0 1em 0 0;
+            font-size: .813em;
+            color: #666;
+        }
+        a{
+            display: block;
+            height: 30px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            color: #555;
+            &:hover,
+            &:focus {
+                color: $aHover;
+            }
+        }
+    }
+    .more {
+        // text-align: right;
+        float: right;
+        @include screen('mobile') {
+            // text-align: center;
+        }
+        a {
+            display: inline-block;
+            // background: $color-gray;
+            // color: #FFF;
+            width: auto;
+            font-size: 1em;
+            padding: .5em 2em;
+            border: solid 1px #888;
+            color: #555;
+            i{ font-size: 1.2em;}
+            @include border-radius(4px);
+            @include transition(all, .3s, ease-out);
+            &:hover,
+            &:focus {
+                background: darken($primaryColor, 30);
+                color: #fff;
+                border: solid 1px transparent;
+            }
+        }
+    }
+}
+
+
+// 放在CP裡的table
+.SP_table{
+    a{
+        text-decoration: none !important;
+        @include aSetting();
+    }
+}

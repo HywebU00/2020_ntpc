@@ -1,0 +1,140 @@
+body{
+    &.noscroll {
+        // position: fixed!important;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        overflow: hidden !important;
+    }
+}
+// 最外圍預設為100%
+.wrapper {
+    width: 100%;
+    margin: 0px auto;
+    @include screen('mobile') {
+        background:#FFF;
+    }
+}
+// 整體共用container樣式，請注意首頁切版頁面的整齊
+.container {
+    padding: 0;
+    margin: 0 auto;
+    max-width: $container-max; //請看_variable.scss
+}
+.main {
+    position: relative;
+    margin: 0 auto;
+    padding: 0; // max-width: $container-max; 
+    // 可先設定一個中央區塊最大寬，限制accesskey對齊
+    @include screen('mobile') {
+        padding-top: 55px;
+    }
+    // 內頁標題設定
+    h2{
+        line-height: 1.25em;
+    }
+}
+
+// 首頁公告
+.announce{
+    position: fixed;
+    z-index: 3002;
+    width: 500px;
+    // max-height: 300px;
+    background: #fff;
+    left: 50%;
+    top: 50%;
+    margin-left: -250px;
+    margin-top: -150px;
+    padding: 50px 0 10px;
+    @include border-radius();
+    @include box-sizing();
+    box-shadow: 0px 0px 60px 0px rgba(0,0,0,0.45);
+    background: #cb4000;
+    a.close{
+        position: absolute;
+        top: 14px;
+        right: 20px;
+        font-size: 0;
+        width: 26px;
+        height: 26px;
+        color: #fff;
+        &:before{
+            // content: '\e9ee';
+            content: '';
+            // font-size: 26px;
+            background: url('../images/icon/icon_close_white.png') 50% 50% no-repeat;
+            background-size: contain;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+        }
+    }
+    .content{
+        background: #fff;
+        padding: 1em 2em;
+        h3{
+            font-size: 1.85em;
+            color: #cb4000;
+            margin: 16px 0;
+        }
+        h4{ margin: 10px 0; }
+        p{
+            font-size: 1.25em;
+            line-height: 1.4;
+        }   
+    }
+    @include screen('xs_mobile') {
+        width: 300px;
+        margin-left: -150px;
+    }
+}
+
+////////////////////////////////////////////////////////////
+// 為了與首頁區隔，請在內頁加上innerpage ClassName
+.innerpage {
+    padding-top: 2em;
+    >.container {
+        @include gutter(); //gutter 代表左右要留白
+        font-size: 125%;
+    }
+
+    // 顯示條件查詢
+    .advance_search{
+        position: absolute;
+        right: 15px;
+        top: 70px;
+        transition: right 600ms ease;
+        button{
+            @include border-radius(8px);
+            background: $secondaryColor;
+            color: #fff;
+            padding: .45em 1em;
+            border: 0;
+        }
+    }
+    .advance_block{
+        border-radius: 6px;
+        border: 3px solid #DDD;
+        background: #FFF;
+        display: none;
+        overflow: hidden;
+        margin-bottom: 2em;
+        .Date{
+            input{
+                display: inline-block;
+                width: 48%;
+                &:first-child{
+                    margin-right: 1%;
+                }
+            }
+        }
+    }
+    @include screen('notebook') {
+        .advance_search{ right: 60px; }
+    }
+    @include screen('tablet') {
+        .advance_search{ position: static; }
+    }
+    @include screen('mobile') { padding-top: 5em; }
+}

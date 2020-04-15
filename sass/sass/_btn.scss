@@ -1,0 +1,163 @@
+// 按鈕設定
+$btn-font-color:$color-word;
+$btn-border:darken($color-word, 5);
+$btn-padding:.5em 2em;
+$btn-radius:4px;
+// 按鈕外框
+.btn_grp {
+    text-align: center;
+    padding: 1em 0;
+    a{ text-decoration: none; }
+}
+// 按鈕的共用設定
+@mixin btn_setting($btn-bg:#DDD, $btn-font-color:$btn-font-color) {
+    background: $btn-bg;
+    border: 1px solid darken($btn-bg, 10);
+    color: $btn-font-color;
+    @include box-shadow(0px 2px 2px RGBA(0,0,0,.08));
+    @include border-radius($btn-radius);
+    &:hover,
+    &:focus {
+        background: lighten($btn-bg, 5);
+         @include box-shadow(0px 2px 2px RGBA(0,0,0,.15));
+        cursor: pointer;
+        color: #FFF;
+    }
+    &.active {
+        background: lighten($btn-bg, 5);
+        cursor: pointer;
+    }
+}
+
+// 按鈕預設陰影
+%btn {
+    font-size: $font-size;
+    background-image: none; //修正firefox
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+    // white-space: nowrap;
+    // line-height: normal;
+    width:auto;
+    min-width:5em;
+    // margin:.25em .1em;
+}
+
+.btn {
+    @extend %btn;
+    overflow: hidden;
+    padding: $btn-padding !important;
+    touch-action: manipulation;
+    @include box-sizing(border-box);
+    @include btn_setting();
+    @include text-shadow(RGBA(0, 0, 0, .3) 0px 0px 0px);
+    background-color: rgb(247, 247, 247); // Old browsers
+    @include filter-gradient(#f7f7f7, #eaeaea, vertical); // IE6-9
+    @include background-image(linear-gradient(top, rgba(252, 252, 252, 1) 0%, rgba(230, 230, 230, 1) 100%));
+    &:hover,
+    &:focus {
+        color: $btn-font-color;
+        background-color: rgb(230, 230, 230); // Old browsers
+        @include filter-gradient(#f7f7f7, #eaeaea, vertical); // IE6-9
+        @include background-image(linear-gradient(top, rgba(250, 250, 250, 1) 0%, rgba(220, 220, 220, 1) 100%));
+    }
+}
+
+
+//按鈕顏色
+//@include btn_setting(按鈕顏色,字的顏色);
+.btn-green {
+    @extend %btn;
+    @include btn_setting($color-green, #FFF);
+}
+
+.btn-blue {
+    @extend %btn;
+    @include btn_setting($color-blue, #FFF);
+}
+
+.btn-yellow {
+    @extend %btn;
+    @include btn_setting($color-yellow, #FFF);
+}
+
+.btn-orange {
+    @extend %btn;
+    @include btn_setting($color-orange, #FFF);
+}
+
+.btn-red {
+    @extend %btn;
+    @include btn_setting($color-red, #FFF);
+}
+
+.btn-purple {
+    @extend %btn;
+    @include btn_setting($color-purple, #FFF);
+}
+
+.btn-white {
+    @extend %btn;
+    @include btn_setting(#fff, #1D72A4);
+    margin-bottom: 5px;
+    &:hover,
+    &:focus {
+        color: #fff;
+        background-color: darken(#1D72A4, 10);
+    }
+}
+
+.btn-Youtube{
+    @extend %btn;
+    @include btn_setting(#e02f2f, #fff);
+    color: #000\9 !important;
+}
+
+// 按鈕大小
+.btn-xl {
+    font-size: $font-size * 1.5; //24px
+}
+
+.btn-lg {
+    font-size: $font-size * 1.25; //20px
+}
+
+.btn-sm {
+    font-size: $font-size * .938; //15px
+}
+
+.btn-xs {
+    font-size: $font-size * .75; //12px
+}
+
+
+// 新增稅目、應被證件查詢
+.btn-decision{
+    @extend %btn;
+    @include btn_setting( darken($primaryColor, 10), #fff);
+    &:hover,
+    &:focus {
+        color: #fff;
+        background-color: darken(#0270b3, 10);
+    }
+}
+
+// 重新產生、語音播放
+.btn-deepgray{
+    @extend %btn;
+    @include btn_setting(#545454, #fff);
+    &:hover,
+    &:focus {
+        color: #fff;
+        background-color: darken(#4b90ba, 10);
+    }
+}
+
+
+
+
+
+
+
+
