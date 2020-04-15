@@ -602,6 +602,99 @@ dl {
   }
 }
 
+// 宣導品
+.resources{
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display:-flex;
+
+	flex-flow: row wrap;
+	justify-content: flex-start;
+	align-content: flex-start;
+
+	.item{
+		// background: #eee;
+		box-sizing: border-box;
+		margin-bottom: 1em;
+
+		flex:1 1 50%;
+
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display:-flex;
+
+		flex-flow: row wrap;
+		justify-content: flex-start;
+		align-content: flex-start;
+
+		min-height: 180px;
+
+		img{
+			flex:1 1 130px;
+			height: 130px;
+		}
+		.info{
+			flex:1 1 auto;
+			width: calc( 100% - 130px);
+			box-sizing: border-box;
+			padding: 0 .75em;
+			h3{
+				line-height: 1.2;
+				margin: .5em 0;
+
+				overflow: hidden;
+				text-overflow: -o-ellipsis-lastline;
+				text-overflow: ellipsis;
+				display: -webkit-box;
+				-webkit-line-clamp: 2;
+				-webkit-box-orient: vertical;
+			}
+			p{
+				margin: 0 0;
+				span{
+					color: red;
+					padding: 0 .5em;
+				}
+				input{ width: 50px; margin: 0 .5em; }
+			}
+		}
+	}
+}
+.counnt{
+	background: #f3f3f3;
+	padding: .75em 1.5em;
+	border-radius: 4px;
+	span{
+		color: red;
+		padding: 0 .5em;
+
+		&.quantity{ color: blue; }
+	}
+	ul{
+		border-top: solid 1px #222;
+		border-bottom: solid 1px #222;
+		padding-top: 1em;
+		padding-bottom: 1em;
+
+		li{ line-height: 1.6; }
+	}
+	h4.result{ text-align: right; }
+}
+@include screen('mobile') {
+	.resources{
+		.item{
+			flex:1 1 auto;
+			min-height: 150px;
+		}
+	}
+}
+
+
+
 // 圖示說明
 .Icon-caption{
 	ul{
