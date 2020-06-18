@@ -636,7 +636,9 @@ dl {
 
 		img{
 			flex:1 1 130px;
-			height: 130px;
+			height: 100%;
+		    max-height: 130px;
+		    max-width: 130px;
 		}
 		.info{
 			flex:1 1 auto;
