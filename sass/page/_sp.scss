@@ -640,6 +640,13 @@ dl {
 		    max-height: 130px;
 		    max-width: 130px;
 		}
+
+		.img-container1{
+			background: #f3f3f3;
+			width: 130px;
+			height: 130px;
+			text-align: center;
+		}
 		.info{
 			flex:1 1 auto;
 			width: calc( 100% - 130px);
