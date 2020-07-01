@@ -536,9 +536,9 @@ $(function() {
     /*-----------------------------*/
     /////form表單 placeholder隱藏/////
     /*-----------------------------*/
-    $('input,textarea').focus(function() {
-        $(this).removeAttr('placeholder');
-    });
+    // $('input,textarea').focus(function() {
+    //     $(this).removeAttr('placeholder');
+    // });
     /*------------------------------------*/
     /////form表單 單個檔案上傳+多個檔案上傳/////
     /*------------------------------------*/

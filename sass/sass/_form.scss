@@ -25,12 +25,24 @@
     .Middle{ width: 100%;}      //欄寬
 }
 
+input[readonly].content-box-switch,
+input[disable].content-box-switch{
+    &:hover, &:focus{
+        cursor: not-allowed;
+        background: #f2f2f2;
+        color: #b3b3b3;
+        border-color: #b3b3b3;
+    }
+}
+
 .form_grid {
     margin: .5em;
     .form_grp {
         border-bottom: 1px solid #DDD;
         overflow: hidden;
         padding: .5em 1em;
+
+
     }
     .form_title {
         @include make-xs-column(12);
@@ -66,6 +78,11 @@
         ol, ul{
             margin: 0;
         }
+    }
+
+    @include screen('xs_mobile') {
+        margin: .5em 0;
+        .form_grp { padding: .5em 0; }
     }
 }
 

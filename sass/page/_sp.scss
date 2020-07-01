@@ -703,6 +703,35 @@ dl {
 	}
 }
 
+// 2020-0701 slideToggle
+.content-box{
+	// background: pink;
+	border-radius: 6px;
+	border: solid 1px rgba(0,0,0,0.25);
+	padding: .75em 1em;
+	margin-bottom: 1em;
+
+	display: none;
+
+	.resources{}
+	.btn_grp{
+		a{
+			color: #fff !important;
+			text-decoration: none !important
+		}
+	}
+
+	// 捐贈發票
+	.Donation{}
+	// 受捐機關
+	.Recipient{}
+
+	.Donation, .Recipient{
+		table{
+			td{ text-align: center; }
+		}
+	}
+}
 
 
 // 圖示說明

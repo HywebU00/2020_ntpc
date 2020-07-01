@@ -416,11 +416,32 @@ $(function() {
             }
         }]
     });
-    if(!isEmptyObject($('.cp_slider'))) {
-        $('.cp_slider').slickLightbox({
-            caption: 'caption',
-            useHistoryApi: 'true',
-            lazy: true
-        });
-    };
+    // if(!isEmptyObject($('.cp_slider'))) {
+    //     $('.cp_slider').slickLightbox({
+    //         caption: 'caption',
+    //         useHistoryApi: 'true',
+    //         lazy: true
+    //     });
+    // };
+
+    // SP -------------- 2020-0701
+    $('.content-box-switch').click(function(){
+        // alert('有');
+        $(this).next('section').find('.content-box').slideToggle(300);
+    });
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
