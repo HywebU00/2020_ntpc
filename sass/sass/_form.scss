@@ -17,7 +17,7 @@
 .Major{ color: red; font-weight: bold;}
 
 .SS{ width: 150px;}      //欄寬
-.Short{ width: auto;}      //欄寬
+.Short{ width: auto; min-width: 96px;}      //欄寬
 .Middle{ width: 50%;}      //欄寬
 .Large{ width: 100%;}
 @include screen('tablet') {
@@ -64,7 +64,7 @@ input[disable].content-box-switch{
         @include make-lg-column(8);
         @include gutter();
         >div>span{ margin-right: 1em;}
-        input+span{ margin: 0 1em; }
+        input+span{ margin: 0 .5em 0 .25em; }
         div>a{
             margin: 0 1em 0 0;
             text-decoration: underline;
@@ -184,7 +184,7 @@ label,
 legend {
     // white-space: nowrap;
     display: inline-block;
-    margin: 0 0 .5em 0;
+    margin: .5em 0;
     @include screen('xs_mobile') {
         display: block;
     }

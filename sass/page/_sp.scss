@@ -545,7 +545,7 @@ a:focus.CalendarBtn{
 			    display: flex;
 			    flex-flow: row nowrap;  
 				justify-content: flex-start;
-				align-items: baseline;
+				align-items: center;
 
 				.form_title, .form_content{ float: none; }
 		    	.form_title{
