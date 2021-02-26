@@ -527,7 +527,10 @@ a:focus.CalendarBtn{
 	a{
 		color: #545454;
 	    text-decoration: underline;
-	    margin: 0 1em;
+	    // margin: 0 1em;
+	    display: inline-block;
+    	padding: .25em .5em;
+
 	    &:hover, &:focus {
 	       color: darken($primaryColor, 10);
 	    }
@@ -536,6 +539,37 @@ a:focus.CalendarBtn{
 	.form_grid{
 		.form_grp{
 			border-bottom: dotted 1px #ddd;
+
+			.flex{
+				box-sizing: border-box;
+			    display: flex;
+			    flex-flow: row nowrap;  
+				justify-content: flex-start;
+				align-items: baseline;
+
+				.form_title, .form_content{ float: none; }
+		    	.form_title{
+		    		flex: 0 0 130px;
+		    		min-width: 130px;
+		    		padding: 0;
+		    	}
+		    	.form_content{}
+
+		    	@include screen('tablet') {
+		    		flex-flow: row wrap; 
+
+		    		.form_title, .form_content{
+		    			flex: 1 1 100%;
+		    		}
+		    		.form_title{}
+		    		.form_content{}
+		    	}
+			}
+
+			.sample{
+				text-align: right;
+				a{}
+			}
 		}
 		.form_grp:last-child{
 			border-bottom: 0;
@@ -548,7 +582,7 @@ a:focus.CalendarBtn{
 			margin: .75em 0;
 			tr{
 				>td:last-child{
-					text-align: center;
+					// text-align: center;
 				}
 				&:last-child td{
 					border-bottom: 0;

@@ -46,9 +46,9 @@ input[disable].content-box-switch{
     }
     .form_title {
         @include make-xs-column(12);
-        @include make-sm-column(3);
-        @include make-md-column(3);
-        @include make-lg-column(3);
+        @include make-sm-column(12);
+        @include make-md-column(4);
+        @include make-lg-column(4);
         @include gutter();
         padding-top: 5px;
         font-weight: bold;
@@ -59,9 +59,9 @@ input[disable].content-box-switch{
     }
     .form_content {
         @include make-xs-column(12);
-        @include make-sm-column(9);
-        @include make-md-column(9);
-        @include make-lg-column(9);
+        @include make-sm-column(12);
+        @include make-md-column(8);
+        @include make-lg-column(8);
         @include gutter();
         >div>span{ margin-right: 1em;}
         input+span{ margin: 0 1em; }
@@ -400,8 +400,8 @@ input[disable] {
     .upload_btn {
         position: absolute;
         overflow: hidden;
-        top: 5px;
-        right: 5px;
+        top: 9px;
+        right: 6px;
         @extend %btn;
         @include btn_setting($form-focus, #FFF);
         padding: .2em 1em !important;

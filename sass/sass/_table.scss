@@ -9,13 +9,11 @@ table {
         position: relative;
     }
     th,
-    td {
-        padding: .5em;
-        text-align: left;
-    }
+    td { text-align: left; }
     td {
         border: #ddd 1px solid;
         word-break: break-all;
+        padding: .25em;
         a {
             word-break: break-all;
         }
@@ -26,6 +24,7 @@ table {
         border: #DDD 1px solid;
         text-align: center;
         min-width: 45px;
+        padding: .5em;
         // white-space: nowrap;
     }
     &.table_hover {
