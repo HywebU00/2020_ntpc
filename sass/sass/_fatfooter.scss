@@ -44,6 +44,9 @@ $fatTextColor: #FFF; //fatFooter 連結顏色
             cursor: pointer;
             border: none;
         }
+
+        // 2022-0209 無障礙
+        b{ font-size: 0; }
     }
     nav {
         clear: both;
