@@ -282,3 +282,31 @@
         display: none !important;
     }
 }
+
+
+// 鍵盤遊走
+.slick-dots {
+    button{
+        width: 21px;
+        height: 21px;
+        &:before{
+            border: solid 3px #fff;
+            transition: border 300ms ease;
+        }
+
+        &:hover, &:focus{
+            &:before{
+                border: solid 3px darken($lightColor, 10);
+            }
+        }
+    }
+}
+
+.slick-prev,
+.slick-next {
+    border: solid 3px transparent;
+    transition: border 300ms ease;
+    &:hover, &:focus{
+        border: solid 3px $lightColor;
+    }
+}

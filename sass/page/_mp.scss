@@ -256,7 +256,11 @@
             @include make-sm-column(4);
             @include make-md-column(3);
             @include make-lg-column(3);
-            margin: .25em 0 .25em;
+
+            // margin: .25em 0 .25em;
+            padding: .45em;
+            box-sizing: border-box;
+
             // ie8 hack -----------------------
             -ms-float: left;
             -ms-width: 23%;
@@ -265,7 +269,7 @@
             background: #104971\9;
             // --------------------------------
             transform-origin: 50% 50%;
-            transform: scale(1, 1);
+            transform: scale(.9, .9);
             transition: all .6s;
             .Item {
                 width: 90%;
@@ -303,12 +307,12 @@
             p {
                 text-align: center;
                 margin-top: .5em;
-                font-size: 112.5%;
+                font-size: 125%;
             }
             color: #333;
             color: #FFF\9;
             &:hover, &:focus {
-                transform: scale(1.1, 1.1);
+                transform: scale(1, 1);
                 background: #087677\9;
                 .Item {
                     p {
@@ -818,21 +822,20 @@
         bottom: initial;
         margin-top: .3em;
 
+        // button{
+        //     width: 21px;
+        //     height: 21px;
+        //     &:before{
+        //         border: solid 3px #fff;
+        //         transition: border 300ms ease;
+        //     }
 
-        button{
-            width: 21px;
-            height: 21px;
-            &:before{
-                border: solid 3px #fff;
-                transition: border 300ms ease;
-            }
-
-            &:hover, &:focus{
-                &:before{
-                    border: solid 3px darken($lightColor, 10);
-                }
-            }
-        }
+        //     &:hover, &:focus{
+        //         &:before{
+        //             border: solid 3px darken($lightColor, 10);
+        //         }
+        //     }
+        // }
     }
     .slick-dots li.slick-active button:before {
         background: $lightColor;
@@ -849,14 +852,14 @@
         top: 38%;
     }
 
-    .slick-prev,
-    .slick-next {
-        border: solid 3px transparent;
-        transition: border 300ms ease;
-        &:hover, &:focus{
-            border: solid 3px $lightColor;
-        }
-    }
+    // .slick-prev,
+    // .slick-next {
+    //     border: solid 3px transparent;
+    //     transition: border 300ms ease;
+    //     &:hover, &:focus{
+    //         border: solid 3px $lightColor;
+    //     }
+    // }
 
     @include screen('mobile') {
         padding-bottom: 0;
@@ -967,6 +970,12 @@
         a.btn {
             width: 180px;
             display: inline-block;
+
+            border: solid 3px transparent;
+            transition: border 300ms ease;
+            &:hover, &:focus{
+                border: solid 3px darken($lightColor, 10);
+            }
         }
     }
     .slick-dots {
