@@ -11,7 +11,7 @@
     border-bottom: 1px solid transparent;
 }
 .MP {
-    background: url(../images/mp-bg.png) 50% top no-repeat;
+    // background: url(../images/mp-bg.png) 50% 147px no-repeat;
     // background-size: contain;
     .section {
         padding: 0 0 0;
@@ -23,6 +23,11 @@
         .Side_Position {
             padding-top: 20px;
         }
+    }
+
+    .main{
+        background: url(../images/mp-bg.png) 50% top no-repeat;
+        background-size: contain;
     }
 }
 // 側邊按鈕的複雜定位
@@ -760,7 +765,8 @@
         img {
             // width: 100%;
             width: auto;
-            max-width: 100%;
+            // max-width: 100%;
+            width: 100%;
             height: 100%;
             margin: 0 auto;
         }
@@ -777,6 +783,11 @@
         height: 100%;
         width: 100%;
         position: relative;
+
+        border: solid 0px transparent;
+        box-sizing: border-box;
+        transition: border 300ms ease;
+
         .caption {
             position: absolute;
             width: 100%;
@@ -798,13 +809,33 @@
                 padding: .5em;
             }
         }
+
+        &:focus{
+            border: solid 3px $lightColor;
+        }
     }
     .slick-dots {
         bottom: initial;
         margin-top: .3em;
+
+
+        button{
+            width: 21px;
+            height: 21px;
+            &:before{
+                border: solid 3px #fff;
+                transition: border 300ms ease;
+            }
+
+            &:hover, &:focus{
+                &:before{
+                    border: solid 3px darken($lightColor, 10);
+                }
+            }
+        }
     }
     .slick-dots li.slick-active button:before {
-        background: #f98385;
+        background: $lightColor;
     }
     .slick-dots li button:before {
         background: #333;
@@ -817,6 +848,16 @@
         right: -100px\9;
         top: 38%;
     }
+
+    .slick-prev,
+    .slick-next {
+        border: solid 3px transparent;
+        transition: border 300ms ease;
+        &:hover, &:focus{
+            border: solid 3px $lightColor;
+        }
+    }
+
     @include screen('mobile') {
         padding-bottom: 0;
         .slick-prev {

@@ -69,7 +69,7 @@ input[disable].content-box-switch{
         >div>span{ margin-right: 1em;}
         input+span{ margin: 0 .5em 0 .25em; }
         div>a{
-            margin: 0 1em 0 0;
+            // margin: 0 1em 0 0;
             text-decoration: underline;
             color: darken($primaryColor, 10);
             &:hover, &:focus {

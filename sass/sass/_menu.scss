@@ -114,8 +114,15 @@
                     color: #044847 !important;
                     border-bottom: solid 1px #38b4b1;
                     margin: 15px 10px;
-                    &:hover, &:focus{
-                        outline:1px solid #38b4b1;
+                    &:hover{
+                        // outline:1px solid #38b4b1;
+                        // border-bottom: solid 1px transparent;
+
+                        // background: lighten($primaryColor, 30);
+                        background: #e5e5e5;
+                    }
+                    &:focus{
+                        // outline:1px solid #38b4b1;
                         border-bottom: solid 1px transparent;
                     }
                     @include screen('tablet') {

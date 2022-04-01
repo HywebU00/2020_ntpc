@@ -5,7 +5,7 @@ body {
 // tab的外框線
 a:focus {
     outline: none;
-    box-shadow: 0 0px 0px 1px $primaryColor inset;
+    box-shadow: 0 0px 0px 3px $lightColor inset;
     @include screen('mobile') {
         box-shadow: none;
     }

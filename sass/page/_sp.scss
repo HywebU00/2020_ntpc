@@ -222,11 +222,12 @@
 // 統一發票
 .Invoice{
 	table{
-		h3{
+		.prize_number{
 			margin: 0;
 			font-size: 2em;
-			color: $lightColor;
+			color: darken($lightColor, 10);
 			line-height: 1.8;
+			font-weight: 500;
 			span{
 				display: inline-block;
 				&:after{ content:'、'; }
@@ -437,15 +438,15 @@ a:focus.CalendarBtn{
 			width: calc(100%/7);
 			text-align: center;
 			vertical-align: top;
-			border: solid 1px #fff;
+			// border: solid 1px #fff;
 			// border-right: solid 1px #ddd; 
 			// border-bottom: solid 1px #ddd; 
 			box-sizing: border-box;
-			background: lighten($lightColor, 18);
-			&:hover, &:focus, &:active{
-				cursor: pointer;
-				background: darken($lightColor, 10);
-			}
+			// background: lighten($lightColor, 18);
+			// &:hover, &:focus, &:active{
+			// 	cursor: pointer;
+			// 	background: darken($lightColor, 10);
+			// }
 			span{ display: block; }
 		}
 		.Available{
@@ -455,19 +456,27 @@ a:focus.CalendarBtn{
 			background: #ffe9ca;
 			height: 42px;
 		}
-		.Unclick{ 
-			color: rgba(0, 0, 0, .30);
-			background: rgba(0, 0, 0, 0);
+		.Unclick{
+			// color: rgba(0, 0, 0, .30);
+			border: solid 1px #fff;
+			background: rgba(0, 0, 0, .125);
+			cursor: not-allowed;
 			&:hover, &:focus, &:active{
-				color: rgba(0, 0, 0, .30);
-				background: rgba(0, 0, 0, 0);
-				cursor: auto;
+				// color: rgba(0, 0, 0, .30);
+				// background: rgba(0, 0, 0, .125);
+				// cursor: auto;
 			}
 		}
 		.Closed{  color: red; font-weight: bold; }
 		a{
 			color: #000;
-			&:hover{ color: #fff; }
+			display: block;
+
+			&:hover, &:focus{
+				color: #fff;
+				background: darken($lightColor, 15);
+				box-shadow: 0 0 0 3px darken($primaryColor, 10) inset;
+			}
 		}
 		a:hover .Closed{
 			text-decoration: underline;
@@ -475,13 +484,23 @@ a:focus.CalendarBtn{
 		}
 		.Act{
 			background: darken($lightColor, 10);
-			a{ color: #fff; }
+			a{
+				color: #fff;
+			}
 		}
 		+ div > .Closed{
+			// 不開放 
+			// background: #fff;
+			// box-shadow: inset 0 0 3px #000;
+
+			background: rgba(0, 0, 0, .125);
+		}
+		+ div > .Available{
+			// 可預約
+			// background: #fcdbdd;
 			background: #fff;
-			box-shadow: inset 0 0 3px #000;
-		}    /*不開放*/
-		+ div > .Available{ background: #fcdbdd; } /*可預約*/
+			box-shadow: inset 0 0 0 2px #ddd;
+		}
 	}
 	.dot{
 		display: inline-block;
@@ -508,6 +527,10 @@ a:focus.CalendarBtn{
 	}
 	@include screen('mobile') {
     }
+}
+
+.calendar{
+	margin-bottom: 1em;
 }
 
 
