@@ -48,7 +48,7 @@
             position: absolute;
             right: 0;
             width: 60px;
-            background: rgba(0, 0, 0, .75);
+            // background: rgba(0, 0, 0, .75);
             background: #333\9;
             border-radius: 5px;
             a {
@@ -57,25 +57,63 @@
                 height: 60px;
                 transition: background .3s ease;
                 text-align: center;
-                &:hover, &:focus {
-                    // background: $lightColor;
-                    background: darken($primaryColor, 30);
-                }
+
                 img {
                     // width: 85%;
                     // height: 85%;
                 }
-            }
-            a:first-child {
-                &:hover, &:focus {
+
+                // 第一項是 手機版開關按鈕
+                // 智能克服下推為第二項
+                &:nth-child(2) {
                     border-radius: 5px 5px 0 0;
                 }
-            }
-            a:last-child {
-                &:hover, &:focus {
+                &:last-child {
                     border-radius: 0 0 5px 5px;
                 }
+
+                background: red;
+                // 智能客服
+                &:nth-child(2){
+                    background: #795548;
+                }
+                // 話務中心
+                &:nth-child(3){
+                    background: #a26a08;
+                }
+                // 意見信箱
+                &:nth-child(4){
+                    background: #0e7d28;
+                }
+                // line
+                &:nth-child(5){
+                    background: #00c300;
+                }
+                // fb
+                &:nth-child(6){
+                    background: #1877f2;
+                }
+                // QA
+                &:nth-child(7){
+                    background: #2b2ca3;
+                }
+
+                &:hover, &:focus {
+                    // background: $lightColor;
+                    // background: darken($primaryColor, 30);
+                    background: #FF5733;
+                }
             }
+            // a:first-child {
+            //     &:hover, &:focus {
+            //         border-radius: 5px 5px 0 0;
+            //     }
+            // }
+            // a:last-child {
+            //     &:hover, &:focus {
+            //         border-radius: 0 0 5px 5px;
+            //     }
+            // }
             a.GoLink {}
             a.GoTel {
                 display: none;
