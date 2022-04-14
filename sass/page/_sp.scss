@@ -854,6 +854,24 @@ dl {
         // 	margin-right: .3em;
         // }
 	}
+
+	// 憑證登入
+	.link_list{
+		a{
+			display: inline-block;
+			width: auto;
+			padding: .5em 1em;
+			border: 1px solid darken($primaryColor, 10);
+			border-radius: 4px;
+			color: darken($primaryColor, 10);
+
+			&:hover, &:focus{
+				background: darken($primaryColor, 20);
+				color: #fff;
+			}
+		}
+	}
+
 	@include screen('tablet'){
 		p{
 			border-bottom: dotted 1px #555;
@@ -1163,7 +1181,7 @@ a.Download{
 		background-size: cover;
 		background-repeat: no-repeat;
 		background-position: 50% 50%;
-		height: 600px;
+		min-height: 600px;
 		text-align: center;
 		padding: 0 0;
 		overflow: hidden;
@@ -1198,6 +1216,127 @@ a.Download{
 			width: 500px\9;
 			// padding-right: 60px;
 		}
+		.quick_function{
+			display: block;
+			width: 88%;
+			box-sizing: border-box;
+
+			.sub_title,
+			.flex_wrap{
+				background: none !important;
+				@include make-xs-column(12);
+				@include make-sm-column(12);
+				@include make-md-column(12);
+				@include make-lg-column(12);
+
+				box-sizing: border-box;
+			}
+			.sub_title{
+				text-align: left;
+				color: darken($primaryColor,20);
+				padding-bottom: 0;
+				padding-left: 4.3em;
+			}
+			.flex_wrap{
+				display: flex;
+				flex-flow: row nowrap;
+				padding: 2em 3em;
+				margin: 1em 2em 2em;
+				
+				background: #eee !important;
+				box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+				border-radius: 60px;
+
+			}
+			.col{
+				text-align: left;
+				padding-right: 1em;
+				select{
+					@include formStyle();
+
+					width: 100%;
+				    -webkit-appearance: none; //清除 safari 的預設樣式
+				    -moz-appearance: none;
+				    appearance: none;
+
+				    line-height: 2.4em;
+				    height: 2.4em;
+				    padding: 0 24px 0 .5em;
+				    border: 1px solid $color-gray;
+				    background: #fff url(../images/basic/icon_select_arrow.svg) no-repeat right center;
+				    background-size: 20px;
+				    option {
+				        outline: none;
+				        border: none;
+				    }
+				    &:-moz-focusring {
+				        color: transparent;
+				        text-shadow: 0 0 0 #000;
+				    }
+				}
+
+				.form_grp{
+					.form_title{
+						margin-bottom: 6px;
+						font-size: 112.5%;
+						font-weight: bold;
+						color: #1b3766;
+						display: block;
+					}
+					.form_content{}
+				}
+
+
+				&:nth-child(1){
+					flex: 1 1 auto;
+					flex-basis: calc(30% - (60px/2));
+				}
+				&:nth-child(2){
+					flex: 1 1 auto;
+					flex-basis: calc(50% - (60px/2));
+				}
+				&:nth-child(3){
+					flex: 0 0 60px;
+					padding-right: 0;
+					a{
+						display: block;
+						background: #1b3766;
+						color: #fff;
+						width: 72px;
+						height: 72px;
+						line-height: 72px;
+						text-align: center;
+						border-radius: 50%;
+						text-decoration: none;
+
+						&:hover, &:focus{
+							background: darken($primaryColor,20);
+						}
+					}
+				}
+			}
+
+
+			@include screen('mobile') {
+				.flex_wrap{
+					flex-flow: row wrap;
+					border-radius: 12px;
+				}
+				.col{
+					padding-right: 0;
+					&:nth-child(1),
+					&:nth-child(2),
+					&:nth-child(3){
+						flex: 1 1 100%;
+					}
+					&:nth-child(3){
+						padding-top: 1em;
+						a{ margin: auto; }
+					}
+				}
+			}
+		}
+
 		a{
 			margin: 0 0;
 			padding: 0 0;
