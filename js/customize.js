@@ -17,6 +17,14 @@ $(function() {
         fade: true,
         cssEase: 'ease'
     });
+
+    // 稅務線上服務 2022-0414
+    $('.Tax_Online_2022 .link_list a').on('focus', function(event) {
+        // if(){}else{}
+        $('.Tax_Online_2022').find('.Item_switch').removeClass('act');
+        $(this).parents('.Item_switch').addClass('act');
+    });
+
     // 節稅資訊  -----------------------------------------------
     $('.singleSlider_TaxReduce').slick({
         dots: true,

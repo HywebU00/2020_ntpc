@@ -393,7 +393,7 @@
         @include gutter();
 
         .Item_switch{
-            @include flex-xs-equal(2, 0px);
+            @include flex-xs-equal(2, $m-gutter);
             @include flex-sm-equal(2, $m-gutter);
             @include flex-md-equal(4, $m-gutter);
             @include flex-lg-equal(4, $m-gutter);
