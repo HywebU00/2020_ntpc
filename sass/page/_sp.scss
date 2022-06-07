@@ -1341,7 +1341,7 @@ a.Download{
 			margin: 0 0;
 			padding: 0 0;
 			img{
-				// width: 100%;
+				width: 100%;
 				height: 100%;
 				transition: transform .6s ease;
 			}
@@ -1648,6 +1648,7 @@ a.Download{
 	.Front{
 		.Box{
 			height: auto;
+			min-height: auto;
 			margin-top: -6px;
 			&:nth-child(6n+1){
 				border-top: solid 8px #0cb3b4;
