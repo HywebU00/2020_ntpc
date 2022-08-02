@@ -1,16 +1,30 @@
 // 自動產生編號：https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Lists_and_Counters/Using_CSS_counters
 .np {
     ul,ol {
-        overflow:hidden;
-        padding:1em 0;
+        padding: 1em 0;
         margin: 0;
         overflow:hidden;
+        list-style: none;
+
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+
     }
     li {
-        display: block;
-        width: 49%;
-        margin: 0 1% 10px 0;
-        float: left;
+        // display: block;
+        // width: 49%;
+        // margin: 0 1% 10px 0;
+        // float: left;
+
+        flex: 0 0 49.5%;
+        margin-bottom: 10px;
+
+        border: 2px solid #DDD;
+        @include border-radius(4px);
+        &:hover,
+        &:focus { border: 2px solid $primaryColor; }
+
         @include box-sizing(border-box);
         &:nth-child(even) {
         	width: 50%;
@@ -26,13 +40,11 @@
             }
         }
         a {
-            @include border-radius(4px);
-            border: 2px solid #DDD;
-            padding: 1em 1em 1em 2em;
+            padding: 1em 1em 1em 2.4em;
             display: block;
             vertical-align: top;
             text-decoration: none;
-            @include text-overflow;
+            // @include text-overflow;
             position:relative;
             // &:before{
             //     content: "";
@@ -57,19 +69,19 @@
                     display:inline-block;
                 }
             }
-            &:hover,
-            &:focus {
-                border: 2px solid $primaryColor;
-            }
             i{
-                font-size: 1em;
+                font-size: .65em;
                 text-align: center;
                 background: $primaryColor;
                 border-radius: 50%;
                 color: #fff;
-                margin-right: 10px;
-                display: inline-block;
-                width: 1.5em;
+                // margin-right: 10px;
+                margin-left: -30px;
+                // display: inline-block;
+
+                position: absolute;
+                width: 24px;
+                height: 24px;
             }
         }
     }
