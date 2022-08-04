@@ -30,15 +30,7 @@
         	width: 50%;
             margin-right: 0px;
         }
-        @include screen('mobile') {
-            float:none;
-            width: 96%;
-            margin:0px auto 10px;
-            &:nth-child(even){
-                width: 96%;
-                margin-right: auto;
-            }
-        }
+
         a {
             padding: 1em 1em 1em 2.4em;
             display: block;
@@ -84,5 +76,19 @@
                 height: 24px;
             }
         }
+
+        @include screen('mobile') {
+            flex: 1 1 auto;
+            flex-basis: calc(100% - 4px);
+
+            // float:none;
+            // width: 96%;
+            // margin:0px auto 10px;
+            &:nth-child(even){
+                // width: 96%;
+                // margin-right: auto;
+            }
+        }
+
     }
 }
