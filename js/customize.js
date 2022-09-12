@@ -7,6 +7,19 @@ for (var key in obj) {
 }
 
 $(function() {
+    // 滿意度調查  ----------------------------------------------
+    $('.btn-Feedback').click(function(event) {
+        $(this).addClass('act');
+        $('body').addClass('cover');
+        $('.Feedback').fadeIn();
+    });
+
+    $('.Feedback').find('a.close').click(function(event) {
+        $('.btn-Feedback').removeClass('act');
+        $('body').removeClass('cover');
+        $('.Feedback').fadeOut();
+    });
+
     // 主視覺  -------------------------------------------------
     $('.singleSlider').slick({
         dots: true,

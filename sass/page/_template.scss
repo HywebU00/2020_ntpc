@@ -6,6 +6,19 @@ body{
         position: absolute;
         overflow: hidden !important;
     }
+
+    &.cover{
+        position: relative;
+        &:after{
+            content: '';
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,.75);
+            z-index: 100;
+            top: 0;
+        }
+    }
 }
 // 最外圍預設為100%
 .wrapper {
@@ -84,11 +97,50 @@ body{
             line-height: 1.4;
         }   
     }
+
+    // 滿意度調查表
+    &.Feedback{
+        display: none;
+    }
+
     @include screen('xs_mobile') {
         width: 300px;
         margin-left: -150px;
     }
 }
+
+
+// 滿意度
+.vote{
+    padding: .65em 0;
+    .fieldset{
+        display: flex;
+        flex-flow: row nowrap;
+        label{
+            color: transparent;
+            background: url(../images/star-select.png) 6px 50% no-repeat;
+            width: 38px;
+            height: 38px;
+            display: inline-block;
+            padding-right: 20px;
+
+            &:hover ~ label{ opacity: .3;}
+        }
+
+        input[type="radio"]:checked+label ~ label {
+            background-image: url('../Images/star-null.png')
+        }
+    }
+
+    +.btn{
+        margin-left: calc(50% - 60px);
+        width: 120px;
+        margin-top: 1em;
+        background: darken($primaryColor, 30);
+        color: #FFF;
+    }
+}
+
 
 ////////////////////////////////////////////////////////////
 // 為了與首頁區隔，請在內頁加上innerpage ClassName
