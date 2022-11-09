@@ -65,12 +65,12 @@
 
                 // 第一項是 手機版開關按鈕
                 // 智能克服下推為第二項
-                &:nth-child(2) {
-                    border-radius: 5px 5px 0 0;
-                }
-                &:last-child {
-                    border-radius: 0 0 5px 5px;
-                }
+                // &:nth-child(2) {
+                //     border-radius: 5px 5px 0 0;
+                // }
+                // &:last-child {
+                //     border-radius: 0 0 5px 5px;
+                // }
 
                 background: red;
                 // 智能客服
@@ -144,6 +144,11 @@
                 border-right: dotted 1px rgba(255,255,255,.6);
             }
         }
+
+        // 側邊欄出現
+        .Show{
+            right: 0 !important;
+        }
     }
     @media screen and (max-width: 1320px) {
         width: 100%;
@@ -151,13 +156,46 @@
             width: 100%;
         }
     }
+    
+    // 側邊欄按鈕出現
+    // 最小寬1200px
+    @media screen and (min-width: 1260px) {
+        .Side_Position {
+            #Side {
+                // 收合按鈕
+                button{
+                    // 當寬度 >1200px 時隱藏按鈕
+                    display: none;
+                }
+            }
+        }
+    }
+    // 側邊欄隱藏
+    // 最大寬1200px
+    @media screen and (max-width: 1260px) {
+        .Side_Position {
+            #Side {
+                right: -60px;
+                transition: right 600ms ease;
+            }
+        }
+    }
+
     @media screen and (max-width: 768px) {
         .Side_Position {
             bottom: 0;
+            padding-top: 0 !important;
+            height: 100px;
+            // background: yellowgreen;
             #Side {
                 position: static;
                 width: 100%;
-                height: 60px;
+                right: 0;
+                margin-left: 16px;
+
+                margin-top: 60px;  // 隱藏
+                transition: .6s;
+
                 a {
                     float: left;
                 }
@@ -167,6 +205,25 @@
                 a.GoTel {
                     display: block;
                 }
+
+                // 收合按鈕
+                button{
+                    position: relative;
+                    top: 0;
+                    left: 16px;
+                    width: 94px;
+                    height: 40px;
+                    border-radius: 5px 5px 0 0;
+                }
+                [tooltip]::before,
+                [tooltip]::after {
+                    display: none;
+                }
+            }
+
+            // 側邊欄出現
+            .Show{
+                margin-top: 0 !important;
             }
         }
     }
@@ -184,35 +241,8 @@
             }
         }
     }
-
-    // 側邊欄按鈕出現
-    // 最小寬1200px
-    @media screen and (min-width: 1200px) {
-        .Side_Position {
-            #Side {
-                // 收合按鈕
-                button{
-                    // 當寬度 >1200px 時隱藏按鈕
-                    display: none;
-                }
-            }
-        }
-    }
-    // 側邊欄隱藏
-    // 最大寬1200px
-    @media screen and (max-width: 1200px) {
-        .Side_Position {
-            #Side {
-                right: -60px;
-                transition: right 600ms ease;
-            }
-        }
-    }
 }
 
-
-// 側邊欄出現
-.Show{ right: 0 !important; }
 
 // 首頁區塊設定
 .section {
