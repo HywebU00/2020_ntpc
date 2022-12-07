@@ -25,7 +25,7 @@
     <div class="announce" style="display: none;">
         <a href="#" class="close icon-cancel-3">Close</a>
         <div class="content">
-            <h2>公告</h2>      
+            <h2>公告</h2>
             <p>春節期間，財政部稅務入口網及本處官網僅提供查調服務，申辦作業於上班日再行分案辦理。</p>
         </div>
     </div>
@@ -44,6 +44,7 @@
             <section class="Side_Wrap">
                 <div class="Side_Position">
                     <div id="Side">
+                        <button type="button" name="展開" class="open-side icon-left-open">展開</button>
                         <a href="#" title="" class=""><span>首頁</span></a>
                         <a href="#" title="" class=""><span>意見信箱</span></a>
                         <a href="#" title="" class=""><span>English</span></a>
@@ -100,7 +101,8 @@
                         </div>
                     </div>
                 </section>
-                <section class="section col-6 Box MainInfo" style="background-image: url(images/Front/Front-bg-02.jpg);">
+                <section class="section col-6 Box MainInfo"
+                    style="background-image: url(images/Front/Front-bg-02.jpg);">
                     <div class="Left wow bounceInRight">
                         <a href="" title=""><img src="images/Front/Front_Box02-right.png" alt=""></a>
                     </div>
@@ -131,7 +133,8 @@
                         </div>
                     </div>
                 </section>
-                <section class="section col-6 Box MainInfo" style="background-image: url(images/Front/Front-bg-02-2.jpg);">
+                <section class="section col-6 Box MainInfo"
+                    style="background-image: url(images/Front/Front-bg-02-2.jpg);">
                     <div class="Left wow bounceInRight">
                         <a href="" title=""><img src="images/Front/Front_Box02-right2.png" alt=""></a>
                     </div>
@@ -162,7 +165,8 @@
                         </div>
                     </div>
                 </section>
-                <section class="section col-6 Box MainInfo" style="background-image: url(images/Front/Front-bg-02-3.jpg);">
+                <section class="section col-6 Box MainInfo"
+                    style="background-image: url(images/Front/Front-bg-02-3.jpg);">
                     <div class="Left wow bounceInRight">
                         <a href="" title=""><img src="images/Front/Front_Box02-right3.png" alt=""></a>
                     </div>
@@ -194,16 +198,16 @@
                     </div>
                 </section>
                 <section class="section col-6 Box">
-                    <a href="#" title="繳稅之行動支付App"><img src="images/Front/Front-bg-03.jpg" alt=""></a>   
+                    <a href="#" title="繳稅之行動支付App"><img src="images/Front/Front-bg-03.jpg" alt=""></a>
                 </section>
                 <section class="section col-6 Box">
-                    <a href="#" title="稅保法，保護你不可不知"><img src="images/Front/Front-bg-04.jpg" alt=""></a>   
+                    <a href="#" title="稅保法，保護你不可不知"><img src="images/Front/Front-bg-04.jpg" alt=""></a>
                 </section>
                 <section class="section col-6 Box">
-                    <a href="#" title="免書證謄本"><img src="images/Front/Front-bg-05.jpg" alt=""></a>   
+                    <a href="#" title="免書證謄本"><img src="images/Front/Front-bg-05.jpg" alt=""></a>
                 </section>
                 <section class="section col-6 Box">
-                    <a href="#" title="雲端發票"><img src="images/Front/Front-bg-06.jpg" alt=""></a>   
+                    <a href="#" title="雲端發票"><img src="images/Front/Front-bg-06.jpg" alt=""></a>
                 </section>
                 <!-- End -->
             </div>
@@ -220,7 +224,7 @@
                     <li><a href="javascript:;" title="">政府網站資料開放宣告</a></li>
                 </ul>
                 <p>服務時間：星期一至五 8:00 至 18:00 (中午不打烊)
-                   </br>版權所有©Copyright 新北市政府稅捐稽徵處
+                    </br>版權所有©Copyright 新北市政府稅捐稽徵處
                 </p>
             </div>
             <div class="footer_icon">
@@ -260,17 +264,18 @@
     <script>
         wow = new WOW({
             animateClass: 'animated',
-            offset:       100,
-            callback:     function(box) {
+            offset: 100,
+            callback: function (box) {
                 console.log("WOW: animating <" + box.tagName.toLowerCase() + ">")
             }
         });
         wow.init();
-        $('.moar').click(function(event) {
+        $('.moar').click(function (event) {
             var section = document.createElement('section');
             section.className = 'section--purple wow fadeInDown';
             this.parentNode.insertBefore(section, this);
         });
     </script>
 </body>
+
 </html>
