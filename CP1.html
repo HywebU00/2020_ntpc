@@ -22,8 +22,10 @@
     <!-- WOW動畫-->
     <link href="vendor/wow/animate.css" rel="stylesheet">
     <!-- Add fancyBox main JS and CSS files -->
-    <link href="vendor/fancyBox/jquery.fancybox.css?v=2.1.5" rel="stylesheet" media="screen" />
-    <link rel="stylesheet" type="text/css" href="js/fancyBox/jquery.fancybox.css?v=2.1.5" media="screen" />
+    <!-- <link href="vendor/fancyBox/jquery.fancybox.css?v=2.1.5" rel="stylesheet" media="screen" />
+    <link rel="stylesheet" type="text/css" href="js/fancyBox/jquery.fancybox.css?v=2.1.5" media="screen" /> -->
+    <!-- 燈箱facybox -->
+    <link rel="stylesheet" type="text/css" href="vendor/fancybox/jquery.fancybox.min.css">
     <!-- hyui -->
     <link href="css/hyui.css" rel="stylesheet">
 </head>
@@ -50,12 +52,12 @@
                         <li>
                             <a href="#" title="" class="People">分眾</a>
                             <ul>
-                              <li><a href="#" title="">兒童版</a></li>
-                              <li><a href="#" title="">身障人士</a></li>
-                              <li><a href="#" title="">銀髮族</a></li>
-                              <li><a href="#" title="">地政士</a></li>
-                              <li><a href="#" title="">新住民</a></li>
-                          </ul>  
+                                <li><a href="#" title="">兒童版</a></li>
+                                <li><a href="#" title="">身障人士</a></li>
+                                <li><a href="#" title="">銀髮族</a></li>
+                                <li><a href="#" title="">地政士</a></li>
+                                <li><a href="#" title="">新住民</a></li>
+                            </ul>  
                         </li>
                     </ul>
                 </nav>
@@ -562,37 +564,25 @@
                         <div class="img-container">
                             <a href="#" title="">
                                 <span class="caption">圖說1</span>
-                                <div class="imgOuter4-3"><img src="http://placehold.it/100x200" alt="" class="cover"></div>
+                                <div class="imgOuter4-3"><img src="https://assets.imgix.net/examples/kingfisher.jpg?w=800&h=480&fit=crop&auto=format%2Cenhance&usm=20" alt="" class="cover"></div>
                             </a>
                         </div>
                         <div class="img-container">
                             <a href="#" title="">
                                 <span class="caption">圖說2字很多字很多字很多字很多字很多字很多字很多字很多</span>
-                                <div class="imgOuter4-3"><img src="http://placehold.it/300x300" alt="" class="cover"></div>
+                                <div class="imgOuter4-3"><img src="https://assets.imgix.net/examples/puffins.jpg?w=800&h=480&fit=crop&auto=format%2Cenhance&usm=20" alt="" class="cover"></div>
                             </a>
                         </div>
                         <div class="img-container">
                             <a href="#" title="">
                                 <span class="caption">圖說3</span>
-                                <div class="imgOuter4-3"><img src="http://placehold.it/300x400" alt="" class="cover"></div>
+                                <div class="imgOuter4-3"><img src="https://assets.imgix.net/unsplash/transport.jpg?w=800&h=480&fit=crop&auto=format%2Cenhance&usm=20" alt="" class="cover"></div>
                             </a>
                         </div>
                         <div class="img-container">
                             <a href="#" title="">
                                 <span class="caption">圖說4</span>
-                                <div class="imgOuter4-3"><img src="http://placehold.it/400x300" alt="" class="cover"></div>
-                            </a>
-                        </div>
-                        <div class="img-container">
-                            <a href="#" title="">
-                                <span class="caption">圖說5</span>
-                                <div class="imgOuter4-3"><img src="http://placehold.it/400x300" alt="" class="cover"></div>
-                            </a>
-                        </div>
-                        <div class="img-container">
-                            <a href="#" title="">
-                                <span class="caption">圖說6</span>
-                                <div class="imgOuter4-3"><img src="http://placehold.it/400x300" alt="" class="cover"></div>
+                                <div class="imgOuter4-3"><img src="https://assets.imgix.net/unsplash/bridge.jpg?w=800&h=480&fit=crop&auto=format%2Cenhance&usm=20" alt="" class="cover"></div>
                             </a>
                         </div>
                     </div>
@@ -602,27 +592,39 @@
                     <h3>燈箱照片</h3>
                     <div class="cp_slider">
                         <div class="imgOuter">
-                            <a href="https://assets.imgix.net/examples/kingfisher.jpg?w=800&h=480&fit=crop&auto=format%2Cenhance&usm=20" data-caption="補單專機操作測拍">
-                                <img src="https://assets.imgix.net/examples/kingfisher.jpg?w=800&h=480&fit=crop&auto=format%2Cenhance&usm=20" alt="">
+                            <a href="images/demo/01.jpg" data-fancybox="images" data-caption="補單專機操作測拍">
+                                <img src="images/demo/01.jpg" alt="">
                             </a>
                             <p class="infotxt">補單專機操作測拍</p>
                         </div>
                         <div class="imgOuter">
-                            <a href="https://assets.imgix.net/examples/puffins.jpg?w=800&h=480&fit=crop&auto=format%2Cenhance&usm=20" data-caption="很多很多的字很多很多的字很多很多的字">
-                                <img src="https://assets.imgix.net/examples/puffins.jpg?w=800&h=480&fit=crop&auto=format%2Cenhance&usm=20" alt=""> </a>
+                            <a href="images/demo/02.jpg" data-fancybox="images" data-caption="很多很多的字很多很多的字很多很多的字">
+                                <img src="images/demo/02.jpg" alt=""> </a>
                             <p class="infotxt">很多很多的字很多很多的字很多很多的字很多很多的字很多很多的字很多很多的字</p>
                         </div>
                         <div class="imgOuter">
-                            <a href="https://assets.imgix.net/unsplash/transport.jpg?w=800&h=480&fit=crop&auto=format%2Cenhance&usm=20" data-caption="第三張圖說">
-                                <img src="https://assets.imgix.net/unsplash/transport.jpg?w=800&h=480&fit=crop&auto=format%2Cenhance&usm=20" alt="">
+                            <a href="images/demo/03.jpg" data-fancybox="images" data-caption="第三張圖說">
+                                <img src="images/demo/03.jpg" alt="">
                             </a>
                             <p class="infotxt">第三張圖說</p>
                         </div>
                         <div class="imgOuter">
-                            <a href="https://assets.imgix.net/unsplash/bridge.jpg?w=800&h=480&fit=crop&auto=format%2Cenhance&usm=20" data-caption="第四張圖說">
-                                <img src="https://assets.imgix.net/unsplash/bridge.jpg?w=800&h=480&fit=crop&auto=format%2Cenhance&usm=20" alt="">
+                            <a href="images/demo/04.jpg" data-fancybox="images" data-caption="第四張圖說">
+                                <img src="images/demo/04.jpg" alt="">
                             </a>
                             <p class="infotxt">第四張圖說</p>
+                        </div>
+                        <div class="imgOuter">
+                            <a href="images/demo/05.jpg" data-fancybox="images" data-caption="第五張圖說">
+                                <img src="images/demo/05.jpg" alt="">
+                            </a>
+                            <p class="infotxt">第五張圖說</p>
+                        </div>
+                        <div class="imgOuter">
+                            <a href="images/demo/06.jpg" data-fancybox="images" data-caption="第六張圖說">
+                                <img src="images/demo/06.jpg" alt="">
+                            </a>
+                            <p class="infotxt">第六張圖說</p>
                         </div>
                     </div>
                 </div>
@@ -813,7 +815,7 @@
                         <li><a href="javascript:;" title="">政府網站資料開放宣告</a></li>
                     </ul>
                     <p>服務時間：星期一至五 8:00 至 18:00 (中午不打烊)
-                       </br>版權所有©Copyright 新北市政府稅捐稽徵處
+                    </br>版權所有©Copyright 新北市政府稅捐稽徵處
                     </p>
                 </div>
                 <div class="footer_icon">
@@ -837,10 +839,12 @@
     <!-- slick js -->
     <script src="vendor/slick/slick.min.js"></script>
     <script src="vendor/slick/slick-lightbox.js "></script>
+    <!-- fancy -->
+    <script src='vendor/fancybox/jquery.fancybox.min.js'></script>
     <!--fancy box-->
-    <script src="vendor/fancyBox/jquery.fancybox.js?v=2.1.5"></script>
-    <script src="vendor/fancyBox/fanctbox_set.js"></script>
-    <script>
+    <!-- <script src="vendor/fancyBox/jquery.fancybox.js?v=2.1.5"></script>
+    <script src="vendor/fancyBox/fanctbox_set.js"></script> -->
+    <!-- <script>
         $(function(){
             $('.fancybox-buttons').fancybox({
                 openEffect: 'none',
@@ -859,7 +863,7 @@
                 }
             });
         })
-    </script>
+    </script> -->
     <!-- hyUI -->
     <script src="js/hyui.js"></script>
     <!-- 客製js -->
