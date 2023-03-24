@@ -68,6 +68,10 @@ input[disable].content-box-switch{
         @include gutter();
         >div>span{ margin-right: 1em;}
         input+span{ margin: 0 .5em 0 .25em; }
+        input+span+ul{
+            margin-left: 20px;
+            padding-top: 10px;
+        }
         div>a{
             // margin: 0 1em 0 0;
             text-decoration: underline;

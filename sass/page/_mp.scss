@@ -799,7 +799,7 @@
     .container {
         //@include gutter(); gutter 代表左右要留白
     }
-    .Tax_AD {
+    .Tax_AD{
         @include make-xs-column(12);
         @include make-sm-column(6); //768px  width:50%
         @include make-md-column(6); //992px  width:50%
@@ -1081,7 +1081,7 @@
         height: 100%;
     }
 }
-.imgOuter4-3 {
+.imgOuter3-4 {
     @include aspect-ratio(3, 4);
 }
 //設定比例 3:4
