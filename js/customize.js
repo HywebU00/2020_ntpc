@@ -48,14 +48,14 @@ $(function() {
         // fade: true,
         // cssEase: 'ease'
         centerMode: true,
-        centerPadding: '60px',
+        centerPadding: '0px',
         slidesToShow: 1,
         responsive: [{
             breakpoint: 768,
             settings: {
                 // arrows: false,
                 centerMode: true,
-                centerPadding: '40px',
+                centerPadding: '0px',
                 slidesToShow: 1
             }
         }, {
@@ -63,7 +63,7 @@ $(function() {
             settings: {
                 // arrows: false,
                 centerMode: true,
-                centerPadding: '40px',
+                centerPadding: '0px',
                 slidesToShow: 1
             }
         }]
