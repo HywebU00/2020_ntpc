@@ -177,7 +177,6 @@
                     padding: 0;
                     &:last-child{
                         padding: 10px 50px 10px 20px;
-                        // padding-right: 50px;
                     }
                 }
                 .text{
@@ -212,8 +211,6 @@
                 img{}
                 .Text{}
             }
-            .slick-prev,
-            .slick-next{}
             .slick-prev{
                 left: 0;
             }
@@ -233,6 +230,9 @@
                     flex-wrap: wrap;
                     .col{
                         flex: 1 1 100%;
+                        &:last-child{
+                            padding: 10px 50px;
+                        }
                     }
                     img{
                         display: block;
