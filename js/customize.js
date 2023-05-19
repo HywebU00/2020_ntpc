@@ -39,34 +39,38 @@ $(function() {
     });
 
     // 節稅資訊  -----------------------------------------------
-    $('.singleSlider_TaxReduce').slick({
-        dots: true,
-        arrow: true,
-        // infinite: true,
-        // speed: 500,
-        // autoplay: false,
-        // fade: true,
-        // cssEase: 'ease'
-        centerMode: true,
-        centerPadding: '0px',
-        slidesToShow: 1,
-        responsive: [{
-            breakpoint: 768,
-            settings: {
-                // arrows: false,
+    $('.singleSlider_TaxReduce').each(function() {
+        if(!$(this).hasClass('taxInfo')) {
+            $(this).slick({
+                dots: true,
+                arrow: true,
+                // infinite: true,
+                // speed: 500,
+                // autoplay: false,
+                // fade: true,
+                // cssEase: 'ease'
                 centerMode: true,
                 centerPadding: '0px',
-                slidesToShow: 1
-            }
-        }, {
-            breakpoint: 480,
-            settings: {
-                // arrows: false,
-                centerMode: true,
-                centerPadding: '0px',
-                slidesToShow: 1
-            }
-        }]
+                slidesToShow: 1,
+                responsive: [{
+                    breakpoint: 768,
+                    settings: {
+                        // arrows: false,
+                        centerMode: true,
+                        centerPadding: '0px',
+                        slidesToShow: 1
+                    }
+                }, {
+                    breakpoint: 480,
+                    settings: {
+                        // arrows: false,
+                        centerMode: true,
+                        centerPadding: '0px',
+                        slidesToShow: 1
+                    }
+                }]
+            });
+        }
     });
     // 以下是IE8以下的版本
     if (document.all && document.querySelector && !document.addEventListener) {

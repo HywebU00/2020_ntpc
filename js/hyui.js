@@ -437,6 +437,42 @@ $(function() {
     tabSet();
 
     function tabSet() { //頁籤
+        function slickContent(obj) {
+            if(obj && $(obj) && !$(obj).hasClass('slick-initialized')) {
+                $(obj).slick({
+                    dots: true,
+                    arrow: true,
+                    // infinite: true,
+                    // speed: 500,
+                    // autoplay: false,
+                    // fade: true,
+                    // cssEase: 'ease'
+                    centerMode: true,
+                    centerPadding: '0px',
+                    slidesToShow: 1,
+                    responsive: [{
+                        breakpoint: 768,
+                        settings: {
+                            // arrows: false,
+                            centerMode: true,
+                            centerPadding: '0px',
+                            slidesToShow: 1
+                        }
+                    }, {
+                        breakpoint: 480,
+                        settings: {
+                            // arrows: false,
+                            centerMode: true,
+                            centerPadding: '0px',
+                            slidesToShow: 1
+                        }
+                    }]
+                });
+            } else {
+                $(obj).slick('unslick');
+                slickContent($(obj));
+            }
+        }
         $('.tabs').each(function() {
             var _tab = $(this),
                 _tabItem = _tab.find('.tabItem'),
@@ -444,10 +480,11 @@ $(function() {
                 _tabContent = _tab.find('.tabContent'),
                 tabwidth = _tab.width(),
                 tabItemHeight = _tabItem.outerHeight(),
-                tabContentHeight = _tab.find('.active').next().innerHeight(),
                 tiGap = 5,
                 tabItemLength = _tabItem.length,
                 tabItemWidth;
+            slickContent(_tab.find('.active').next('.tabContent').find('.singleSlider_TaxReduce'));
+            var tabContentHeight = _tab.find('.active').next().innerHeight();
             _tab.find('.active').next('.tabContent').show();
             if (ww >= wwSmall) {
                 _tabContent.css('top', tabItemHeight);
@@ -471,17 +508,26 @@ $(function() {
                     tvp = _tab.offset().top,
                     tabIndex = _tabItemNow.index() / 2,
                     scollDistance = tvp + tabItemHeight * tabIndex - hh;
-                _tabItem.removeClass('active');
+                _tab.find('.tabItem').each(function(){
+                    if($(this).hasClass('active')) {
+                        _tabItem = $(this);
+                        $(this).removeClass('active');
+                    }
+                });
                 _tabItemNow.addClass('active');
-                if (ww <= wwSmall) {
-                    _tabItem.not('.active').next().slideUp();
-                    _tabItemNow.next().slideDown();
-                    $("html,body").stop(true, false).animate({ scrollTop: scollDistance });
-                } else {
-                    _tabItem.not('.active').next().hide();
-                    _tabItemNow.next().show();
-                    tabContentHeight = _tabItemNow.next().innerHeight();
-                    _tab.height(tabContentHeight + tabItemHeight);
+                if(_tabItemNow.html() != _tabItem.html()) {
+                    if (ww <= wwSmall) {
+                        _tabItem.next().slideUp();
+                        _tabItemNow.next().slideDown();
+                        $("html,body").stop(true, false).animate({ scrollTop: scollDistance });
+                    } else {
+                        _tabItem.next().hide();
+                        _tabItemNow.next().show();
+                        slickContent(_tabItemNow.next().find('.singleSlider_TaxReduce'));
+                        tabContentHeight = _tabItemNow.next().innerHeight();
+                        
+                        _tab.height(tabContentHeight + tabItemHeight);
+                    }
                 }
                 e.preventDefault();
             }
