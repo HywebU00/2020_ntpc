@@ -267,12 +267,12 @@ $(function() {
     $('.btn-fatfooter').click(function(e) {
         $(this).parent('.container').find('nav>ul>li>ul').stop(true, true).slideToggle(function() {
             if ($(this).is(':visible')) {
-                // $('.btn-fatfooter').html("收合");
+                $('.btn-fatfooter').html("<b>收合選單</b>");
                 $('.btn-fatfooter').attr('name', '收合選單');
                 $('.btn-fatfooter').removeClass('icon-down-open');
                 $('.btn-fatfooter').addClass('icon-up-open');
             } else {
-                // $('.btn-fatfooter').html("展開");
+                $('.btn-fatfooter').html("<b>展開選單</b>");
                 $('.btn-fatfooter').attr('name', '展開選單');
                 $('.btn-fatfooter').removeClass('icon-up-open');
                 $('.btn-fatfooter').addClass('icon-down-open');
@@ -611,7 +611,9 @@ $(function() {
     $('.modal_overlay').hide(); //隱藏透明底
     //按鈕動作
     $('.openModal').click(function(e) {
-        var index = $('.openModal').index(this);
+        //var index = $('.openModal').index(this);
+		var index = $(this).closest('.col').attr('id');
+		//alert(index);
         $('#modal_lightbox').html($('#modal_lightbox_' + index).html());
         $('.modal').prepend('<button type="button" class="close">關閉</button><script>$(function() {$(".close").focus();});</script>'); //新增關閉按鈕
         //點選關閉按鈕及透明底都可關閉
