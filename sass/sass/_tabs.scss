@@ -194,6 +194,14 @@
                         width: auto;
                         padding: 10px 0;
                     }
+
+                    &.col-2{
+                        flex-wrap: wrap;
+                        a{
+                            flex: 1 1 45%;
+                            margin-bottom: 4px;
+                        }
+                    }
                 }
 
                 h3{
@@ -236,6 +244,16 @@
                     }
                     img{
                         display: block;
+                    }
+                    .btn_grp{
+                        &.col-2{
+                            a{
+                                flex: 1 1 100%;
+                                &.btn span{
+                                    width: 100%;
+                                }
+                            }
+                        }
                     }
                 }
             }

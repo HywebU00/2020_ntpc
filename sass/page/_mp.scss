@@ -760,7 +760,8 @@
             // a:nth-child(1),
             // a:nth-child(2),
             // a:nth-child(3){}
-            a:nth-child(1) {
+            a:nth-child(1),
+            a:nth-child(4){
                 background: #4b90ba;
             }
             a:nth-child(2) {
