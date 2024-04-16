@@ -2631,19 +2631,32 @@ a.Download {
 			&:nth-child(1) {
 				background: #204066;
 			}
-
 			&:nth-child(2) {
 				background: #007fa8;
 			}
-
 			&:nth-child(3) {
 				background: #19a07d;
 			}
+			&:nth-child(4) {
+				background: #2063b5;
+			}
+			&:nth-child(5) {
+				background: #1492cc;
+			}
+			&:nth-child(6) {
+				background: #0dbd8f;
+			}
+			transition: .3s ease;
 
 			&:hover,
 			&:focus,
 			&.active {
-				background: darken($primaryColor, 30);
+				// background: darken($primaryColor, 30);
+				background: #fff;
+				box-shadow: inset 0 0 0 3px darken($primaryColor, 30);
+				a{
+					color: darken($primaryColor, 30);
+				}
 			}
 		}
 	}
