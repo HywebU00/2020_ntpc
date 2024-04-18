@@ -6477,11 +6477,11 @@ body::-webkit-scrollbar-track {
 .singleSlider-Video .img-container:before {
   display: block;
   content: "";
-  padding-top: 75%;
+  /* padding-top: 75%; */
 }
 .singleSlider-Video .img-container img {
   display: block;
-  position: absolute;
+  /* sposition: absolute; */
   top: 0;
   bottom: 0;
   right: 0;
