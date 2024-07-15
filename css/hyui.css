@@ -5772,6 +5772,17 @@ body::-webkit-scrollbar-track {
   border-radius: 5px;
   overflow: hidden;
 }
+.col-3-9 .Tax_Info a {
+  display: grid;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.col-3-9 .Tax_Info a:nth-child(2) {
+  margin: 8px 0;
+}
+.col-3-9 .Tax_Info a img {
+  width: 100%;
+}
 .col-3-9 .Tax_News {
   float: left;
   width: 100%;
@@ -6027,6 +6038,25 @@ body::-webkit-scrollbar-track {
   height: 100%;
 }
 
+.imgOuter3-1 {
+  position: relative;
+  overflow: hidden;
+}
+.imgOuter3-1:before {
+  display: block;
+  content: "";
+  padding-top: 33.3333333333%;
+}
+.imgOuter3-1 img {
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+}
+
 .imgOuter3-4 {
   position: relative;
   overflow: hidden;
@@ -6063,6 +6093,10 @@ body::-webkit-scrollbar-track {
   right: 0;
   left: 0;
   margin: auto;
+}
+.imgOuter4-1 img {
+  width: 100%;
+  height: 100%;
 }
 
 .imgOuter4-3 {
@@ -6477,11 +6511,11 @@ body::-webkit-scrollbar-track {
 .singleSlider-Video .img-container:before {
   display: block;
   content: "";
-  /* padding-top: 75%; */
+  padding-top: 75%;
 }
 .singleSlider-Video .img-container img {
   display: block;
-  /* sposition: absolute; */
+  position: absolute;
   top: 0;
   bottom: 0;
   right: 0;
