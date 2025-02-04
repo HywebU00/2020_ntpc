@@ -1374,7 +1374,7 @@ img.img_circle {
 .example-1 .tabContent.Tax_Reduce .singleSlider_TaxReduce .img-container p {
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 6;
+  -webkit-line-clamp: 5;
   overflow: hidden;
 }
 .example-1 .tabContent.Tax_Reduce .singleSlider_TaxReduce .slick-prev {
@@ -6230,7 +6230,7 @@ body::-webkit-scrollbar-track {
 }
 .singleSlider .slick-dots {
   bottom: initial;
-  margin-top: 0.3em;
+  margin-top: 1em;
 }
 .singleSlider .slick-dots li.slick-active button:before {
   color: #f75255;
@@ -6261,6 +6261,58 @@ body::-webkit-scrollbar-track {
     right: 0;
     top: 50%;
   }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.slick-control {
+  display: block;
+  margin: 10px auto;
+  padding: 10px 20px;
+  background-color: #288177;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.slick-control:hover, .slick-control:focus-visible {
+  background-color: #226d65;
+}
+
+ul.slick-dots button {
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+ul.slick-dots button:hover, ul.slick-dots button:focus-visible {
+  border: solid 3px #f75255;
+}
+ul.slick-dots button::before {
+  width: 6px;
+  position: static;
+  height: 6px;
+  border-radius: 50%;
+  background: #333;
+}
+ul.slick-dots li.slick-active button::before {
+  background: #f75255;
+}
+ul.slick-dots li button:before,
+ul.slick-dots li.slick-active button:before {
+  border: none;
 }
 
 .singleSlider_TaxReduce {
@@ -6374,6 +6426,7 @@ body::-webkit-scrollbar-track {
 }
 .singleSlider_TaxReduce .slick-dots {
   bottom: initial;
+  margin-top: 1em;
 }
 .singleSlider_TaxReduce .slick-dots li.slick-active button:before {
   color: #f75255;
@@ -6444,6 +6497,9 @@ body::-webkit-scrollbar-track {
   bottom: 0;
   right: 0;
   box-shadow: 0 0px 0px 3px #70d2c7 inset;
+}
+.adSlider .slick-dots {
+  width: calc(100% - 4em);
 }
 .adSlider .img-container {
   width: 165px;
@@ -10309,7 +10365,7 @@ a.Download img {
   border: solid 3px #fff;
   transition: border 300ms ease;
 }
-.slick-dots button:hover:before, .slick-dots button:focus:before {
+.slick-dots button:hover, .slick-dots button:focus {
   border: solid 3px #f75255;
 }
 

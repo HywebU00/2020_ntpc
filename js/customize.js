@@ -84,40 +84,38 @@ $(function() {
             cssEase: 'ease'
         });
     }
-    // 廣告slider  --------------------------------------------
-    $('.adSlider').slick({
-        dots: false,
-        infinite: true,
-        speed: 300,
-        slidesToShow: 6,
-        slidesToScroll: 1,
-        autoplay: true,
-        arrow: true,
-        responsive: [{
-            breakpoint: 1024,
-            settings: {
-                slidesToShow: 4,
-                slidesToScroll: 4,
-                infinite: true,
-                dots: false,
-                arrows: true
-            }
-        }, {
-            breakpoint: 768,
-            settings: {
-                slidesToShow: 3,
-                slidesToScroll: 3,
-                arrows: true
-            }
-        }, {
-            breakpoint: 575,
-            settings: {
-                slidesToShow: 2,
-                slidesToScroll: 2,
-                arrows: true
-            }
-        }]
-    });
+    // // 廣告slider  --------------------------------------------
+    // $('.adSlider').slick({
+    //     dots: false,
+    //     infinite: true,
+    //     speed: 300,
+    //     slidesToShow: 6,
+    //     slidesToScroll: 1,
+    //     autoplay: true,
+    //     autoplaySpeed: 4000, // 延長播放時間至 4 秒，提供更好的可讀性
+    //     arrow: true,
+    //     accessibility: true,
+	// 	adaptiveHeight: true,
+    //     responsive: [{
+    //         breakpoint: 1024,
+    //         settings: {
+    //             slidesToShow: 4,
+    //             slidesToScroll: 4,
+    //         }
+    //     }, {
+    //         breakpoint: 768,
+    //         settings: {
+    //             slidesToShow: 3,
+    //             slidesToScroll: 3,
+    //         }
+    //     }, {
+    //         breakpoint: 575,
+    //         settings: {
+    //             slidesToShow: 2,
+    //             slidesToScroll: 2,
+    //         }
+    //     }]
+    // });
     // 相關照片  -----------------------------------------------
     $('.Multiple_slider').slick({
         // dots: true,
@@ -456,7 +454,90 @@ $(function() {
     });
 });
 
+$(document).ready(function () {
+    // 廣告slider  --------------------------------------------
+    $('.adSlider').slick({
+        dots: false,
+        infinite: true,
+        // speed: 300,
+        slidesToShow: 6,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 4000, // 延長播放時間至 4 秒，提供更好的可讀性
+        arrow: true,
+        accessibility: true,
+		adaptiveHeight: true,
+        responsive: [{
+            breakpoint: 1024,
+            settings: {
+                slidesToShow: 4,
+                slidesToScroll: 4,
+            }
+        }, {
+            breakpoint: 768,
+            settings: {
+                slidesToShow: 3,
+                slidesToScroll: 3,
+            }
+        }, {
+            breakpoint: 575,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2,
+            }
+        }]
+    });
 
+    // 控制自動播放的變數
+	let isPlaying = true;
+
+    // 更新輪播狀態提示
+	function updateCarouselStatus(currentSlide, totalSlides) {
+		$("#carousel-status").text(
+			`目前顯示第 ${currentSlide} 張投影片，共 ${totalSlides} 張`
+		);
+	}
+	// 處理暫停/播放按鈕點擊
+	$("#toggle-autoplay").click(function () {
+		if (isPlaying) {
+			// 暫停播放
+			$(".adSlider").slick("slickPause");
+			$(this)
+				.text("開始播放")
+				.attr("aria-label", "開始自動播放輪播")
+				.attr("aria-pressed", "true");
+		} else {
+			// 開始播放
+			$(".adSlider").slick("slickPlay");
+			$(this)
+				.text("暫停播放")
+				.attr("aria-label", "暫停自動播放輪播")
+				.attr("aria-pressed", "false");
+		}
+		isPlaying = !isPlaying;
+	});
+
+    // 監聽輪播變化
+	$(".adSlider").on("afterChange", function (event, slick, currentSlide) {
+		updateCarouselStatus(currentSlide + 1, slick.slideCount);
+	});
+
+	// 鍵盤控制
+	$(".adSlider").on("keydown", function (e) {
+		switch (e.key) {
+			case "ArrowLeft":
+				$(this).slick("slickPrev");
+				break;
+			case "ArrowRight":
+				$(this).slick("slickNext");
+				break;
+			case "Space":
+				$("#toggle-autoplay").click();
+				e.preventDefault();
+				break;
+		}
+	});
+});
 
 
 

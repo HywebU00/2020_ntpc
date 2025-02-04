@@ -1190,7 +1190,7 @@
     }
     .slick-dots {
         bottom: initial;
-        margin-top: .3em;
+        margin-top: 1em;
 
         // button{
         //     width: 21px;
@@ -1262,6 +1262,98 @@
         }
     }
 }
+
+// 無障礙導航按鈕樣式 --------------------------------------------------
+// .slider-nav {
+// 	text-align: center;
+// 	margin-top: 10px;
+// }
+
+// .slider-nav button {
+// 	margin: 0 5px;
+// 	padding: 5px 10px;
+// 	background: #007bff;
+// 	color: white;
+// 	border: none;
+// 	border-radius: 3px;
+// 	cursor: pointer;
+// }
+
+// .slider-nav button:hover,
+// .slider-nav button:focus {
+// 	background-color: #0056b3;
+// 	outline: 3px solid #0056b3;
+// 	outline-offset: 2px;
+// }
+
+// 隱藏輔助性文字，但保持螢幕閱讀器可讀
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	border: 0;
+}
+
+// 暫停播放
+.slick-control {
+	display: block;
+	margin: 10px auto;
+	padding: 10px 20px;
+	background-color: darken($primaryColor, 30);
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+    transition: .3s;
+    &:hover, &:focus-visible{
+        background-color: darken($primaryColor, 35);
+    }
+}
+
+// 修正 dot
+ul.slick-dots{
+    button{
+        width: 20px;
+        height: 20px;
+        // background: pink;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &:hover,
+        &:focus-visible{
+            border: solid 3px #f75255;
+        }
+        &::before{
+            width: 6px;
+            position: static;
+            height: 6px;
+            border-radius: 50%;
+            background: #333;
+            // &:focus{
+            //     border: none;
+            // }
+        }
+    }
+    li.slick-active{
+        button{
+            &::before{
+                background: #f75255;
+            }
+        }
+    }
+    li button:before,
+    li.slick-active button:before{
+        border: none;
+    }
+}
+
+// --------------------------------------------------
+
 //節稅資訊
 .singleSlider_TaxReduce {
     width: 100%;
@@ -1369,6 +1461,7 @@
     }
     .slick-dots {
         bottom: initial;
+        margin-top: 1em;
     }
     .slick-dots li.slick-active button:before {
         // background: #f98385;
@@ -1482,7 +1575,7 @@
     }
 
     .slick-prev,.slick-next{
-         &:focus {
+        &:focus {
             &:before {
                 content:"";
                 position: absolute;
@@ -1496,6 +1589,9 @@
                 box-shadow: 0 0px 0px 3px $primaryColor inset;
             }
          }
+    }
+    .slick-dots{
+        width: calc(100% - 4em);
     }
 
     .img-container {

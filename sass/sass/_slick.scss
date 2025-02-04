@@ -300,9 +300,10 @@
         }
 
         &:hover, &:focus{
-            &:before{
-                border: solid 3px darken($lightColor, 10);
-            }
+            border: solid 3px darken($lightColor, 10);
+            // &:before{
+            //     border: solid 3px darken($lightColor, 10);
+            // }
         }
     }
 }
