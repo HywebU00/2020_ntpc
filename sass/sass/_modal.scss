@@ -2,70 +2,126 @@
     position: fixed;
     display: none;
     width: 800px;
-    height: 400px;
+    min-height: 400px;
+    max-height: 90vh;
     background: #FFF;
-    z-index: 99999999;
+    z-index: 100000000;
     top: 50%;
     left: 50%;
-    margin-left: -400px;
-    margin-top: -200px;
-    padding:1em 1em 1em;
-    overflow-y: scroll;
+    // margin-left: -400px;
+    // margin-top: -200px;
+    transform: translate(-50%, -50%);
+    padding: 2em 1.75em 1em;
+    overflow: hidden;
     @include box-sizing;
     @include border-radius(8px);
     @include box-shadow(1px 1px 35px RGBA(0, 0, 0, .75));
     animation: scaleUp .4s ease-out;
     h2{
-    	border-bottom: 1px solid $primaryColor;
-    	padding-bottom: .5em;
+        border-bottom: 1px solid $primaryColor;
+        padding-bottom: .5em;
     }
     .close{
-    	position:absolute;
-    	top:5px;
-    	right:5px;
-    	width:30px !important;
-    	min-width:auto;
-    	height:30px;
-    	font-size:0em;
-    	border:none;
-    	display:block;
-    	padding: 0;
-    	background:url(../images/basic/icon_close.svg) no-repeat center center;
-    	&:hover,&:focus{
-    		cursor:pointer;
-    	}
+        position:absolute;
+        top: 5px;
+        right: 5px;
+        width: 40px !important;
+        // min-width:auto;
+        height:40px;
+        font-size:0em;
+        border:none;
+        display:block;
+        padding: 0;
+        background:url(../images/basic/icon_close.svg) no-repeat center center;
+        background-size: 24px;
+        &:hover,&:focus{
+            cursor:pointer;
+        }
     }
     .Text{
-        height: 290px;
-        overflow-y: scroll;
+        min-height: 290px;
+        max-height: 70vh;
+        overflow-y: auto;
+        .note{
+            color: #d43f11;
+        }
+        + .btn_grp{
+            // 右上角全選、全部取消
+            position: absolute;
+            right: 40px;
+            top: 30px;
+            .btn{
+                padding: .25em 1em !important;
+                font-size: 90%;
+                box-shadow: none;
+                transition: .3s;
+                &:hover, &:focus, &:focus-visible{
+                    background: #333;
+                    color: #fff;
+                }
+            }
+        }
+    }
+    form + .btn_grp{
+        // 下載檔案
+        padding: 0 !important;
+        .btn._download{
+            text-align: center;
+            &:hover, &:focus, &:focus-visible{
+                color: #fff!important;
+                background: darken($primaryColor, 30);
+                border: darken($primaryColor, 15) solid 1px;
+            }
+        }
+    }
+    .form_grp{
+        .check_grp{
+            label{
+                display: flex;
+                align-items: center;
+                margin: 1em 0;
+                input[type=checkbox]{
+                    flex: 0 0 24px;
+                    width: 24px;
+                    height: 24px;
+                }
+                b{
+                    flex: 0 0 80px;
+                    color: darken($primaryColor, 30);
+                    padding: 0 4px;
+                    text-align: center;
+                }
+                span{}
+            }
+        }
     }
     @media screen and (max-width: 991px){
-        width: 500px;
-        height: 320px;
-        margin-left: -250px;
-        margin-top: -160px;
-        .Text{ height: 210px; }
+        width: 90vw;
+        // height: 320px;
+        // margin-left: -250px;
+        // margin-top: -160px;
+        // .Text{ height: 210px; }
     }
-    @media screen and (max-width: 767px){
-        width: 300px;
-        height: 420px;
-        margin-left: -150px;
-        margin-top: -210px;
-        .Text{ height: 300px; }
-    }
+    // @media screen and (max-width: 767px){
+    //     // width: 90vw;
+    //     // height: 420px;
+    //     // margin-left: -150px;
+    //     // margin-top: -210px;
+    //     // .Text{ height: 300px; }
+    // }
 }
 
 @keyframes scaleUp {
     0% {
-        transform: scale(1) translateY(-100px);
+        transform: scale(1) translate(-50%, -100%);
         opacity: 0;
     }
     10% {
-        transform: scale(1) translateY(-100px);
+        transform: scale(1) translate(-50%, -100%);
         opacity: 0;
     }
     100% {
-        transform: scale(1) translateY(0px);
+        transform: scale(1) translate(-50%, -50%);
         opacity: 1;
     }
 }

@@ -615,6 +615,7 @@ $(function() {
 		var index = $(this).closest('.col').attr('id');
 		//alert(index);
         $('#modal_lightbox').html($('#modal_lightbox_' + index).html());
+        $('.modal').show();
         $('.modal').prepend('<button type="button" class="close">關閉</button><script>$(function() {$(".close").focus();});</script>'); //新增關閉按鈕
         //點選關閉按鈕及透明底都可關閉
         $('.modal_overlay').click(closeModal);
@@ -629,6 +630,7 @@ $(function() {
     function closeModal() {
         $('#modal_lightbox').hide();
         $('.modal_overlay').hide();
+        $('.modal').hide();
         $('body').removeClass('noscroll');
 		//$('.openModal').eq(0).focus();
 		$('#DIV_TaxReduce .slick-next').focus();
