@@ -204,6 +204,21 @@ body::-webkit-scrollbar-track {
             }
         }
     }
+    // 批次下載
+    .pop_download{
+        position: absolute;
+        right: 15px;
+        top: 70px;
+        transition: right 600ms ease;
+        button{
+            @include border-radius(8px);
+            background: $secondaryColor;
+            color: #fff;
+            padding: .45em 1.125em !important;
+            border: 0;
+            font-size: 95% !important;
+        }
+    }
     @include screen('notebook') {
         .advance_search{ right: 60px; }
     }
