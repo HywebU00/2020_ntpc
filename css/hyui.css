@@ -4608,6 +4608,9 @@ footer .Link_Info .Inner_wrap {
   background: #288177;
   color: #fff !important;
 }
+.category + .pop_download {
+  margin-top: -1.75em !important;
+}
 
 .gallery .lightbox {
   position: fixed;
@@ -5008,9 +5011,9 @@ body::-webkit-scrollbar-track {
   margin-right: 1%;
 }
 .innerpage .pop_download {
-  position: absolute;
-  right: 15px;
-  top: 70px;
+  display: flex;
+  justify-content: flex-end;
+  margin: 10px 0;
   transition: right 600ms ease;
 }
 .innerpage .pop_download button {

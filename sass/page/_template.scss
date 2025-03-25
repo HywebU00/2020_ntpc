@@ -206,9 +206,12 @@ body::-webkit-scrollbar-track {
     }
     // 批次下載
     .pop_download{
-        position: absolute;
-        right: 15px;
-        top: 70px;
+        // position: absolute;
+        // right: 15px;
+        // top: 70px;
+        display: flex;
+        justify-content: flex-end;
+        margin: 10px 0;
         transition: right 600ms ease;
         button{
             @include border-radius(8px);
