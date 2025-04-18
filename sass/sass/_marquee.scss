@@ -90,8 +90,11 @@
             color:#7cb52f;
             margin-right: 15px;
         }
-        &:hover {
-            color: darken($primaryColor, 30);
+        &:hover,
+        &:focus-visible {
+            color: darken($primaryColor, 40);
+            outline: none;
+            box-shadow: 0 0 0 3px $lightColor inset;
         }
     }
 }

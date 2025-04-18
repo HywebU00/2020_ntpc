@@ -479,7 +479,7 @@ $(function() {
                 _tabItemA = _tabItem.children('a'),
                 _tabContent = _tab.find('.tabContent'),
                 tabwidth = _tab.width(),
-                tabItemHeight = _tabItem.outerHeight(),
+                tabItemHeight = _tabItem.outerHeight() + 8,
                 tiGap = 5,
                 tabItemLength = _tabItem.length,
                 tabItemWidth;

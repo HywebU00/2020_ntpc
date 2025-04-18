@@ -75,10 +75,10 @@ input[disable].content-box-switch{
         div>a{
             // margin: 0 1em 0 0;
             text-decoration: underline;
-            color: darken($primaryColor, 10);
+            color: darken($primaryColor, 40);
             &:hover, &:focus {
-               color: darken($lightColor, 10);
-               text-decoration: none;
+                color: darken($lightColor, 10);
+                text-decoration: none;
             }
         }
         .radio_grp>label>div>span{ margin-right: 1em;}
@@ -279,9 +279,10 @@ input[type="date"]:focus,
 input[type="email"]:focus,
 textarea:focus,
 select:focus {
-    border: 1px solid lighten($form-focus, 20);
-    @include box-shadow(0px 0px 0px 2px lighten($form-focus, 20));
-    outline: none;
+    // border: 1px solid lighten($form-focus, 20);
+    // @include box-shadow(0px 0px 0px 2px lighten($form-focus, 20));
+    // outline: none;
+    outline: dotted 3px $lightColor;
 }
 
 input.clean,

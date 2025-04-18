@@ -76,11 +76,11 @@
             @include box-sizing;
         }
 
-        border: solid 0px transparent;
+        // border: solid 0px transparent;
         transition: all 300ms ease;
         &:hover, &:focus{
             box-shadow: none;
-            border: solid 3px $lightColor;
+            // border: dotted 3px $lightColor;
         }
     }
     @media screen and (max-width: 767px) {

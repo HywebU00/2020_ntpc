@@ -15,7 +15,13 @@ table {
         word-break: break-all;
         padding: .25em;
         a {
+            display: inline-block;
             word-break: break-all;
+            // outline: dotted 3px $lightColor;
+            // border: dotted 3px $lightColor;
+            // &:focus-visible{
+            //     outline: dotted 3px $lightColor;
+            // }
         }
     }
     th {
@@ -104,6 +110,8 @@ table.table_penetrate{
     table{
         width:100%;
         min-width:545px;
-        td{ white-space: nowrap; }
+        td{
+            white-space: nowrap;
+        }
     }
 }

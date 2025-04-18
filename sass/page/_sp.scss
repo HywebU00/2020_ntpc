@@ -445,7 +445,7 @@
 
 	.Now {
 		h3 {
-			background: darken($primaryColor, 30);
+			background: darken($primaryColor, 40);
 			color: #fff;
 		}
 
@@ -461,7 +461,7 @@
 		.Oct,
 		.Nov,
 		.Dec {
-			border: solid 1px darken($primaryColor, 30);
+			border: solid 1px darken($primaryColor, 40);
 		}
 	}
 }
@@ -515,7 +515,7 @@
 	&:focus,
 	&:active {
 		color: #fff;
-		background: darken($primaryColor, 30);
+		background: darken($primaryColor, 40);
 		border-color: darken($function_color, 10);
 		outline: solid 2px #ff6f06;
 	}
@@ -675,7 +675,7 @@ a.btn_secondary {
 }
 
 a.btn_main {
-	background: darken($primaryColor, 30);
+	background: darken($primaryColor, 40);
 	color: #fff;
 
 	&:hover,
@@ -712,7 +712,7 @@ a.CalendarBtn {
 a:hover.CalendarBtn,
 a:focus.CalendarBtn {
 	color: #fff !important;
-	background-color: darken($primaryColor, 10);
+	background-color: darken($primaryColor, 40);
 	border: solid 1px #b49061;
 	text-decoration: none !important;
 }
@@ -808,7 +808,7 @@ a:focus.CalendarBtn {
 			&:focus {
 				color: #fff;
 				background: darken($lightColor, 15);
-				box-shadow: 0 0 0 3px darken($primaryColor, 10) inset;
+				box-shadow: 0 0 0 3px darken($primaryColor, 40) inset;
 			}
 		}
 
@@ -898,9 +898,18 @@ a:focus.CalendarBtn {
 		display: inline-block;
 		padding: .25em .5em;
 
+		position: relative;
+
 		&:hover,
 		&:focus {
-			color: darken($primaryColor, 10);
+			color: darken($primaryColor, 40);
+		}
+	}
+
+	> a{
+		// border: 3px solid transparent;
+		&:hover, &:focus-visible{
+			border: 4px solid $lightColor;
 		}
 	}
 
@@ -1210,7 +1219,7 @@ dl {
 			margin-right: 1em;
 
 			i {
-				color: darken($primaryColor, 10);
+				color: darken($primaryColor, 40);
 				font-size: 1.625em;
 			}
 
@@ -1283,14 +1292,14 @@ dl {
 		a {
 			display: inline-block;
 			width: auto;
-			padding: .5em 1em;
-			border: 1px solid darken($primaryColor, 10);
+			padding: .4em 1em;
+			border: 1px solid darken($primaryColor, 40);
 			border-radius: 4px;
-			color: darken($primaryColor, 10);
+			color: darken($primaryColor, 40);
 
 			&:hover,
 			&:focus {
-				background: darken($primaryColor, 20);
+				background: darken($primaryColor, 40);
 				color: #fff;
 			}
 		}
@@ -1496,7 +1505,7 @@ a.Download {
 			&:hover,
 			&:focus,
 			&:active {
-				background: darken($primaryColor, 30);
+				background: darken($primaryColor, 40);
 			}
 		}
 
@@ -1645,7 +1654,7 @@ a.Download {
 
 						&:hover,
 						&:focus {
-							background: darken($primaryColor, 30);
+							background: darken($primaryColor, 40);
 							border-radius: 0;
 						}
 					}
@@ -1805,7 +1814,7 @@ a.Download {
 
 			.sub_title {
 				text-align: left;
-				color: darken($primaryColor, 20);
+				color: darken($primaryColor, 40);
 				padding-bottom: 0;
 				padding-left: 4.3em;
 			}
@@ -1930,16 +1939,17 @@ a.Download {
 			padding: 0 0;
 
 			img {
+				display: block;
 				width: 100%;
 				height: 100%;
-				transition: transform .6s ease;
+				// transition: transform .6s ease;
 			}
 
 			&:hover,
 			&:focus {
-				img {
-					transform: scale(1.05);
-				}
+				// img {
+				// 	transform: scale(1.05);
+				// }
 			}
 		}
 
@@ -2032,7 +2042,7 @@ a.Download {
 
 				&:hover,
 				&:focus {
-					background: darken($primaryColor, 30);
+					background: darken($primaryColor, 40);
 				}
 			}
 		}
@@ -2152,7 +2162,7 @@ a.Download {
 
 				&:hover,
 				&:focus {
-					background: darken($primaryColor, 30);
+					background: darken($primaryColor, 40);
 				}
 			}
 		}
@@ -2555,7 +2565,7 @@ a.Download {
 		text-align: center;
 		line-height: 2.4;
 
-		// color: darken($primaryColor, 10);
+		// color: darken($primaryColor, 40);
 		span {
 			padding: .25em .75em;
 			border-bottom: solid 2px #000;
@@ -2565,7 +2575,7 @@ a.Download {
 	h4.Title {
 		font-size: 1.25em;
 		text-align: center;
-		color: darken($primaryColor, 10);
+		color: darken($primaryColor, 40);
 	}
 
 	.container {
@@ -2615,7 +2625,7 @@ a.Download {
 			&:hover,
 			&:focus,
 			&.active {
-				background: darken($primaryColor, 30);
+				background: darken($primaryColor, 40);
 			}
 		}
 	}
@@ -2651,11 +2661,11 @@ a.Download {
 			&:hover,
 			&:focus,
 			&.active {
-				// background: darken($primaryColor, 30);
+				// background: darken($primaryColor, 40);
 				background: #fff;
-				box-shadow: inset 0 0 0 3px darken($primaryColor, 30);
+				box-shadow: inset 0 0 0 3px darken($primaryColor, 40);
 				a{
-					color: darken($primaryColor, 30);
+					color: darken($primaryColor, 40);
 				}
 			}
 		}
@@ -2707,7 +2717,7 @@ a.Download {
 				&:hover,
 				&:focus {
 					font-weight: bold;
-					background: darken($primaryColor, 30);
+					background: darken($primaryColor, 40);
 
 					span {
 						background: #222
@@ -2875,7 +2885,7 @@ a.Download {
 
 			&:hover,
 			&:focus {
-				background: darken($primaryColor, 30);
+				background: darken($primaryColor, 40);
 
 				span {
 					background: #222
@@ -2915,7 +2925,7 @@ a.Download {
 			text-align: center;
 			line-height: 1.6;
 
-			// color: darken($primaryColor, 10);
+			// color: darken($primaryColor, 40);
 			span {
 				padding: 0 0;
 				// border-bottom: solid 2px #000;
@@ -2925,7 +2935,7 @@ a.Download {
 		h4.Title {
 			// font-size: 1.25em;
 			// text-align: center;
-			// color: darken($primaryColor, 10);
+			// color: darken($primaryColor, 40);
 		}
 
 		.Key-Visual {

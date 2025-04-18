@@ -3,17 +3,21 @@ body {
 }
 
 // tab的外框線
-a:focus {
-    outline: none;
-    box-shadow: 0 0px 0px 3px $lightColor inset;
-    @include screen('mobile') {
-        box-shadow: none;
-    }
+// a:focus,
+a:focus-visible {
+    // outline: none;
+    // box-shadow: 0 0px 0px 3px $lightColor inset;
+    outline: dotted 3px $lightColor;
+    // @include screen('mobile') {
+    //     box-shadow: none;
+    // }
 }
 
 // 連結內包圖片
-a:focus>div{
-    outline: $primaryColor solid 2px;
+a:focus > div,
+a:focus-visible > div{
+    outline: $lightColor dotted 3px;
+
     // border: solid 1px red;
     // box-shadow: 0 0px 0px 3px red inset;
 }

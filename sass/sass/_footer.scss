@@ -20,7 +20,7 @@ footer {
         color: $primaryColor;
         &:hover,
         &:focus {
-            color: darken($primaryColor, 10);
+            color: darken($primaryColor, 40);
         }
     }
     .btn {
@@ -98,7 +98,7 @@ footer {
                 @include transition(all, .3s, ease-out);
                 &:hover,
                 &:focus {
-                    background: darken($primaryColor, 10);
+                    background: darken($primaryColor, 40);
                 }
             }
         }

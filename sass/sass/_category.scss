@@ -7,7 +7,7 @@
         margin: 0;
         overflow:hidden;
         li {
-            margin: 0px 3px 3px 0px;
+            margin: 5px;
             display: block;
             float: left;
         }
@@ -15,8 +15,8 @@
     a {
         // background: $primaryColor;
         // color: #FFF !important;
-        border: solid 1px darken($primaryColor, 30);
-        color: darken($primaryColor, 30) !important;
+        border: solid 1px darken($primaryColor, 40);
+        color: darken($primaryColor, 40) !important;
         padding: 0 1em;
         display:block;
         line-height: 2.2;
@@ -25,12 +25,12 @@
         @include border-radius(4px);
         &:hover,
         &:focus {
-            background: darken($primaryColor, 30);
+            background: darken($primaryColor, 40);
             color: #fff !important;
         }
     }
     .Now{
-        background: darken($primaryColor, 30);
+        background: darken($primaryColor, 40);
         color: #fff !important;
     }
     + .pop_download{

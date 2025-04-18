@@ -9,7 +9,7 @@
     font-size: .938em;
     @include clearfix(); // outline: 1px solid red;
     span{
-        color: darken($primaryColor, 30);
+        color: darken($primaryColor, 40);
         margin:0px .5em;
     }
     .page {
@@ -38,14 +38,14 @@
                 &:hover,
                 &:focus {
                     color: #fff!important;
-                    background: darken($primaryColor, 30);
+                    background: darken($primaryColor, 40);
                     border: darken($primaryColor, 15) solid 1px;
                 }
             }
             &.active {
                 a {
                     color: #fff!important;
-                    background: darken($primaryColor, 30);
+                    background: darken($primaryColor, 40);
                     border: darken($primaryColor, 15) solid 1px;
                 }
             }

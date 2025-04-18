@@ -135,7 +135,7 @@ $btn-radius:4px;
 // 新增稅目、應被證件查詢
 .btn-decision{
     @extend %btn;
-    @include btn_setting( darken($primaryColor, 10), #fff);
+    @include btn_setting( darken($primaryColor, 40), #fff);
     &:hover,
     &:focus {
         color: #fff;

@@ -241,7 +241,7 @@
                         }
                         &:hover,
                         &:focus {
-                            color: lighten($primaryColor, 10); // background: darken($primaryColor, 10);
+                            color: lighten($primaryColor, 10); // background: darken($primaryColor, 40);
                         }
                     }
                     &.nochild {

@@ -272,9 +272,10 @@
             min-width: 50px !important;
 
             &:focus{
-                border: 1px solid lighten($form-focus, 20);
-                @include box-shadow(0px 0px 0px 2px lighten($form-focus, 20));
-                outline: none;
+                // border: 1px solid lighten($form-focus, 20);
+                // @include box-shadow(0px 0px 0px 2px lighten($form-focus, 20));
+                // outline: none;
+                outline: dotted 3px $lightColor;
             }
 
             // 2022-0127 無障礙異動
@@ -315,9 +316,10 @@
             color:#fff;
             // color: #000\9;  ie8 hack -------------- 
             &:focus{
-                border: 1px solid lighten($form-focus, 20);
-                @include box-shadow(0px 0px 0px 2px lighten($form-focus, 20));
-                outline: none;
+                // border: 1px solid lighten($form-focus, 20);
+                // @include box-shadow(0px 0px 0px 2px lighten($form-focus, 20));
+                // outline: none;
+                outline: dotted 3px $lightColor;
             }
         }
     }

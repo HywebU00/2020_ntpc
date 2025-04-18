@@ -741,20 +741,20 @@ form input[type=button], .btn-deepgray, .btn-decision, .btn-Youtube, .btn-white,
 }
 
 .btn-decision {
-  background: #49c6b8;
-  border: 1px solid #35a79a;
+  background: #1c5a53;
+  border: 1px solid #10332f;
   color: #fff;
   box-shadow: 0px 2px 2px RGBA(0, 0, 0, 0.08);
   border-radius: 4px;
 }
 .btn-decision:hover, .btn-decision:focus {
-  background: #5dccbf;
+  background: #226d65;
   box-shadow: 0px 2px 2px RGBA(0, 0, 0, 0.15);
   cursor: pointer;
   color: #FFF;
 }
 .btn-decision.active {
-  background: #5dccbf;
+  background: #226d65;
   cursor: pointer;
 }
 .btn-decision:hover, .btn-decision:focus {
@@ -1192,16 +1192,15 @@ img.img_circle {
 }
 .tabs > .tabItem {
   border-radius: 5px;
-  overflow: hidden;
   float: left;
   font-size: 1em;
-  margin: 0;
+  margin: 4px 0;
   padding: 0;
   line-height: 1;
   font-weight: normal;
 }
 .tabs > .tabItem.active > a {
-  background: #288177;
+  background: #1c5a53;
   color: #FFF;
 }
 @media screen and (max-width:767px) {
@@ -1218,8 +1217,8 @@ img.img_circle {
   padding: 16px 0 14px;
   text-align: center;
   background: #fff;
-  color: #288177;
-  border: solid 1px #288177;
+  color: #1c5a53;
+  border: solid 1px #1c5a53;
   text-decoration: none;
   overflow: hidden;
   white-space: nowrap;
@@ -1229,7 +1228,10 @@ img.img_circle {
 }
 .tabs > .tabItem > a:hover {
   color: #fff;
-  background: #288177;
+  background: #1c5a53;
+}
+.tabs > .tabItem > a:focus {
+  outline: dotted 3px #f98385;
 }
 
 .example-2 .tabItem > a:hover {
@@ -1250,7 +1252,8 @@ img.img_circle {
   left: 0;
   right: 0;
   clear: both;
-  padding: 30px 20px 0;
+  padding: 30px 20px 10px;
+  overflow: visible;
   display: none;
 }
 @media screen and (max-width: 767px) {
@@ -1270,13 +1273,6 @@ img.img_circle {
   margin: 0 0 0.65em 0;
   padding: 0;
   border-bottom: 1px #CCC dashed;
-}
-@media screen and (max-width: 767px) {
-  .tabContent li {
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-  }
 }
 .tabContent li span {
   display: inline-block;
@@ -1312,7 +1308,7 @@ img.img_circle {
   font-size: 1.2em;
 }
 .tabContent .more a:hover, .tabContent .more a:focus {
-  background: #288177;
+  background: #1c5a53;
   color: #fff;
   border: solid 1px transparent;
 }
@@ -1432,6 +1428,7 @@ table td {
   padding: 0.25em;
 }
 table td a {
+  display: inline-block;
   word-break: break-all;
 }
 table th {
@@ -1642,7 +1639,7 @@ input[disable].content-box-switch:focus {
 }
 .form_grid .form_content div > a {
   text-decoration: underline;
-  color: #49c6b8;
+  color: #1c5a53;
 }
 .form_grid .form_content div > a:hover, .form_grid .form_content div > a:focus {
   color: #f75255;
@@ -1877,9 +1874,7 @@ form input[type=date]:focus,
 form input[type=email]:focus,
 form textarea:focus,
 form select:focus {
-  border: 1px solid #1996ce;
-  box-shadow: 0px 0px 0px 2px #1996ce;
-  outline: none;
+  outline: dotted 3px #f98385;
 }
 form input.clean,
 form input.register,
@@ -2310,18 +2305,13 @@ body {
   -webkit-text-size-adjust: none;
 }
 
-a:focus {
-  outline: none;
-  box-shadow: 0 0px 0px 3px #f98385 inset;
-}
-@media screen and (max-width: 767px) {
-  a:focus {
-    box-shadow: none;
-  }
+a:focus-visible {
+  outline: dotted 3px #f98385;
 }
 
-a:focus > div {
-  outline: #70d2c7 solid 2px;
+a:focus > div,
+a:focus-visible > div {
+  outline: #f98385 dotted 3px;
 }
 
 .accesskey {
@@ -2861,8 +2851,10 @@ a.DOC:hover, a.DOC:focus, a.DOC:active, a.PDF:hover, a.PDF:focus, a.PDF:active, 
   color: #7cb52f;
   margin-right: 15px;
 }
-.marquee a:hover {
-  color: #288177;
+.marquee a:hover, .marquee a:focus-visible {
+  color: #1c5a53;
+  outline: none;
+  box-shadow: 0 0 0 3px #f98385 inset;
 }
 
 .header {
@@ -3119,9 +3111,7 @@ a.DOC:hover, a.DOC:focus, a.DOC:active, a.PDF:hover, a.PDF:focus, a.PDF:active, 
   text-indent: -9999px;
 }
 .search .form_grp button.btn.Search:focus {
-  border: 1px solid #1996ce;
-  box-shadow: 0px 0px 0px 2px #1996ce;
-  outline: none;
+  outline: dotted 3px #f98385;
 }
 .search .form_grp button.btn.Search:before {
   content: "";
@@ -3152,9 +3142,7 @@ a.DOC:hover, a.DOC:focus, a.DOC:active, a.PDF:hover, a.PDF:focus, a.PDF:active, 
   color: #fff;
 }
 .search .btn_grp button.btn.Advanced:focus {
-  border: 1px solid #1996ce;
-  box-shadow: 0px 0px 0px 2px #1996ce;
-  outline: none;
+  outline: dotted 3px #f98385;
 }
 .search .keywordHot {
   display: inline-block;
@@ -3423,7 +3411,6 @@ a.DOC:hover, a.DOC:focus, a.DOC:active, a.PDF:hover, a.PDF:focus, a.PDF:active, 
 }
 .menu li a {
   display: block;
-  outline: none;
   text-decoration: none;
   position: static;
 }
@@ -3758,7 +3745,7 @@ footer a {
   color: #70d2c7;
 }
 footer a:hover, footer a:focus {
-  color: #49c6b8;
+  color: #1c5a53;
 }
 footer .btn {
   padding: 0.25em 2em !important;
@@ -3871,7 +3858,7 @@ footer .footer_link li a {
   transition: all, 0.3s, ease-out;
 }
 footer .footer_link li a:hover, footer .footer_link li a:focus {
-  background: #49c6b8;
+  background: #1c5a53;
 }
 footer p {
   line-height: 1.65em;
@@ -4225,7 +4212,7 @@ footer .Link_Info .Inner_wrap {
 .function ul li a:hover,
 .function ul li a:focus,
 .function ul li a:active {
-  background: #288177;
+  background: #1c5a53;
   color: #fff;
 }
 .function ul li.icon_back a:before {
@@ -4267,12 +4254,6 @@ footer .Link_Info .Inner_wrap {
   background: #d2d2d2;
   position: relative;
 }
-.function ul li.forward > a:hover, .function ul li.forward > a:focus, .function ul li.print > a:hover, .function ul li.print > a:focus, .function ul li.back > a:hover, .function ul li.back > a:focus {
-  background: #288177;
-}
-.function ul li.forward > a:hover:before, .function ul li.forward > a:focus:before, .function ul li.print > a:hover:before, .function ul li.print > a:focus:before, .function ul li.back > a:hover:before, .function ul li.back > a:focus:before {
-  filter: invert(100%);
-}
 .function ul li.forward > a:before, .function ul li.print > a:before, .function ul li.back > a:before {
   content: "";
   position: absolute;
@@ -4281,6 +4262,12 @@ footer .Link_Info .Inner_wrap {
   display: block;
   width: 18px;
   height: 18px;
+}
+.function ul li.forward > a:hover, .function ul li.forward > a:focus-visible, .function ul li.print > a:hover, .function ul li.print > a:focus-visible, .function ul li.back > a:hover, .function ul li.back > a:focus-visible {
+  background: #1c5a53;
+}
+.function ul li.forward > a:hover:before, .function ul li.forward > a:focus-visible:before, .function ul li.print > a:hover:before, .function ul li.print > a:focus-visible:before, .function ul li.back > a:hover:before, .function ul li.back > a:focus-visible:before {
+  filter: invert(100%);
 }
 .function ul li.forward a:before {
   background: url(../images/basic/icon_share.svg) no-repeat center center;
@@ -4300,7 +4287,7 @@ footer .Link_Info .Inner_wrap {
   font-weight: bold;
 }
 .function ul.FontSize .Act {
-  background: #288177;
+  background: #1c5a53;
   color: #fff;
 }
 @media screen and (max-width: 1399px) {
@@ -4379,7 +4366,7 @@ footer .Link_Info .Inner_wrap {
 }
 .modal form + .btn_grp .btn._download:hover, .modal form + .btn_grp .btn._download:focus, .modal form + .btn_grp .btn._download:focus-visible {
   color: #fff !important;
-  background: #288177;
+  background: #1c5a53;
   border: #3bbbac solid 1px;
 }
 .modal .form_grp .check_grp label {
@@ -4394,7 +4381,7 @@ footer .Link_Info .Inner_wrap {
 }
 .modal .form_grp .check_grp label b {
   flex: 0 0 80px;
-  color: #288177;
+  color: #1c5a53;
   padding: 0 4px;
   text-align: center;
 }
@@ -4448,7 +4435,7 @@ footer .Link_Info .Inner_wrap {
   clear: both;
 }
 .pagination span {
-  color: #288177;
+  color: #1c5a53;
   margin: 0px 0.5em;
 }
 .pagination .page {
@@ -4480,12 +4467,12 @@ footer .Link_Info .Inner_wrap {
 }
 .pagination .page li a:hover, .pagination .page li a:focus {
   color: #fff !important;
-  background: #288177;
+  background: #1c5a53;
   border: #3bbbac solid 1px;
 }
 .pagination .page li.active a {
   color: #fff !important;
-  background: #288177;
+  background: #1c5a53;
   border: #3bbbac solid 1px;
 }
 .pagination .page li.first a, .pagination .page li.prev a, .pagination .page li.next a, .pagination .page li.last a {
@@ -4586,13 +4573,13 @@ footer .Link_Info .Inner_wrap {
   overflow: hidden;
 }
 .category ul li {
-  margin: 0px 3px 3px 0px;
+  margin: 5px;
   display: block;
   float: left;
 }
 .category a {
-  border: solid 1px #288177;
-  color: #288177 !important;
+  border: solid 1px #1c5a53;
+  color: #1c5a53 !important;
   padding: 0 1em;
   display: block;
   line-height: 2.2;
@@ -4601,11 +4588,11 @@ footer .Link_Info .Inner_wrap {
   border-radius: 4px;
 }
 .category a:hover, .category a:focus {
-  background: #288177;
+  background: #1c5a53;
   color: #fff !important;
 }
 .category .Now {
-  background: #288177;
+  background: #1c5a53;
   color: #fff !important;
 }
 .category + .pop_download {
@@ -4967,7 +4954,7 @@ body::-webkit-scrollbar-track {
   margin-left: calc(50% - 60px);
   width: 120px;
   margin-top: 1em;
-  background: #288177;
+  background: #1c5a53;
   color: #FFF;
 }
 
@@ -5714,7 +5701,7 @@ body::-webkit-scrollbar-track {
   left: 0;
   right: 0;
   bottom: 0;
-  background: #288177;
+  background: #1c5a53;
   transform: scaleX(0);
   transform-origin: 0 50%;
   transition-property: transform;
@@ -5897,6 +5884,9 @@ body::-webkit-scrollbar-track {
 .col-3-9 .Tax_Info a img {
   width: 100%;
 }
+.col-3-9 .Tax_Info a:hover {
+  border: 3px dotted #f98385;
+}
 .col-3-9 .Tax_News {
   float: left;
   width: 100%;
@@ -6041,7 +6031,7 @@ body::-webkit-scrollbar-track {
   left: 0;
   right: 0;
   bottom: 0;
-  background: #288177;
+  background: #1c5a53;
   transform: scaleX(0);
   transform-origin: 0 50%;
   transition-property: transform;
@@ -6340,7 +6330,7 @@ body::-webkit-scrollbar-track {
   }
 }
 .singleSlider a:focus {
-  border: solid 3px #f98385;
+  border: dotted 3px #f98385;
 }
 .singleSlider .slick-dots {
   bottom: initial;
@@ -6361,7 +6351,7 @@ body::-webkit-scrollbar-track {
 .singleSlider .slick-prev:hover, .singleSlider .slick-prev:focus,
 .singleSlider .slick-next:hover,
 .singleSlider .slick-next:focus {
-  border: solid 3px #f98385;
+  border: dotted 3px #f98385;
 }
 @media screen and (max-width: 767px) {
   .singleSlider {
@@ -6392,7 +6382,7 @@ body::-webkit-scrollbar-track {
   display: block;
   margin: 10px auto;
   padding: 10px 20px;
-  background-color: #288177;
+  background-color: #1c5a53;
   color: white;
   border: none;
   border-radius: 5px;
@@ -7054,7 +7044,7 @@ ul.DownLoad li a:hover, ul.DownLoad li a:focus, ul.DownLoad li a:active {
 
 .Title-2nd {
   font-size: 1.6em;
-  color: #49c6b8;
+  color: #1c5a53;
 }
 
 .Comment {
@@ -7220,7 +7210,6 @@ ul.DownLoad li a:hover, ul.DownLoad li a:focus, ul.DownLoad li a:active {
   text-decoration: none;
   color: #555;
   display: block;
-  border: solid 0px transparent;
   transition: all 300ms ease;
 }
 .FotoText a img {
@@ -7238,7 +7227,6 @@ ul.DownLoad li a:hover, ul.DownLoad li a:focus, ul.DownLoad li a:active {
 }
 .FotoText a:hover, .FotoText a:focus {
   box-shadow: none;
-  border: solid 3px #f98385;
 }
 @media screen and (max-width: 767px) {
   .FotoText {
@@ -7863,7 +7851,7 @@ section > .qp {
   border: solid 1px #b1b1b1;
 }
 .Calendar .Now h3 {
-  background: #288177;
+  background: #1c5a53;
   color: #fff;
 }
 .Calendar .Now .Jan,
@@ -7878,7 +7866,7 @@ section > .qp {
 .Calendar .Now .Oct,
 .Calendar .Now .Nov,
 .Calendar .Now .Dec {
-  border: solid 1px #288177;
+  border: solid 1px #1c5a53;
 }
 
 .Invoice table .prize_number {
@@ -7916,7 +7904,7 @@ section > .qp {
 }
 .btn_search:hover, .btn_search:focus, .btn_search:active {
   color: #fff;
-  background: #288177;
+  background: #1c5a53;
   border-color: #b9b9b9;
   outline: solid 2px #ff6f06;
 }
@@ -8049,7 +8037,7 @@ a.btn_secondary:active:before {
 }
 
 a.btn_main {
-  background: #288177;
+  background: #1c5a53;
   color: #fff;
 }
 a.btn_main:hover, a.btn_main:focus, a.btn_main:active {
@@ -8078,7 +8066,7 @@ a.CalendarBtn {
 a:hover.CalendarBtn,
 a:focus.CalendarBtn {
   color: #fff !important;
-  background-color: #49c6b8;
+  background-color: #1c5a53;
   border: solid 1px #b49061;
   text-decoration: none !important;
 }
@@ -8143,7 +8131,7 @@ a:focus.CalendarBtn {
 .calendar table a:hover, .calendar table a:focus {
   color: #fff;
   background: #f53a3d;
-  box-shadow: 0 0 0 3px #49c6b8 inset;
+  box-shadow: 0 0 0 3px #1c5a53 inset;
 }
 .calendar table a:hover .Closed {
   text-decoration: underline;
@@ -8207,9 +8195,13 @@ a:focus.CalendarBtn {
   text-decoration: underline;
   display: inline-block;
   padding: 0.25em 0.5em;
+  position: relative;
 }
 .Box a:hover, .Box a:focus {
-  color: #49c6b8;
+  color: #1c5a53;
+}
+.Box > a:hover, .Box > a:focus-visible {
+  border: 4px solid #f98385;
 }
 .Box .Cancel {
   font-size: 2em;
@@ -8424,7 +8416,7 @@ dl dd {
   margin-right: 1em;
 }
 .Icon-caption ul li i {
-  color: #49c6b8;
+  color: #1c5a53;
   font-size: 1.625em;
 }
 .Icon-caption ul li img {
@@ -8470,13 +8462,13 @@ dl dd {
 .Various .link_list a {
   display: inline-block;
   width: auto;
-  padding: 0.5em 1em;
-  border: 1px solid #49c6b8;
+  padding: 0.4em 1em;
+  border: 1px solid #1c5a53;
   border-radius: 4px;
-  color: #49c6b8;
+  color: #1c5a53;
 }
 .Various .link_list a:hover, .Various .link_list a:focus {
-  background: #35a79a;
+  background: #1c5a53;
   color: #fff;
 }
 @media screen and (max-width: 991px) {
@@ -8658,7 +8650,7 @@ a.Download img {
 .Examine .btn_grp a.btn_no:hover,
 .Examine .btn_grp a.btn_no:focus,
 .Examine .btn_grp a.btn_no:active {
-  background: #288177;
+  background: #1c5a53;
 }
 .Examine .btn_grp a.btn_yes {
   background: #2faa89;
@@ -8761,7 +8753,7 @@ a.Download img {
   background: #007fa8;
 }
 .Front .Side_Wrap .Side_Position #Side a:nth-child(1):hover, .Front .Side_Wrap .Side_Position #Side a:nth-child(1):focus, .Front .Side_Wrap .Side_Position #Side a:nth-child(2):hover, .Front .Side_Wrap .Side_Position #Side a:nth-child(2):focus, .Front .Side_Wrap .Side_Position #Side a:nth-child(3):hover, .Front .Side_Wrap .Side_Position #Side a:nth-child(3):focus, .Front .Side_Wrap .Side_Position #Side a:nth-child(4):hover, .Front .Side_Wrap .Side_Position #Side a:nth-child(4):focus {
-  background: #288177;
+  background: #1c5a53;
   border-radius: 0;
 }
 .Front .Side_Wrap .Side_Position #Side button {
@@ -8945,7 +8937,7 @@ a.Download img {
 }
 .Front .Box .quick_function .sub_title {
   text-align: left;
-  color: #35a79a;
+  color: #1c5a53;
   padding-bottom: 0;
   padding-left: 4.3em;
 }
@@ -9049,12 +9041,9 @@ a.Download img {
   padding: 0 0;
 }
 .Front .Box a img {
+  display: block;
   width: 100%;
   height: 100%;
-  transition: transform 0.6s ease;
-}
-.Front .Box a:hover img, .Front .Box a:focus img {
-  transform: scale(1.05);
 }
 .Front .Box:nth-child(6n+1) {
   border-top: solid 8px #0cb3b4;
@@ -9109,7 +9098,7 @@ a.Download img {
   font-size: 1.125em;
 }
 .Front .Box .Links a:hover, .Front .Box .Links a:focus {
-  background: #288177;
+  background: #1c5a53;
 }
 .Front .Timer {
   margin: 90px 1.5em 0;
@@ -9192,7 +9181,7 @@ a.Download img {
   background: #007fa8;
 }
 .Front .MainInfo .Links a:hover, .Front .MainInfo .Links a:focus {
-  background: #288177;
+  background: #1c5a53;
 }
 .Front .MainInfo .Left {
   float: right;
@@ -9498,7 +9487,7 @@ a.Download img {
 .Branch h4.Title {
   font-size: 1.25em;
   text-align: center;
-  color: #49c6b8;
+  color: #1c5a53;
 }
 .Branch .container {
   margin: 1em 0;
@@ -9568,7 +9557,7 @@ a.Download img {
   background: #19a07d;
 }
 .Branch .col-3 .col:hover, .Branch .col-3 .col:focus, .Branch .col-3 .col.active {
-  background: #288177;
+  background: #1c5a53;
 }
 .Branch .col-4 .col {
   float: left;
@@ -9618,10 +9607,10 @@ a.Download img {
 }
 .Branch .col-4 .col:hover, .Branch .col-4 .col:focus, .Branch .col-4 .col.active {
   background: #fff;
-  box-shadow: inset 0 0 0 3px #288177;
+  box-shadow: inset 0 0 0 3px #1c5a53;
 }
 .Branch .col-4 .col:hover a, .Branch .col-4 .col:focus a, .Branch .col-4 .col.active a {
-  color: #288177;
+  color: #1c5a53;
 }
 .Branch .col-6 .col {
   float: left;
@@ -9698,7 +9687,7 @@ a.Download img {
 }
 .Branch .col-9-3 .Tax-Issues a:hover, .Branch .col-9-3 .Tax-Issues a:focus {
   font-weight: bold;
-  background: #288177;
+  background: #1c5a53;
 }
 .Branch .col-9-3 .Tax-Issues a:hover span, .Branch .col-9-3 .Tax-Issues a:focus span {
   background: #222;
@@ -9824,7 +9813,7 @@ a.Download img {
   border-radius: 5px;
 }
 .Branch .Lang a:hover, .Branch .Lang a:focus {
-  background: #288177;
+  background: #1c5a53;
 }
 .Branch .Lang a:hover span, .Branch .Lang a:focus span {
   background: #222;
@@ -10517,7 +10506,6 @@ a.goCenter {
   }
 }
 a.goCenter:hover, a.goCenter:focus {
-  outline: none;
   top: 0;
   opacity: 1;
 }

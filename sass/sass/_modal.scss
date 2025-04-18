@@ -69,7 +69,7 @@
             text-align: center;
             &:hover, &:focus, &:focus-visible{
                 color: #fff!important;
-                background: darken($primaryColor, 30);
+                background: darken($primaryColor, 40);
                 border: darken($primaryColor, 15) solid 1px;
             }
         }
@@ -87,7 +87,7 @@
                 }
                 b{
                     flex: 0 0 80px;
-                    color: darken($primaryColor, 30);
+                    color: darken($primaryColor, 40);
                     padding: 0 4px;
                     text-align: center;
                 }

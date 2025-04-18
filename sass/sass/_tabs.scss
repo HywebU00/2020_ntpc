@@ -19,14 +19,14 @@
     }
     &>.tabItem {
         border-radius: 5px;
-        overflow:hidden;
+        // overflow:hidden;
         &.active>a {
-            background: darken($primaryColor, 30);
+            background: darken($primaryColor, 40);
             color: #FFF;
         }
         float: left;
         font-size: 1em;
-        margin: 0;
+        margin: 4px 0;
         padding: 0;
         line-height: 1;
         font-weight: normal;
@@ -46,15 +46,18 @@
             text-align: center;
             // background-color: #76a0b9;
             background: #fff;
-            color: darken($primaryColor, 30);
-            border: solid 1px darken($primaryColor, 30);
+            color: darken($primaryColor, 40);
+            border: solid 1px darken($primaryColor, 40);
             text-decoration: none;
             @include text-overflow();
             @include box-sizing();
             @include border-radius(5px);
             &:hover {
                 color: #fff;
-                background: darken($primaryColor, 30);
+                background: darken($primaryColor, 40);
+            }
+            &:focus{
+                outline: dotted 3px $lightColor;
             }
         }
     }
@@ -82,8 +85,10 @@
     left: 0;
     right: 0;
     clear: both;
-    padding: 30px 20px 0;
+    padding: 30px 20px 10px;
+    overflow: visible;
     display: none;
+    
     @include screen('mobile') {
         position: static;
         margin-bottom: 30px;
@@ -100,9 +105,9 @@
         margin: 0 0 .65em 0;
         padding: 0;
         border-bottom: 1px #CCC dashed;
-         @include screen('mobile') {
-            @include text-overflow();
-        }
+        // @include screen('mobile') {
+        //     @include text-overflow();
+        // }
         span {
             display: inline-block;
             margin: 0 1em 0 0;
@@ -142,7 +147,7 @@
             @include transition(all, .3s, ease-out);
             &:hover,
             &:focus {
-                background: darken($primaryColor, 30);
+                background: darken($primaryColor, 40);
                 color: #fff;
                 border: solid 1px transparent;
             }
