@@ -31,7 +31,7 @@ a:focus-visible > div{
     z-index: 9;
     color: $color-word;
     font-size: $font-size;
-    @include screen("mobile") {
+    @include screen("tablet") {
         display: none;
     }
 }

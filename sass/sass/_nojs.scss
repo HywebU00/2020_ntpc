@@ -2,8 +2,8 @@
 a.goCenter {
 	position: absolute;
 	top: -2.2em;
-	left: 50%;
-	margin-left: -480px;
+	left: calc( (100% - 1200px - 3px) / 2);
+	// margin-left: -480px;
 	padding: 0 .5em;
 	height: 2em;
 	line-height: 2em;
@@ -15,13 +15,18 @@ a.goCenter {
 	transition: .5s;
 	@include border-radius(0px 0px 4px 4px);
 	color: #FFF;
-	@include screen("mobile") {
-		display: none;
-	}
 	&:hover,&:focus {
 		// outline: none;
 		top: 0;
 		opacity: 1;
+	}
+
+	@media screen and (max-width: 1200px) {
+		left: 20px;
+	}
+
+	@include screen("mobile") {
+		display: none;
 	}
 }
 // no-js

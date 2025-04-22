@@ -199,6 +199,13 @@
                 padding: .75em .5em;
                 border: 0;
                 border-right: dotted 1px rgba(255,255,255,.6);
+
+
+                // outline: 3px dotted $lightColor;
+                &:hover,
+                &:focus-visible{
+                    outline: 3px dotted $lightColor;
+                }
             }
         }
 

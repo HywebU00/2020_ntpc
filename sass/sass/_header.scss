@@ -53,7 +53,7 @@
         position: relative; // menu
         .sidebarCtrl {
             display: none;
-            left: 0px;
+            left: 3px;
             @extend %mobileCtrlBtn;
             span {
                 position:absolute;
@@ -65,16 +65,19 @@
                 margin-left: -25%;
                 display: block;
                 &:nth-child(2){
-                     top:50%;
+                    top:50%;
                 } 
                 &:nth-child(3){
-                     top:65%;
+                    top:65%;
                 }
+            }
+            &:focus-visible{
+                outline: 3px dotted $lightColor;
             }
         } // search
         .searchCtrl {
             display: none;
-            right: 0px;
+            right: 3px;
             font-size: 0em;
             @extend %mobileCtrlBtn;
             &:before {
@@ -88,6 +91,9 @@
                 top: 10px;
                 left: 10px;
                 display: block;
+            }
+            &:focus-visible{
+                outline: 3px dotted $lightColor;
             }
         }
     }
@@ -158,6 +164,11 @@
                     padding: .2em .5em;
                     text-decoration: none;
                     color: #fff;
+                    outline: none;
+                    border: 3px dotted transparent;
+                    &:focus-visible{
+                        border-color: $lightColor;
+                    }
                 }
                 button{
                     padding: .5em;
@@ -210,7 +221,75 @@
                 }
             }
         }
-    } 
+    }
+    // 
+    .sidebar {
+        .navigation {
+            li a{
+                display: block;
+                height: 3em;
+                line-height: 2em;
+                padding: 0.5em 1em;
+                font-size: 1.125em;
+                color: #FFF;
+                font-weight: bold;
+                text-decoration: none;
+                box-sizing: border-box;
+            }
+            ul li{
+                margin: 0;
+                // 分眾
+                &:last-child{
+                    border: solid 1px #fff;
+                    position: static;
+                    margin-bottom: 1em;
+                    a{
+                        width: 100%;
+                        text-align: left;
+                        // border-bottom: dotted 1px #fff;
+                        background: transparent;
+                        &:hover, &:focus{
+                            background: none;
+                            cursor: crosshair;
+                        }
+                    }
+                    ul{
+                        position: static;
+                        margin: 0;
+                        padding: 0;
+                        width: 100%;
+                        background: transparent;
+                        &:before{
+                            display: none;
+                        }
+                        li{
+                            width: 100%;
+                            padding: 0;
+                            // background: pink;
+                            &:last-child{ border: 0; }
+                            a{
+                                display: block;
+                                // border-bottom: 0;
+                                &:hover, &:focus {
+                                    background: darken($primaryColor, 20) !important;
+                                    cursor: pointer;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            // ul {
+            //     li{
+            //         &:last-child{
+            //             a{}
+            //             // 分眾
+            //             ul{}s
+            //         }
+            //     }
+            // }
+        }
+    }
 }
 
 //search

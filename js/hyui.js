@@ -37,8 +37,25 @@ $(function() {
     /*-----------------------------------*/
     ////////////// 行動版選單切換////////////
     /*-----------------------------------*/
-    _body.prepend('<aside class="sidebar"><div class="m_area"><button type="button" class="sidebarClose">關閉</button></div><div class="menu_overlay"></div></aside>');
-    $('header .container').prepend('<button type="button" class="sidebarCtrl">側欄選單</button><button type="button" class="searchCtrl">查詢</button>');
+    // _body.prepend('<aside class="sidebar"><div class="m_area"><button type="button" class="sidebarClose">關閉</button></div><div class="menu_overlay"></div></aside>');
+    // $('header .container').prepend('<button type="button" class="sidebarCtrl">側欄選單</button><button type="button" class="searchCtrl">查詢</button>');
+
+    // $('header .container').prepend('<button type="button" class="sidebarCtrl">側欄選單</button><aside class="sidebar"><div class="m_area"><button type="button" class="sidebarClose">關閉</button></div><div class="menu_overlay"></div></aside><button type="button" class="searchCtrl">查詢</button>');
+
+    // const $allyAU = $('<a class="accesskey" href="#aU" id="aU" accesskey="U" title="網站標題" tabindex="2">:::</a>');
+    const $sidebarCtrl = $('<button type="button" class="sidebarCtrl">側欄選單</button>');
+    const $sidebar = $(`
+    <aside class="sidebar">
+        <div class="m_area">
+        <button type="button" class="sidebarClose">關閉</button>
+        </div>
+        <div class="menu_overlay"></div>
+    </aside>
+    `);
+    const $searchCtrl = $('<button type="button" class="searchCtrl">查詢</button>');
+    $('header .container').prepend($sidebarCtrl, $sidebar);
+    $('.container h1').after($searchCtrl);
+
     var menu_status = false;
     var _sidebar = $('.sidebar'),
         _search = $('.search'),
@@ -46,8 +63,9 @@ $(function() {
         _sidebarClose = $('.sidebarClose'),
         _sidebarCtrl = $('.sidebarCtrl'),
         _overlay = $('.menu_overlay');
-    _mArea = $('.m_area');
-    _sidebarCtrl.append('<span></span><span></span><span></span>');
+        _mArea = $('.m_area');
+        _sidebarCtrl.append('<span></span><span></span><span></span>');
+        _searchCtrl = $('.searchCtrl');
     var search_mode = false;
     // 打開選單 function
     function showSidebar() {
@@ -108,7 +126,8 @@ $(function() {
             _overlay.hide();
             _nav.prependTo(_mArea);
             _menu.prependTo(_mArea);
-            _search.prependTo(_body);
+            // _search.prependTo(_body);
+            // _search.after(_searchCtrl);
             _search.addClass('m_search');
             _mArea.css({
                 'margin-left': _mArea.width() * -1 + 'px'
@@ -208,7 +227,7 @@ $(function() {
     });
     mobileMenu();
     // 行動版查詢
-    var _searchCtrl = $('.searchCtrl');
+    // var _searchCtrl = $('.searchCtrl');
     _searchCtrl.off().on('click', function(e) {
         if (!search_mode) {
             $('.m_search').stop(true, false).slideDown('400', 'easeOutQuint');

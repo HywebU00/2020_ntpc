@@ -2322,7 +2322,7 @@ a:focus-visible > div {
   color: #666;
   font-size: 1em;
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 991px) {
   .accesskey {
     display: none;
   }
@@ -2910,7 +2910,7 @@ a.DOC:hover, a.DOC:focus, a.DOC:active, a.PDF:hover, a.PDF:focus, a.PDF:active, 
 }
 .header > .container .sidebarCtrl {
   display: none;
-  left: 0px;
+  left: 3px;
 }
 .header > .container .sidebarCtrl span {
   position: absolute;
@@ -2928,9 +2928,12 @@ a.DOC:hover, a.DOC:focus, a.DOC:active, a.PDF:hover, a.PDF:focus, a.PDF:active, 
 .header > .container .sidebarCtrl span:nth-child(3) {
   top: 65%;
 }
+.header > .container .sidebarCtrl:focus-visible {
+  outline: 3px dotted #f98385;
+}
 .header > .container .searchCtrl {
   display: none;
-  right: 0px;
+  right: 3px;
   font-size: 0em;
 }
 .header > .container .searchCtrl:before {
@@ -2944,6 +2947,9 @@ a.DOC:hover, a.DOC:focus, a.DOC:active, a.PDF:hover, a.PDF:focus, a.PDF:active, 
   top: 10px;
   left: 10px;
   display: block;
+}
+.header > .container .searchCtrl:focus-visible {
+  outline: 3px dotted #f98385;
 }
 .header h1 {
   float: left;
@@ -3006,6 +3012,11 @@ a.DOC:hover, a.DOC:focus, a.DOC:active, a.PDF:hover, a.PDF:focus, a.PDF:active, 
   padding: 0.2em 0.5em;
   text-decoration: none;
   color: #fff;
+  outline: none;
+  border: 3px dotted transparent;
+}
+.header .navigation ul li a:focus-visible {
+  border-color: #f98385;
 }
 .header .navigation ul li button {
   padding: 0.5em;
@@ -3054,6 +3065,58 @@ a.DOC:hover, a.DOC:focus, a.DOC:active, a.PDF:hover, a.PDF:focus, a.PDF:active, 
   color: #fff;
   background: transparent;
   width: 100%;
+}
+.header .sidebar .navigation li a {
+  display: block;
+  height: 3em;
+  line-height: 2em;
+  padding: 0.5em 1em;
+  font-size: 1.125em;
+  color: #FFF;
+  font-weight: bold;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+.header .sidebar .navigation ul li {
+  margin: 0;
+}
+.header .sidebar .navigation ul li:last-child {
+  border: solid 1px #fff;
+  position: static;
+  margin-bottom: 1em;
+}
+.header .sidebar .navigation ul li:last-child a {
+  width: 100%;
+  text-align: left;
+  background: transparent;
+}
+.header .sidebar .navigation ul li:last-child a:hover, .header .sidebar .navigation ul li:last-child a:focus {
+  background: none;
+  cursor: crosshair;
+}
+.header .sidebar .navigation ul li:last-child ul {
+  position: static;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background: transparent;
+}
+.header .sidebar .navigation ul li:last-child ul:before {
+  display: none;
+}
+.header .sidebar .navigation ul li:last-child ul li {
+  width: 100%;
+  padding: 0;
+}
+.header .sidebar .navigation ul li:last-child ul li:last-child {
+  border: 0;
+}
+.header .sidebar .navigation ul li:last-child ul li a {
+  display: block;
+}
+.header .sidebar .navigation ul li:last-child ul li a:hover, .header .sidebar .navigation ul li:last-child ul li a:focus {
+  background: #35a79a !important;
+  cursor: pointer;
 }
 
 .search {
@@ -3347,8 +3410,9 @@ a.DOC:hover, a.DOC:focus, a.DOC:active, a.PDF:hover, a.PDF:focus, a.PDF:active, 
   background: #ffb800;
   color: #000;
 }
-.menu > ul > li a.Invoice:hover, .menu > ul > li a.Invoice:focus {
+.menu > ul > li a.Invoice:hover, .menu > ul > li a.Invoice:focus-visible {
   background: #f75255;
+  border-color: #fff !important;
 }
 .menu > ul > li:hover, .menu > ul > li:focus {
   background: #fff;
@@ -3445,7 +3509,7 @@ a.DOC:hover, a.DOC:focus, a.DOC:active, a.PDF:hover, a.PDF:focus, a.PDF:active, 
 .menu li li.hasChild > a {
   padding-right: 2em;
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 991px) {
   .menu > ul ul li a {
     margin: 0;
   }
@@ -3490,7 +3554,7 @@ a.DOC:hover, a.DOC:focus, a.DOC:active, a.PDF:hover, a.PDF:focus, a.PDF:active, 
   top: 0;
   left: 0;
   padding-bottom: 3em;
-  height: 100%;
+  height: 90vh;
   background: #70d2c7;
   overflow: hidden;
   overflow-y: scroll;
@@ -3517,7 +3581,7 @@ a.DOC:hover, a.DOC:focus, a.DOC:active, a.PDF:hover, a.PDF:focus, a.PDF:active, 
   width: 100%;
   box-shadow: 0px 0px 4px RGBA(0, 0, 0, 0.4);
   margin-bottom: 1em;
-  background: #CCC;
+  background: #fff;
 }
 .sidebar .m_area .menu li {
   display: block;
@@ -3532,6 +3596,11 @@ a.DOC:hover, a.DOC:focus, a.DOC:active, a.PDF:hover, a.PDF:focus, a.PDF:active, 
   padding: 0.5em 1em;
   background: #FFF;
   border-bottom: 1px solid #CCC;
+  border: 3px dotted transparent;
+}
+.sidebar .m_area .menu li > a:focus-visible {
+  outline: none;
+  border: 3px dotted #f98385;
 }
 .sidebar .m_area .menu li.hasChild > a {
   padding: 0.5em 1em !important;
@@ -3586,6 +3655,9 @@ a.DOC:hover, a.DOC:focus, a.DOC:active, a.PDF:hover, a.PDF:focus, a.PDF:active, 
   border-bottom: none;
   border-left: none;
   transition: 0.3s;
+}
+.sidebar .m_area .menu li li li a::after {
+  display: none;
 }
 .sidebar .m_area .menu a {
   display: block;
@@ -3647,20 +3719,10 @@ a.DOC:hover, a.DOC:focus, a.DOC:active, a.PDF:hover, a.PDF:focus, a.PDF:active, 
   text-decoration: none;
   box-sizing: border-box;
 }
-.sidebar .navigation li a:nth-child(odd) {
-  border-left: none;
-  border-top: none;
-}
 .sidebar .navigation li a:hover, .sidebar .navigation li a:focus {
   background: #35a79a;
 }
 
-.sidebar .navigation ul li:last-child {
-  border: solid 1px #fff;
-}
-.sidebar .navigation ul li:last-child a {
-  border-bottom: dotted 1px #fff;
-}
 .sidebar .navigation ul li:last-child a:hover, .sidebar .navigation ul li:last-child a:focus {
   background: none;
   cursor: crosshair;
@@ -3673,7 +3735,6 @@ a.DOC:hover, a.DOC:focus, a.DOC:active, a.PDF:hover, a.PDF:focus, a.PDF:active, 
   border: 0;
 }
 .sidebar .navigation ul li:last-child ul li a {
-  border-bottom: 0;
   padding: 0.5em 2.2em;
 }
 .sidebar .navigation ul li:last-child ul li a:hover, .sidebar .navigation ul li:last-child ul li a:focus {
@@ -3694,7 +3755,7 @@ a.DOC:hover, a.DOC:focus, a.DOC:active, a.PDF:hover, a.PDF:focus, a.PDF:active, 
   text-indent: -9999px;
   border: none;
   background: none;
-  border: none;
+  border: 3px dotted transparent;
 }
 .sidebar button.sidebarClose:before {
   position: absolute;
@@ -3707,6 +3768,10 @@ a.DOC:hover, a.DOC:focus, a.DOC:active, a.PDF:hover, a.PDF:focus, a.PDF:active, 
   transform: rotate(45deg);
   border-right: none;
   border-top: none;
+}
+.sidebar button.sidebarClose:hover, .sidebar button.sidebarClose:focus-visible {
+  outline: none;
+  border-color: #f98385;
 }
 
 @keyframes showMenu {
@@ -5174,6 +5239,9 @@ body::-webkit-scrollbar-track {
   padding: 0.75em 0.5em;
   border: 0;
   border-right: dotted 1px rgba(255, 255, 255, 0.6);
+}
+.Side_Wrap .Side_Position #Side button:hover, .Side_Wrap .Side_Position #Side button:focus-visible {
+  outline: 3px dotted #f98385;
 }
 .Side_Wrap .Side_Position .Show {
   right: 0 !important;
@@ -10486,8 +10554,7 @@ a.Download img {
 a.goCenter {
   position: absolute;
   top: -2.2em;
-  left: 50%;
-  margin-left: -480px;
+  left: calc((100% - 1200px - 3px) / 2);
   padding: 0 0.5em;
   height: 2em;
   line-height: 2em;
@@ -10500,14 +10567,19 @@ a.goCenter {
   border-radius: 0px 0px 4px 4px;
   color: #FFF;
 }
+a.goCenter:hover, a.goCenter:focus {
+  top: 0;
+  opacity: 1;
+}
+@media screen and (max-width: 1200px) {
+  a.goCenter {
+    left: 20px;
+  }
+}
 @media screen and (max-width: 767px) {
   a.goCenter {
     display: none;
   }
-}
-a.goCenter:hover, a.goCenter:focus {
-  top: 0;
-  opacity: 1;
 }
 
 .no-js noscript {
