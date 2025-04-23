@@ -6723,6 +6723,7 @@ ul.slick-dots li.slick-active button:before {
 
 .singleSlider-Video {
   width: 100%;
+  background: pink;
   position: relative;
   min-height: 1px;
   padding-left: 0;
@@ -6739,7 +6740,7 @@ ul.slick-dots li.slick-active button:before {
 .singleSlider-Video .img-container:before {
   display: block;
   content: "";
-  padding-top: 75%;
+  padding-top: 60%;
 }
 .singleSlider-Video .img-container img {
   display: block;
@@ -6765,7 +6766,7 @@ ul.slick-dots li.slick-active button:before {
   width: 100%;
   position: relative;
 }
-.singleSlider-Video a .caption {
+.singleSlider-Video a p {
   position: absolute;
   width: 100%;
   height: 3em;
@@ -6783,7 +6784,7 @@ ul.slick-dots li.slick-active button:before {
   box-sizing: border-box;
 }
 @media screen and (max-width: 767px) {
-  .singleSlider-Video a .caption {
+  .singleSlider-Video a p {
     height: 2em;
     width: 100%;
     left: 0;

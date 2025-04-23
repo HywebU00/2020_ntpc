@@ -1663,12 +1663,13 @@ ul.slick-dots{
 // 影片
 .singleSlider-Video {
     width: 100%;
+    background: pink;
     @include gutter(0);
     .img-container {
         height: inherit;
         width: 100%;
         position: relative;
-        @include aspect-ratio(4,3);
+        @include aspect-ratio(5,3);
         img {
             width: 100%;
             height: 100%;
@@ -1677,13 +1678,17 @@ ul.slick-dots{
             // height: 280px;
             width: 100%;
         }
+        // &:before{
+        //     display: none;
+        // }
     }
     a {
         display: block;
         height: 100%;
         width: 100%;
         position: relative;
-        .caption {
+        // position: static;
+        p {
             position: absolute;
             width: 100%;
             height: 3em;
