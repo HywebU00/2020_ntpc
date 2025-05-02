@@ -113,7 +113,6 @@ $(function() {
     _menu.find('li:last>a').focusout(function() {
         _menu.find('li ul').hide();
     });
-
     function mobileMenu() {
         // switch PC/MOBILE
         ww = _window.outerWidth();
@@ -226,6 +225,19 @@ $(function() {
         }
     });
     mobileMenu();
+
+    // 鍵盤遊走出 .m_area 時，關閉.sidebar
+    $('.m_area').on('focusout', function (e) {
+        const mArea = $(this);
+        setTimeout(() => {
+            const active = document.activeElement;
+            if (!mArea[0].contains(active)) {
+                mArea.closest('.sidebar').hide(); // 或用 .css('display', 'none')
+            }
+        }, 10); // 確保 focus 已轉移
+    });
+
+
     // 行動版查詢
     // var _searchCtrl = $('.searchCtrl');
     _searchCtrl.off().on('click', function(e) {
@@ -237,13 +249,22 @@ $(function() {
             $('.m_search').hide();
             search_mode = false;
         }
-
     });
     // 如果點在外面
-    $('.main').off().on('click touchend', function(e) {
-        $('.m_search').hide();
-        search_mode = false;
+    // $('.main').off().on('click touchend', function(e) {
+    //     $('.m_search').hide();
+    //     search_mode = false;
+    // });
+    // 鍵盤遊走 .m_search
+    $('.m_search').on('focusout', function () {
+        const $this = $(this);
+        setTimeout(() => {
+            if (!$this.find(':focus').length) {
+                $this.css('display', 'none');
+            }
+        }, 0);
     });
+
     // 固定版頭
     var hh = $('.header').outerHeight(true),
         menuH = _menu.outerHeight(),

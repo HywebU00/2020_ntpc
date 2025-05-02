@@ -296,9 +296,12 @@ ul.DownLoad {
             &:hover,
             &:focus,
             &:active {
-                color: #fff !important;
-                background: darken($lightColor, 10);
-                outline: solid 2px #ff6f06;
+                // color: #fff !important;
+                // background: darken($lightColor, 10);
+                // outline: dotted 2px #ff6f06;
+                color: #000 !important;
+                background: #ececec !important;
+                outline: dotted 3px darken($lightColor, 10);
             }
         }
     }

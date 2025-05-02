@@ -1321,6 +1321,7 @@
     transition: .3s;
     &:hover, &:focus-visible{
         background-color: darken($primaryColor, 35);
+        outline: dotted 3px $lightColor;
     }
 }
 
@@ -1607,7 +1608,7 @@ ul.slick-dots{
     .img-container {
         width: 165px;
         height: 55px;
-        margin: 0px 15px;
+        margin: 8px 15px;
         a {
             display: block;
             text-align: center;

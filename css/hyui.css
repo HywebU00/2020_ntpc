@@ -557,9 +557,9 @@ form input[type=button], .btn-deepgray, .btn-decision, .btn-Youtube, .btn-white,
 }
 .btn:hover, .btn:focus {
   background: #eaeaea;
-  box-shadow: 0px 2px 2px RGBA(0, 0, 0, 0.15);
   cursor: pointer;
   color: #FFF;
+  outline: dotted 3px #f98385;
 }
 .btn.active {
   background: #eaeaea;
@@ -583,9 +583,9 @@ form input[type=button], .btn-deepgray, .btn-decision, .btn-Youtube, .btn-white,
 }
 .btn-green:hover, .btn-green:focus {
   background: #6ec06e;
-  box-shadow: 0px 2px 2px RGBA(0, 0, 0, 0.15);
   cursor: pointer;
   color: #FFF;
+  outline: dotted 3px #f98385;
 }
 .btn-green.active {
   background: #6ec06e;
@@ -601,9 +601,9 @@ form input[type=button], .btn-deepgray, .btn-decision, .btn-Youtube, .btn-white,
 }
 .btn-blue:hover, .btn-blue:focus {
   background: #3bc2ff;
-  box-shadow: 0px 2px 2px RGBA(0, 0, 0, 0.15);
   cursor: pointer;
   color: #FFF;
+  outline: dotted 3px #f98385;
 }
 .btn-blue.active {
   background: #3bc2ff;
@@ -619,9 +619,9 @@ form input[type=button], .btn-deepgray, .btn-decision, .btn-Youtube, .btn-white,
 }
 .btn-yellow:hover, .btn-yellow:focus {
   background: #fcc82a;
-  box-shadow: 0px 2px 2px RGBA(0, 0, 0, 0.15);
   cursor: pointer;
   color: #FFF;
+  outline: dotted 3px #f98385;
 }
 .btn-yellow.active {
   background: #fcc82a;
@@ -637,9 +637,9 @@ form input[type=button], .btn-deepgray, .btn-decision, .btn-Youtube, .btn-white,
 }
 .btn-orange:hover, .btn-orange:focus {
   background: #f88629;
-  box-shadow: 0px 2px 2px RGBA(0, 0, 0, 0.15);
   cursor: pointer;
   color: #FFF;
+  outline: dotted 3px #f98385;
 }
 .btn-orange.active {
   background: #f88629;
@@ -655,9 +655,9 @@ form input[type=button], .btn-deepgray, .btn-decision, .btn-Youtube, .btn-white,
 }
 .btn-red:hover, .btn-red:focus {
   background: #ff5865;
-  box-shadow: 0px 2px 2px RGBA(0, 0, 0, 0.15);
   cursor: pointer;
   color: #FFF;
+  outline: dotted 3px #f98385;
 }
 .btn-red.active {
   background: #ff5865;
@@ -673,9 +673,9 @@ form input[type=button], .btn-deepgray, .btn-decision, .btn-Youtube, .btn-white,
 }
 .btn-purple:hover, .btn-purple:focus {
   background: #b46dcc;
-  box-shadow: 0px 2px 2px RGBA(0, 0, 0, 0.15);
   cursor: pointer;
   color: #FFF;
+  outline: dotted 3px #f98385;
 }
 .btn-purple.active {
   background: #b46dcc;
@@ -692,9 +692,9 @@ form input[type=button], .btn-deepgray, .btn-decision, .btn-Youtube, .btn-white,
 }
 .btn-white:hover, .btn-white:focus {
   background: white;
-  box-shadow: 0px 2px 2px RGBA(0, 0, 0, 0.15);
   cursor: pointer;
   color: #FFF;
+  outline: dotted 3px #f98385;
 }
 .btn-white.active {
   background: white;
@@ -715,9 +715,9 @@ form input[type=button], .btn-deepgray, .btn-decision, .btn-Youtube, .btn-white,
 }
 .btn-Youtube:hover, .btn-Youtube:focus {
   background: #e34545;
-  box-shadow: 0px 2px 2px RGBA(0, 0, 0, 0.15);
   cursor: pointer;
   color: #FFF;
+  outline: dotted 3px #f98385;
 }
 .btn-Youtube.active {
   background: #e34545;
@@ -749,9 +749,9 @@ form input[type=button], .btn-deepgray, .btn-decision, .btn-Youtube, .btn-white,
 }
 .btn-decision:hover, .btn-decision:focus {
   background: #226d65;
-  box-shadow: 0px 2px 2px RGBA(0, 0, 0, 0.15);
   cursor: pointer;
   color: #FFF;
+  outline: dotted 3px #f98385;
 }
 .btn-decision.active {
   background: #226d65;
@@ -771,9 +771,9 @@ form input[type=button], .btn-deepgray, .btn-decision, .btn-Youtube, .btn-white,
 }
 .btn-deepgray:hover, .btn-deepgray:focus {
   background: #616161;
-  box-shadow: 0px 2px 2px RGBA(0, 0, 0, 0.15);
   cursor: pointer;
   color: #FFF;
+  outline: dotted 3px #f98385;
 }
 .btn-deepgray.active {
   background: #616161;
@@ -1775,6 +1775,7 @@ form button {
   border-radius: 5px;
   transition: border, 0.2s, ease-out;
   transition: box-shadow, 0.2s, ease-out;
+  margin: 3px;
 }
 form input,
 form select,
@@ -1820,9 +1821,9 @@ form button:hover, form button:focus,
 form input[type=button]:hover,
 form input[type=button]:focus {
   background: #11658a;
-  box-shadow: 0px 2px 2px RGBA(0, 0, 0, 0.15);
   cursor: pointer;
   color: #FFF;
+  outline: dotted 3px #f98385;
 }
 form button.active,
 form input[type=button].active {
@@ -1838,9 +1839,9 @@ form input[type=submit] {
 }
 form input[type=submit]:hover, form input[type=submit]:focus {
   background: #11658a;
-  box-shadow: 0px 2px 2px RGBA(0, 0, 0, 0.15);
   cursor: pointer;
   color: #FFF;
+  outline: dotted 3px #f98385;
 }
 form input[type=submit].active {
   background: #11658a;
@@ -1894,9 +1895,9 @@ form button.clean:focus,
 form button.register:hover,
 form button.register:focus {
   background: #83d8cf;
-  box-shadow: 0px 2px 2px RGBA(0, 0, 0, 0.15);
   cursor: pointer;
   color: #FFF;
+  outline: dotted 3px #f98385;
 }
 form input.clean.active,
 form input.register.active,
@@ -1917,9 +1918,9 @@ form input.add:hover, form input.add:focus,
 form button.add:hover,
 form button.add:focus {
   background: #49c6b8;
-  box-shadow: 0px 2px 2px RGBA(0, 0, 0, 0.15);
   cursor: pointer;
   color: #FFF;
+  outline: dotted 3px #f98385;
 }
 form input.add.active,
 form button.add.active {
@@ -1938,9 +1939,9 @@ form input.clean:hover, form input.clean:focus,
 form button.clean:hover,
 form button.clean:focus {
   background: #626262;
-  box-shadow: 0px 2px 2px RGBA(0, 0, 0, 0.15);
   cursor: pointer;
   color: #FFF;
+  outline: dotted 3px #f98385;
 }
 form input.clean.active,
 form button.clean.active {
@@ -1981,9 +1982,9 @@ form input[type=reset] {
 }
 form input[type=reset]:hover, form input[type=reset]:focus {
   background: white;
-  box-shadow: 0px 2px 2px RGBA(0, 0, 0, 0.15);
   cursor: pointer;
   color: #FFF;
+  outline: dotted 3px #f98385;
 }
 form input[type=reset].active {
   background: white;
@@ -2060,9 +2061,9 @@ form .upload_grp .upload_btn {
 }
 form .upload_grp .upload_btn:hover, form .upload_grp .upload_btn:focus {
   background: #11658a;
-  box-shadow: 0px 2px 2px RGBA(0, 0, 0, 0.15);
   cursor: pointer;
   color: #FFF;
+  outline: dotted 3px #f98385;
 }
 form .upload_grp .upload_btn.active {
   background: #11658a;
@@ -2647,8 +2648,9 @@ a.ODF {
 }
 
 a.DOC:hover, a.DOC:focus, a.DOC:active, a.PDF:hover, a.PDF:focus, a.PDF:active, a.ODF:hover, a.ODF:focus, a.ODF:active {
-  background: #f75255 !important;
-  outline: solid 2px #ff6f06;
+  color: #000 !important;
+  background: #ececec !important;
+  outline: dotted 3px #f75255;
 }
 
 .web_link {
@@ -3179,8 +3181,8 @@ a.DOC:hover, a.DOC:focus, a.DOC:active, a.PDF:hover, a.PDF:focus, a.PDF:active, 
 .search .form_grp button.btn.Search:before {
   content: "";
   position: absolute;
-  left: 16px;
-  top: 11px;
+  left: 18px;
+  top: 12px;
   display: block;
   width: 18px;
   height: 18px;
@@ -3300,6 +3302,11 @@ a.DOC:hover, a.DOC:focus, a.DOC:active, a.PDF:hover, a.PDF:focus, a.PDF:active, 
   min-width: 60px !important;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
+  margin: 0;
+}
+.search.m_search .form_grp button.btn.Search:before {
+  left: 22px;
+  top: 13px;
 }
 .search.m_search .btn_grp {
   display: inline-block;
@@ -4131,6 +4138,7 @@ footer .Link_Info .Inner_wrap {
   text-decoration: none;
   cursor: pointer;
   border: none;
+  outline: dotted 3px #f98385;
 }
 .fatfooter .btn-fatfooter b {
   font-size: 0;
@@ -4184,6 +4192,7 @@ footer .Link_Info .Inner_wrap {
   display: block;
   font-weight: 800;
   padding: 1% 5%;
+  margin: 3px;
   border-bottom: dotted 1px rgba(255, 255, 255, 0.5);
 }
 .fatfooter nav ul li a:hover, .fatfooter nav ul li a:focus {
@@ -5046,6 +5055,9 @@ body::-webkit-scrollbar-track {
   color: #fff;
   padding: 0.45em 1em;
   border: 0;
+}
+.innerpage .advance_search button:hover, .innerpage .advance_search button:focus-visible {
+  outline: dotted 3px #f98385;
 }
 .innerpage .advance_block {
   border-radius: 6px;
@@ -6459,6 +6471,7 @@ body::-webkit-scrollbar-track {
 }
 .slick-control:hover, .slick-control:focus-visible {
   background-color: #226d65;
+  outline: dotted 3px #f98385;
 }
 
 ul.slick-dots button {
@@ -6676,7 +6689,7 @@ ul.slick-dots li.slick-active button:before {
 .adSlider .img-container {
   width: 165px;
   height: 55px;
-  margin: 0px 15px;
+  margin: 8px 15px;
 }
 .adSlider .img-container a {
   display: block;
@@ -7106,9 +7119,9 @@ ul.DownLoad li a:before, ul.DownLoad li a:after {
   display: none;
 }
 ul.DownLoad li a:hover, ul.DownLoad li a:focus, ul.DownLoad li a:active {
-  color: #fff !important;
-  background: #f75255;
-  outline: solid 2px #ff6f06;
+  color: #000 !important;
+  background: #ececec !important;
+  outline: dotted 3px #f75255;
 }
 
 .Title-2nd {
@@ -9007,8 +9020,9 @@ a.Download img {
 .Front .Box .quick_function .sub_title {
   text-align: left;
   color: #1c5a53;
-  padding-bottom: 0;
-  padding-left: 4.3em;
+  padding: 1em 0 0.25em 4em;
+  font-size: 1.25em;
+  font-weight: bold;
 }
 .Front .Box .quick_function .flex_wrap {
   display: flex;
@@ -9175,7 +9189,8 @@ a.Download img {
   background: rgba(255, 255, 255, 0.5);
   padding: 2em 2em 1em;
 }
-.Front .Timer h3 {
+.Front .Timer h3,
+.Front .Timer .sub_title {
   background: none;
   padding: 0.5em 0;
   font-size: 2em;

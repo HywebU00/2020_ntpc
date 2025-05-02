@@ -185,6 +185,10 @@ body::-webkit-scrollbar-track {
             color: #fff;
             padding: .45em 1em;
             border: 0;
+
+            &:hover, &:focus-visible{
+                outline: dotted 3px #f98385;
+            }
         }
     }
     .advance_block{

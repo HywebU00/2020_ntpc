@@ -366,8 +366,8 @@
             &:before {
                 content: '';
                 position: absolute;
-                left: 16px;
-                top: 11px;
+                left: 18px;
+                top: 12px;
                 display: block;
                 width: 18px;
                 height: 18px;
@@ -510,6 +510,11 @@
                 min-width: 60px !important;
                 border-top-left-radius: 0;
                 border-bottom-left-radius: 0;
+                margin: 0;
+                &:before {
+                    left: 22px;
+                    top: 13px;
+                }
             }
         }
         .btn_grp {

@@ -217,6 +217,7 @@ textarea,
 select,
 button {
     @include formStyle(); // 預設載入formStyle設定
+    margin: 3px;
 }
 
 input,
@@ -251,8 +252,7 @@ input[type="file"] {
 }
 
 button,
-input[type="button"],
-{
+input[type="button"]{
     @extend %btn;
     @include btn_setting($form-focus, #FFF);
 }

@@ -215,9 +215,24 @@ $(function() {
     });
 
     // 分眾、分享  --------------------------------------------------
-    $(".People").off().click(function() {
-        $(this).next('ul').slideToggle(300);
+    // $(".People").off().click(function() {
+    //     $(this).next('ul').slideToggle(300);
+    // });
+    $('a.People').on('focus', function () {
+        $(this).next('ul').css('display', 'block');
     });
+
+    $('.People + ul').on('focusout', function (e) {
+        const $ul = $(this);
+        setTimeout(() => {
+            // 判斷是否還有焦點在這個 ul 內部
+            const isStillInside = $.contains($ul[0], document.activeElement);
+            if (!isStillInside) {
+            $ul.hide(); // 或用 .css('display', 'none')
+            }
+        }, 0); // 延遲到 focus 移動完成後再判斷
+    });
+
 
     $(".forward>a").off().click(function() {
         $(this).next('ul').slideToggle(300);
@@ -242,10 +257,18 @@ $(function() {
     });
 
     $('.announce .close').click(function(e) {
-        /* Act on the event */
-        // alert('123');
         $(this).parent().fadeOut(600);
     });
+    $('.announce').on('focusout', function (e) {
+        const $announce = $(this);
+        // 使用 setTimeout 確保下一個焦點已定位好
+        setTimeout(() => {
+            if (!$(document.activeElement).closest('.announce').length) {
+            $announce.hide(); // 或用 .css('display', 'none')
+            }
+        }, 0);
+    });
+
 
     // 常見問答  -------------------------------------------------
     // $('.QandA div:first-child').find('li:first-child .Ans').show().addClass('Show');
@@ -258,12 +281,7 @@ $(function() {
         return false;
     })
 
-    // 愚蠢的側邊欄
-
-    // 1、當.open-side被click的時候，他的上一層#Side right=0
-    //    .open-side 圖標、文字要改為：icon-left-open、關閉
-    // 2、要判斷假如
-
+    // 側邊欄
     $('.Side_Wrap .open-side').click(function(e){
         // 假如 按鈕（.open-side）的爸（#Side）身上有.Show，就移掉
         // 沒有的話就加上.Show
@@ -282,6 +300,29 @@ $(function() {
             $('.open-side').addClass('icon-right-open');
         }
     });
+
+    // 鍵盤遊走
+    $('#Side .open-side').on('focusin', function () {
+        const $this = $('#Side .open-side');
+        $('#Side').addClass('Show');
+        $this.html('收合');
+        $this.removeClass('icon-left-open');
+        $this.addClass('icon-right-open');
+    });
+    $('#Side').on('focusout', function (e) {
+        // 確認焦點是否真的離開 #Side 區域
+        const related = e.relatedTarget;
+        const $this = $('#Side .open-side');
+        if (!related || !$.contains($('#Side')[0], related)) {
+            $('#Side').removeClass('Show');
+            $this.html('展開');
+            $this.removeClass('icon-right-open');
+            $this.addClass('icon-left-open');
+        }
+    });
+
+
+
 
     // function 社群
     // 字級  --------------------------------------------------

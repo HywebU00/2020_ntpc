@@ -1815,8 +1815,11 @@ a.Download {
 			.sub_title {
 				text-align: left;
 				color: darken($primaryColor, 40);
-				padding-bottom: 0;
-				padding-left: 4.3em;
+				// padding-bottom: 0;
+				// padding-left: 4.3em;
+				padding: 1em 0 .25em 4em;
+				font-size: 1.25em;
+				font-weight: bold;
 			}
 
 			.flex_wrap {
@@ -2054,7 +2057,8 @@ a.Download {
 		background: rgba(255, 255, 255, .5);
 		padding: 2em 2em 1em;
 
-		h3 {
+		h3,
+		.sub_title {
 			background: none;
 			padding: .5em 0;
 			font-size: 2em;

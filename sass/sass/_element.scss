@@ -369,8 +369,9 @@ a.PDF{ background:  #d61a1a !important; }
 a.ODF{ background:  #4b8fba !important; }
 a.DOC, a.PDF, a.ODF{
     &:hover, &:focus, &:active{
-        background: darken($lightColor, 10) !important;
-        outline: solid 2px #ff6f06;
+        color: #000 !important;
+        background: #ececec !important;
+        outline: dotted 3px darken($lightColor, 10);
     }
 }
 

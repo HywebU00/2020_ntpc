@@ -43,6 +43,7 @@ $fatTextColor: #FFF; //fatFooter 連結顏色
             text-decoration: none;
             cursor: pointer;
             border: none;
+            outline: dotted 3px $lightColor;
         }
 
         // 2022-0209 無障礙
@@ -84,6 +85,7 @@ $fatTextColor: #FFF; //fatFooter 連結顏色
                     display: block;
                     font-weight: 800;
                     padding: 1% 5%;
+                    margin: 3px;
                     border-bottom: dotted 1px rgba(255,255,255,.5);
                     &:hover,
                     &:focus {
