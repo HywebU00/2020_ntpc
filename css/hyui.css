@@ -3017,7 +3017,7 @@ a.DOC:hover, a.DOC:focus, a.DOC:active, a.PDF:hover, a.PDF:focus, a.PDF:active, 
   outline: none;
   border: 3px dotted transparent;
 }
-.header .navigation ul li a:focus-visible {
+.header .navigation ul li a:hover, .header .navigation ul li a:focus-visible {
   border-color: #f98385;
 }
 .header .navigation ul li button {
@@ -3067,6 +3067,10 @@ a.DOC:hover, a.DOC:focus, a.DOC:active, a.PDF:hover, a.PDF:focus, a.PDF:active, 
   color: #fff;
   background: transparent;
   width: 100%;
+  transition: 0.1s;
+}
+.header .navigation ul li:last-child ul li a:hover, .header .navigation ul li:last-child ul li a:focus-visible {
+  background: #222;
 }
 .header .sidebar .navigation li a {
   display: block;

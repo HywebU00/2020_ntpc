@@ -166,6 +166,7 @@
                     color: #fff;
                     outline: none;
                     border: 3px dotted transparent;
+                    &:hover,
                     &:focus-visible{
                         border-color: $lightColor;
                     }
@@ -215,6 +216,11 @@
                                 color: #fff;
                                 background: transparent;
                                 width: 100%;
+                                transition: .1s;
+                                &:hover,
+                                &:focus-visible{
+                                    background: #222;
+                                }
                             }
                         }
                     }

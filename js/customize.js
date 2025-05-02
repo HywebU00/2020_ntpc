@@ -215,12 +215,21 @@ $(function() {
     });
 
     // 分眾、分享  --------------------------------------------------
-    // $(".People").off().click(function() {
+    // $("a.People").off().click(function() {
     //     $(this).next('ul').slideToggle(300);
     // });
-    $('a.People').on('focus', function () {
-        $(this).next('ul').css('display', 'block');
+
+    $('a.People').on('click', function (e) {
+        e.preventDefault(); // 防止 <a> 預設行為
+        const $ul = $(this).next('ul');
+
+        if ($ul.css('display') === 'block') {
+            $ul.hide();
+        } else {
+            $ul.show();
+        }
     });
+
 
     $('.People + ul').on('focusout', function (e) {
         const $ul = $(this);
