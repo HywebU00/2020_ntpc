@@ -2,11 +2,11 @@
     height: 45px;
     display: block;
     overflow: hidden;
-    background: url(../images/icon_announce.svg) 12px 50% no-repeat #fff;
+    background: url(../images/icon_announce.svg) 12px 50% no-repeat #795549;
     background-size: 28px;
     margin: auto auto -1.25em;
     text-align: left;
-    padding: 0 1em 0 3em;
+    padding: 0 0 0 3em;
     position: relative;
     min-height: 1px;
     // padding-left: 15px;
@@ -14,7 +14,7 @@
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    border-radius: 20px;
+    border-radius: 30px;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     // @media(max-width:991px) {
     //     margin: 1.5em 0em;
@@ -57,14 +57,14 @@
         top: 2px !important;
         left: auto;
         opacity: .5;
-        background: url('../vendor/slick/icon_arrow_up_s.png') no-repeat 7px center;
+        background: url('../vendor/slick/icon_arrow_up_s.png') no-repeat 7px center #fff;
         background-size: 16px;
         box-shadow: none;
         border-radius: 50%;
         &:hover,
         &:focus {
             opacity: 1;
-            background: url('../vendor/slick/icon_arrow_up_s.png') no-repeat 7px center !important;
+            background: url('../vendor/slick/icon_arrow_up_s.png') no-repeat 7px center #fff !important;
             background-size: 16px !important;
         }
         &:before {
@@ -78,13 +78,14 @@
     }
     a {
         display: block;
+        font-size: 1.125em;
         line-height: 40px;
         margin-right: 3em;
         font-weight: bold;
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
-        color: #000;
+        color: #fff;
         text-decoration: none;
         span {
             color:#7cb52f;
@@ -92,7 +93,7 @@
         }
         &:hover,
         &:focus-visible {
-            color: darken($primaryColor, 40);
+            // color: darken($primaryColor, 40);
             outline: none;
             box-shadow: 0 0 0 3px $lightColor inset;
         }

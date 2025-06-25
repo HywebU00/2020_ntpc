@@ -2793,15 +2793,15 @@ a.DOC:hover, a.DOC:focus, a.DOC:active, a.PDF:hover, a.PDF:focus, a.PDF:active, 
   height: 45px;
   display: block;
   overflow: hidden;
-  background: url(../images/icon_announce.svg) 12px 50% no-repeat #fff;
+  background: url(../images/icon_announce.svg) 12px 50% no-repeat #795549;
   background-size: 28px;
   margin: auto auto -1.25em;
   text-align: left;
-  padding: 0 1em 0 3em;
+  padding: 0 0 0 3em;
   position: relative;
   min-height: 1px;
   box-sizing: border-box;
-  border-radius: 20px;
+  border-radius: 30px;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 .marquee ul {
@@ -2820,14 +2820,14 @@ a.DOC:hover, a.DOC:focus, a.DOC:active, a.PDF:hover, a.PDF:focus, a.PDF:active, 
   top: 2px !important;
   left: auto;
   opacity: 0.5;
-  background: url("../vendor/slick/icon_arrow_up_s.png") no-repeat 7px center;
+  background: url("../vendor/slick/icon_arrow_up_s.png") no-repeat 7px center #fff;
   background-size: 16px;
   box-shadow: none;
   border-radius: 50%;
 }
 .marquee .slick-next:hover, .marquee .slick-next:focus {
   opacity: 1;
-  background: url("../vendor/slick/icon_arrow_up_s.png") no-repeat 7px center !important;
+  background: url("../vendor/slick/icon_arrow_up_s.png") no-repeat 7px center #fff !important;
   background-size: 16px !important;
 }
 .marquee .slick-next:before {
@@ -2840,13 +2840,14 @@ a.DOC:hover, a.DOC:focus, a.DOC:active, a.PDF:hover, a.PDF:focus, a.PDF:active, 
 }
 .marquee a {
   display: block;
+  font-size: 1.125em;
   line-height: 40px;
   margin-right: 3em;
   font-weight: bold;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  color: #000;
+  color: #fff;
   text-decoration: none;
 }
 .marquee a span {
@@ -2854,7 +2855,6 @@ a.DOC:hover, a.DOC:focus, a.DOC:active, a.PDF:hover, a.PDF:focus, a.PDF:active, 
   margin-right: 15px;
 }
 .marquee a:hover, .marquee a:focus-visible {
-  color: #1c5a53;
   outline: none;
   box-shadow: 0 0 0 3px #f98385 inset;
 }
